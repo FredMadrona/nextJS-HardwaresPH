@@ -2,23 +2,13 @@
 import styles from "../pages/globals.css"; // Import the globals.css file
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import {FaFacebook, FaGoogle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { useMediaQuery } from 'react-responsive';
 
 
-const Homepage = () => {
+const Login = () => {
 
-
-  const isMobile = useMediaQuery({ maxWidth: 767 }); // Adjust the breakpoint as needed
-  const [isCollapsed, setIsCollapsed] = useState(!isMobile);
-
-  useEffect(() => {
-    setIsCollapsed(!isMobile);
-  }, [isMobile]);
-
-
+ 
   return (
     <div>
       <div className="grid grid-cols-12 w-full  h-screen">
@@ -96,7 +86,7 @@ const Homepage = () => {
             <div className="flex w-full justify-center mt-10 align-middle">
               <p className="text-xs text-gray-400">Don't have an account ?</p>{" "}
               <span className="text-xs text-primary font-bold ml-1 cursor-pointer hover:underline">
-                <Link href="/Products">Sign up now</Link>
+                <Link href="/HomePage">Sign up now</Link>
               </span>
             </div>
             <div className="w-full justify-center text-center text-gray-400 mt-5">
@@ -113,4 +103,4 @@ const Homepage = () => {
     </div>
   );
 };
-export default Homepage;
+export default Login;

@@ -2,13 +2,12 @@
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 
-
 // Use either the function keyword
 function Homepage() {
   return (
     <div>
       <Navbar />
-      <HorizontalMenu />
+       <HorizontalMenu />
     </div>
   );
 }
