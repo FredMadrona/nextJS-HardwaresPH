@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { BsCart2, BsHeart } from "react-icons/bs";
-
+import Link from "next/link";
 
 const ProductGrid = () => {
 
@@ -1665,7 +1665,6 @@ const ProductGrid = () => {
                 </div>
               </div>
             </div>
-            {/* Add more checkbox options for colors as needed */}
           </div>
         </div>
 
@@ -1688,11 +1687,11 @@ const ProductGrid = () => {
                 <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
               </p>
             </div>
-           
+           <Link href="/AddToCart">
               <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
                 Add to cart <BsCart2 className="mx-2" />
               </button>
-          
+              </Link>
           </div>
         ))}
       </div>

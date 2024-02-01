@@ -5,7 +5,7 @@ import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/ProductGrid";
 
-const ProductPage = () => {
+const page = () => {
   return (
     <div>
       <Navbar />
@@ -16,4 +16,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default page;

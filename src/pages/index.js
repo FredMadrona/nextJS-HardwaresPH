@@ -15,10 +15,12 @@ const Login = () => {
         <div className="md:col-span-6 h-screen lg:col-span-4 col-span-12  flex flex-col items-center justify-center w-full ">
           <div className=" w-[80%]">
             <Image src="/Hardware_Logo.svg" className="mx-auto" height={250} width={250} />
+            <Link href="/ProductPage">
             <p className="font-semibold mb-1 text-md text-center">
               {" "}
               Welcome Back !
             </p>
+            </Link>
             <p className="text-center text-sm text-grey">
               Sign in to continue to HardwaresPH
             </p>
