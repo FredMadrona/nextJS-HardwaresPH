@@ -51,7 +51,7 @@ const ProductOptions = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-[60px] ">
         <div className="cols-span-1 flex lg:flex-col flex-row ">
           <div className="flex w-full justify-center">
-            <Image src="/Hardware04.jpg" layout="responsive" width={25} height={25} alt="Hardware Image" className="lg:m-5 m-1  cursor-pointer "/>
+            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="lg:m-5 m-1  cursor-pointer "/>
             {/* <StaticImage
               src="../ProductImages/Hardware04.jpg"
               className="lg:m-5 m-1  cursor-pointer "
@@ -59,7 +59,7 @@ const ProductOptions = () => {
           </div>
           <div className="flex lg:flex-row flex-col  gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto">
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" width={25} height={25} alt="Hardware Image" className="hover:cursor-pointer "/>
+            <Image src="/Hardware04.jpg"  layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -67,7 +67,7 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" width={25} height={25} alt="Hardware Image" className="hover:cursor-pointer "/>
+            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -75,7 +75,7 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" width={25} height={25} alt="Hardware Image" className="hover:cursor-pointer "/>
+            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -83,7 +83,7 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" width={25} height={25} alt="Hardware Image" className="hover:cursor-pointer "/>
+            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100}  alt="Hardware Image" className="hover:cursor-pointer "/>
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -198,10 +198,11 @@ const ProductOptions = () => {
                 </button>
               </div>
               <div className="w-1/4 lg:w-full ">
+                <Link href="/Cart">
                 <button className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full">
                   {" "}
                   Add to Cart
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>
