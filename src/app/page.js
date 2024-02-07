@@ -1,13 +1,10 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import HorizontalMenu from "@/components/HorizontalMenu";
-
+import LoginPage from "@/components/LoginPage";
 // Use either the function keyword
 function Homepage() {
   return (
     <div>
-      <Navbar />
-       <HorizontalMenu />
+   <LoginPage/>
     </div>
   );
 }

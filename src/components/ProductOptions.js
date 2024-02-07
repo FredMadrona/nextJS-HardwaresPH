@@ -35,7 +35,7 @@ const ProductOptions = () => {
         <Link href="/"> <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
           Home /
         </span></Link>
-        <Link href="/" ><span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
+        <Link href="/catalog" ><span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
           {" "}
           Category /
         </span></Link>
@@ -198,7 +198,7 @@ const ProductOptions = () => {
                 </button>
               </div>
               <div className="w-1/4 lg:w-full ">
-                <Link href="/Cart">
+                <Link href="/checkout">
                 <button className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full">
                   {" "}
                   Add to Cart
