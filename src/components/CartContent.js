@@ -152,7 +152,11 @@ const CartContent = () => {
                 <p className="text-gray-300 text-center"> or </p>
               </div>
               <div className="w-full flex justify-center mt-1 p-3">
+<<<<<<< Updated upstream
                <Link href="/Checkout" className="w-full"> <button className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
+=======
+               <Link href="/billing/page.js" className="w-full"> <button className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
+>>>>>>> Stashed changes
                   <p className="font-semibold hover:underline text-xs md:text-md">
                     PROCEED TO CHECKOUT
                   </p>
