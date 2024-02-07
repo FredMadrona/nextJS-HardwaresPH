@@ -5,6 +5,7 @@ import ShippingDetails from "@/components/ShippingDetails";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
+import styles from "../pages/globals.css";
 
 
 function Cart() {

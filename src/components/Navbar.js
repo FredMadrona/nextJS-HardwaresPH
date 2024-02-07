@@ -50,7 +50,7 @@ const Navbar = () => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <Link href="/"><BsCart2 /></Link>
+            <Link href="/Cart"><BsCart2 /></Link>
           </svg>
           <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
             0
