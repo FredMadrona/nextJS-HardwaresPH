@@ -1,19 +1,20 @@
-// pages/index.js
+"use client";
 import Navbar from "@/components/Navbar";
-import styles from "../pages/globals.css"; // Import the globals.css file
 import HorizontalMenu from "@/components/HorizontalMenu";
-import Footer from "@/components/Footer";
 import ProductGrid from "@/components/ProductGrid";
+import Footer from "@/components/Footer";
 
-const page = () => {
+function products() {
   return (
     <div>
-      <Navbar />
-      <HorizontalMenu />
+     <Navbar />
+       <HorizontalMenu />
       <ProductGrid/>
       <Footer/>
     </div>
   );
-};
+}
 
-export default page;
+
+
+export default products;

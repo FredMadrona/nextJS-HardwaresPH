@@ -1,26 +1,20 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
-
+import ProductCards from "@/components/ProductCards";
+import Footer from "@/components/Footer";
 // Use either the function keyword
-function Homepage() {
+function home() {
   return (
     <div>
       <Navbar />
        <HorizontalMenu />
+        <ProductCards/>    
+        <Footer/>
     </div>
   );
 }
 
-// Or the arrow function syntax
-// const Homepage = () => {
-//   return (
-//     <div>
-//       <Navbar />
-//       <HorizontalMenu />
 
-//     </div>
-//   );
-// }
 
-export default Homepage;
+export default home;

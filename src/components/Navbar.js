@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
       <div className="flex items-center justify-center col-span-4  ">
-       <Link href="/HomePage">
+       <Link href="/">
        <Image src="/Hardware_Logo.svg" height={100} width={250} alt="Hardwares Logo "></Image>
        </Link>
       </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <Link href="/Cart"><BsCart2 /></Link>
+            <Link href="/"><BsCart2 /></Link>
           </svg>
           <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
             0

@@ -1,16 +1,13 @@
-// pages/index.js
-import styles from "../pages/globals.css"; // Import the globals.css file
 import Link from "next/link";
 import Image from "next/image";
 import {FaFacebook, FaGoogle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 
-const Login = () => {
-
- 
+const LoginPage = () => {
   return (
-    <div>
+   
+  <div>
       <div className="grid grid-cols-12 w-full  h-screen">
         <div className="md:col-span-6 h-screen lg:col-span-4 col-span-12  flex flex-col items-center justify-center w-full ">
           <div className=" w-[80%]">
@@ -88,7 +85,7 @@ const Login = () => {
             <div className="flex w-full justify-center mt-10 align-middle">
               <p className="text-xs text-gray-400">Don't have an account ?</p>{" "}
               <span className="text-xs text-primary font-bold ml-1 cursor-pointer hover:underline">
-                <Link href="/HomePage">Sign up now</Link>
+                <Link href="/home">Sign up now</Link>
               </span>
             </div>
             <div className="w-full justify-center text-center text-gray-400 mt-5">
@@ -103,6 +100,8 @@ const Login = () => {
         </div>
       </div>
     </div>
+    
   );
 };
-export default Login;
+
+export default LoginPage;

@@ -1,20 +1,22 @@
-import React from "react";
+"use client";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
-import Footer from "@/components/Footer";
 import ProductOptions from "@/components/ProductOptions";
 import ProductDescriptions from "@/components/ProductDescriptions";
+import Footer from "@/components/Footer";
 
-const AddToCart = () => {
+function cart() {
   return (
     <div>
-      <Navbar />
-      <HorizontalMenu />
-      <ProductOptions />
+     <Navbar />
+       <HorizontalMenu />
+       <ProductOptions />
       <ProductDescriptions />
-      <Footer />
+      <Footer/>
     </div>
   );
-};
+}
 
-export default AddToCart;
+
+
+export default cart;

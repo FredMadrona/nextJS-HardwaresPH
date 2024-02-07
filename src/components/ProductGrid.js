@@ -1687,7 +1687,7 @@ const ProductGrid = () => {
                 <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
               </p>
             </div>
-           <Link href="/AddToCart">
+           <Link href="/cart">
               <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
                 Add to cart <BsCart2 className="mx-2" />
               </button>
