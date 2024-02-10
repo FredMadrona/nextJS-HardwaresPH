@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
+import CartContent from "./CartContent";
+import cartData from "./cartData";
 
 const Navbar = () => {
+  
+  const [cartItems, setCartItems] = useState(cartData);
+
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
+
+  const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
@@ -41,7 +52,7 @@ const Navbar = () => {
           
         </div>
 
-        <div className="relative flex flex-row  items-center ">
+        <div className="relative flex flex-row items-center ">
           <svg
             className="h-8 w-8 text-primary cursor-pointer "
             fill="none"
@@ -50,15 +61,18 @@ const Navbar = () => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <Link href="/"><BsCart2 /></Link>
+            <Link href="/">
+              <BsCart2 />
+            </Link>
           </svg>
+          {/* items in cart counter */}
           <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
-            0
+            {totalItemsInCart}
           </span>
         </div>
+        {/* Display the total price of the cart */}
         <p className="text-primary text-sm ">0.00</p>
-
-        {/* Conditionally render the MenuButton component on medium screens */}
+        {/* Render CartContent */}
       </div>
       {/* End of Column 3 */}
     </nav>
