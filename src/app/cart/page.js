@@ -5,11 +5,23 @@ import ProductOptions from "@/components/ProductOptions";
 import ProductDescriptions from "@/components/ProductDescriptions";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
+import cartData from "@/components/cartData";
+import React, { useState } from "react";
+
 function cart() {
+  
+  const [cartItems, setCartItems] = useState(cartData);
+  
+  const updateCart = (updatedCart) => {
+    console.log('Updated Cart in cart:', updatedCart);
+    setCartItems(updatedCart);
+    
+  };
+  
   return (
     <div>
       <CartProvider>
-      <Navbar />
+      <Navbar cartItems={cartItems} updateCart={updateCart}/>
        <HorizontalMenu />
        <ProductOptions />
       <ProductDescriptions />

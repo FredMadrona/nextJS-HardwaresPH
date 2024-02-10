@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsTrash3 } from "react-icons/bs";
-import cartData from "./cartData"; // Import cartData
+
 
 const CartItem = ({ item, onDecrease, onIncrease, onDelete }) => {
   const decreaseQuantity = () => {
@@ -14,7 +14,6 @@ const CartItem = ({ item, onDecrease, onIncrease, onDelete }) => {
 
   const handleDelete = () => {
     // Call onDelete to remove the item from the cartData
-    window.location.reload();
     onDelete(item.id);
     
   };

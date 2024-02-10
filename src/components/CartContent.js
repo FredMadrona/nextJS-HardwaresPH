@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { BsTrash3 } from "react-icons/bs";
 import Link from "next/link";
 import CartItem from "./CartItem";
 
 const CartContent = ({ cartItems, updateCart }) => {
-  console.log(cartItems);
   const handleDecrease = (index) => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity -= 1;
-    updateCart(updatedCart);
+    updateCart(updatedCart); // Update the state
   };
 
   const handleIncrease = (index) => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity += 1;
-    updateCart(updatedCart);
+    updateCart(updatedCart); // Update the state
+  };
+
+  const handleDelete = (itemId) => {
+    updateCart(cartItems.filter((item) => item.id !== itemId)); // Filter out item
   };
 
   return (
@@ -41,15 +43,24 @@ const CartContent = ({ cartItems, updateCart }) => {
                 </tr>
               </thead>
               {/* Items in cart */}
-              <tbody>
-          {cartItems.map((item, index) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              onDecrease={() => handleDecrease(index)}
-              onIncrease={() => handleIncrease(index)}
-            />
-          ))}
+        <tbody>
+          {cartItems && cartItems.length > 0 ? (
+            cartItems.map((item, index) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                onDecrease={() => handleDecrease(index)}
+                onIncrease={() => handleIncrease(index)}
+                onDelete={() => handleDelete(item.id)}
+              />
+            ))
+          ) : (
+            <tr className="text-center py-10">
+              <td colSpan="5">
+                <p className="text-gray-400">Your cart is empty.</p>
+              </td>
+            </tr>
+          )}
         </tbody>
 
               {/* end of items in cart */}

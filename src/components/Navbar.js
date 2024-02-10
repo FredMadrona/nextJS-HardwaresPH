@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
-import CartContent from "./CartContent";
-import cartData from "./cartData";
 
-const Navbar = () => {
-  
-  const [cartItems, setCartItems] = useState(cartData);
+const Navbar = ({cartItems}) => {
 
-  const updateCart = (updatedCart) => {
-    setCartItems(updatedCart);
-  };
-
-  const totalItemsInCart = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItemsInCart = cartItems && cartItems.length > 0
+  ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
+  : 0;
 
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">

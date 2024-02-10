@@ -1,15 +1,22 @@
 "use client";
-import React from "react";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
 import BillingNavTrail from "@/components/BillingNavTrail";
 import BillingContent from "@/components/BillingContent";
+import cartData from "@/components/cartData";
+import React, { useState } from "react";
+
 
 function Billing() {
+    const [cartItems, setCartItems] = useState(cartData);
+
+    const updateCart = (updatedCart) => {
+      setCartItems(updatedCart);
+    };
     return (
         <div>   
-        <Navbar />
+        <Navbar cartItems={cartItems} updateCart={updateCart}/>
         <HorizontalMenu />
         <BillingNavTrail />
         <BillingContent />

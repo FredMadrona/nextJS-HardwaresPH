@@ -8,25 +8,24 @@ import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
 
-function products() {
+function Products() {
   const [cartItems, setCartItems] = useState(cartData);
 
   const updateCart = (updatedCart) => {
+    console.log('Updated Cart in Products:', updatedCart);
     setCartItems(updatedCart);
   };
+  
   return (
     <div>
-     <Navbar />
-       <HorizontalMenu />
-       <CartNavTrail/>
-       <CartContent cartItems={cartItems} updateCart={updateCart} />
-            
-            <ShippingDetails/>
+      <Navbar cartItems={cartItems} updateCart={updateCart}/>
+      <HorizontalMenu />
+      <CartNavTrail/>
+      <CartContent cartItems={cartItems} updateCart={updateCart} />
+      <ShippingDetails/>
       <Footer/>
     </div>
   );
 }
 
-
-
-export default products;
+export default Products;
