@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import ProductGrid from "@/components/ProductGrid";
+import withAuth from "@/hoc/withAuth";
 
 
 function products() {
@@ -16,4 +17,4 @@ function products() {
 
 
 
-export default products;
+export default withAuth(products);
