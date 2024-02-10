@@ -18,8 +18,6 @@ const CartContent = ({ cartItems, updateCart }) => {
     updateCart(updatedCart);
   };
 
-  
-
   return (
     <div>
       <div className="grid grid-cols-12 bg-gray-100">
