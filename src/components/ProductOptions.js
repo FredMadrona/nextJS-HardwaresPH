@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
+import { useCart } from "./CartContext";
+import cartData from "./cartData"; // Import cartData
 
 const ProductOptions = () => {
-  const options = ["Small", "Medium", "Large"];
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const { addToCart } = useCart();
+  const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -17,8 +20,6 @@ const ProductOptions = () => {
     setIsOpen(false);
   };
 
-  const [quantity, setQuantity] = useState(1);
-
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
@@ -27,6 +28,22 @@ const ProductOptions = () => {
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    const newItem = {
+      id: cartData.length + 1, // Generate a unique ID (you may use a library for this)
+      image: "/Hardware04.jpg",
+      name: "Stainless Steel Bathroom Hardware WWG17220",
+      quantity,
+      total: 0.00,
+    };
+
+    // Update cartData array
+    cartData.push(newItem);
+
+    // Call addToCart from your context
+    addToCart(newItem);
   };
 
   return (
@@ -121,7 +138,7 @@ const ProductOptions = () => {
               }}
               role="button"
               tabIndex={0}
-              className="border border-gray-400 p-1  px-2 flex items-between justify-between w-1/2 lg:mt-5 mt-1 cursor-pointer "
+              className="border border-gray-400 p-1 px-2 flex items-between justify-between w-1/2 lg:mt-5 mt-1 cursor-pointer"
             >
               {selectedOption ? selectedOption : "Select Size"}
               {isOpen ? (
@@ -130,6 +147,7 @@ const ProductOptions = () => {
                 <FaChevronUp className=" mt-1 hover:cursor-pointer" />
               )}
             </div>
+
             {/*   */}
             {isOpen && (
               <ul className="bg-white border border-gray-300 w-1/2 cursor-pointer shadow-lg">
@@ -197,12 +215,15 @@ const ProductOptions = () => {
                   +{" "}
                 </button>
               </div>
-              <div className="w-1/4 lg:w-full ">
+              <div className="w-1/4 lg:w-full">
                 <Link href="/checkout">
-                <button className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full">
-                  {" "}
+                <button
+                  className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
+                  onClick={handleAddToCart}
+                >
                   Add to Cart
-                </button></Link>
+                </button>
+                </Link>
               </div>
             </div>
           </div>

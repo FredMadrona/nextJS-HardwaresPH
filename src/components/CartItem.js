@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { BsTrash3 } from "react-icons/bs";
+import cartData from "./cartData"; // Import cartData
 
-const CartItem = ({ item, onDecrease, onIncrease }) => {
+const CartItem = ({ item, onDecrease, onIncrease, onDelete }) => {
   const decreaseQuantity = () => {
     onDecrease();
   };
@@ -10,6 +11,14 @@ const CartItem = ({ item, onDecrease, onIncrease }) => {
   const increaseQuantity = () => {
     onIncrease();
   };
+
+  const handleDelete = () => {
+    // Call onDelete to remove the item from the cartData
+    window.location.reload();
+    onDelete(item.id);
+    
+  };
+
 
   return (
     <tr className="py-[100px] border border-b">
@@ -31,8 +40,11 @@ const CartItem = ({ item, onDecrease, onIncrease }) => {
       <td className="w-1/6">
         <p className="text-sm md:text-md lg:text-lg font-semibold text-center">P {item.total}</p>
       </td>
+      {/* Delete Button */}
       <td className="w-1/6 m-5">
-        <BsTrash3 className="text-gray-400 cursor-pointer lg:m-5 m-2 mr-4" />
+        <button onClick={handleDelete} >
+          <BsTrash3 className="text-gray-400 cursor-pointer lg:m-5 m-2 mr-4" />
+        </button>
       </td>
     </tr>
   );
