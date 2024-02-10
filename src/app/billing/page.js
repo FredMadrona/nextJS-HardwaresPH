@@ -5,6 +5,7 @@ import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
 import BillingNavTrail from "@/components/BillingNavTrail";
 import BillingContent from "@/components/BillingContent";
+import withAuth from "@/hoc/withAuth";
 
 function Billing() {
     return (
@@ -18,4 +19,4 @@ function Billing() {
     );
 }
 
-export default Billing;
+export default withAuth(Billing);
