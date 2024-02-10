@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
+import withAuth from "@/hoc/withAuth";
 
 function cart() {
   
@@ -33,4 +34,4 @@ function cart() {
 
 
 
-export default cart;
+export default withAuth(cart);

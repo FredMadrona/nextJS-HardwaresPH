@@ -6,7 +6,7 @@ import BillingNavTrail from "@/components/BillingNavTrail";
 import BillingContent from "@/components/BillingContent";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
-
+import withAuth from "@/hoc/withAuth";
 
 function Billing() {
     const [cartItems, setCartItems] = useState(cartData);
@@ -25,4 +25,4 @@ function Billing() {
     );
 }
 
-export default Billing;
+export default withAuth(Billing);

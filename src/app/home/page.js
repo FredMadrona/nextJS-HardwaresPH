@@ -5,6 +5,8 @@ import ProductCards from "@/components/ProductCards";
 import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
+import withAuth from "@/hoc/withAuth";
+
 // Use either the function keyword
 function home() {
   const [cartItems, setCartItems] = useState(cartData);
@@ -14,7 +16,7 @@ function home() {
   };
   return (
     <div>
-      <Navbar cartItems={cartItems} />
+      <Navbar cartItems={cartItems} updateCart={updateCart}/>
        <HorizontalMenu />
         <ProductCards/>    
         <Footer/>
@@ -24,4 +26,4 @@ function home() {
 
 
 
-export default home;
+export default withAuth(home);

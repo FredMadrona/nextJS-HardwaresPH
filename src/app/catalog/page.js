@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
+import withAuth from "@/hoc/withAuth";
 
 function products() {
   const [cartItems, setCartItems] = useState(cartData);
@@ -15,7 +16,7 @@ function products() {
   };
   return (
     <div>
-     <Navbar cartItems={cartItems} />
+     <Navbar cartItems={cartItems} updateCart={updateCart}/>
        <HorizontalMenu />
       <ProductGrid/>
       <Footer/>
@@ -26,4 +27,4 @@ function products() {
 
 
 
-export default products;
+export default withAuth(products);

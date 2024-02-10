@@ -1,23 +1,8 @@
-"use client";
+import React from "react";
 import LoginPage from "@/components/LoginPage";
-// Use either the function keyword
-function Homepage() {
-  return (
-    <div>
-   <LoginPage/>
-    </div>
-  );
-}
 
-// Or the arrow function syntax
-// const Homepage = () => {
-//   return (
-//     <div>
-//       <Navbar />
-//       <HorizontalMenu />
+const index = () => {
+  return <LoginPage />;
+};
 
-//     </div>
-//   );
-// }
-
-export default Homepage;
+export default index;

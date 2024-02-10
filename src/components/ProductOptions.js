@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { useCart } from "./CartContext";
-import cartData from "./cartData"; // Import cartData
+import cartData from "./cartData";
 
 const ProductOptions = () => {
   const { addToCart } = useCart();

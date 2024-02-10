@@ -7,8 +7,9 @@ import ShippingDetails from "@/components/ShippingDetails";
 import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
+import withAuth from "@/hoc/withAuth";
 
-function Products() {
+function checkout() {
   const [cartItems, setCartItems] = useState(cartData);
 
   const updateCart = (updatedCart) => {
@@ -28,4 +29,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default withAuth(checkout);
