@@ -6,6 +6,7 @@ import { useCart } from "./CartContext";
 import cartData from "./cartData";
 
 const ProductOptions = () => {
+  const options = ["Small", "Medium", "Large"];
   const { addToCart } = useCart();
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);

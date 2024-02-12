@@ -1,11 +1,12 @@
+// Billing.js
 "use client";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
 import BillingNavTrail from "@/components/BillingNavTrail";
 import BillingContent from "@/components/BillingContent";
-import cartData from "@/components/cartData";
 import React, { useState } from "react";
+import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
 function Billing() {

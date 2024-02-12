@@ -7,25 +7,30 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    setCartItems((prevCartItems) => [...prevCartItems, item]);
   };
 
   const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== itemId)
+    );
   };
 
-  const clearCart = () => {
-    setCartItems([]);
+  const contextValue = {
+    cartItems,
+    addToCart,
+    removeFromCart,
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
 
 export const useCart = () => {
-  return useContext(CartContext);
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
 };

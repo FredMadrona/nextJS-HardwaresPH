@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CartItem from "./CartItem";
 
 const CartContent = ({ cartItems, updateCart }) => {
+  const [cartItemsState, setCartItemsState] = useState(cartItems);
+  
   const handleDecrease = (index) => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity -= 1;
@@ -16,9 +18,15 @@ const CartContent = ({ cartItems, updateCart }) => {
     updateCart(updatedCart); // Update the state
   };
 
-  const handleDelete = (itemId) => {
-    updateCart(cartItems.filter((item) => item.id !== itemId)); // Filter out item
-  };
+const handleDelete = (itemId) => {
+  const index = cartItems.findIndex((item) => item.id === itemId); // Find the index of the item to remove
+  if (index !== -1) {
+    const updatedCart = [...cartItemsState];
+    cartItems.splice(index, 1); // Remove the item at the found index
+    updateCart(cartItems);
+    setCartItemsState(updatedCart); // Update the cart with the modified array
+  }
+};
 
   return (
     <div>
