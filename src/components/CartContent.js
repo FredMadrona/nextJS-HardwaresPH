@@ -1,23 +1,32 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { BsTrash3 } from "react-icons/bs";
 import Link from "next/link";
+import CartItem from "./CartItem";
 
-const CartContent = () => {
-
+const CartContent = ({ cartItems, updateCart }) => {
+  const [cartItemsState, setCartItemsState] = useState(cartItems);
   
-  const [quantity, setQuantity] = useState(1);
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+  const handleDecrease = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart[index].quantity -= 1;
+    updateCart(updatedCart); // Update the state
   };
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+  const handleIncrease = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart[index].quantity += 1;
+    updateCart(updatedCart); // Update the state
   };
 
+const handleDelete = (itemId) => {
+  const index = cartItems.findIndex((item) => item.id === itemId); // Find the index of the item to remove
+  if (index !== -1) {
+    const updatedCart = [...cartItemsState];
+    cartItems.splice(index, 1); // Remove the item at the found index
+    updateCart(cartItems);
+    setCartItemsState(updatedCart); // Update the cart with the modified array
+  }
+};
 
   return (
     <div>
@@ -41,85 +50,28 @@ const CartContent = () => {
                   <th className="w-1/6"></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr className="py-[100px] border border-b">
-                  <td>
-                    <Image src="/Hardware04.jpg" width={100} height={100} className="md:h-[100px] md:w-[100px] h-[50px] w-[50px] m-5 p-5 border cursor-pointer"/>
-               
-                  </td>
-                  <td className="py-2 px-4 md:w-1/3 w-auto">
-                    <p className="md:text-sm text-xs text-start w-full text-gray-500">
-                      Stainelss Steel Bathroom Hardware WWG17220
-                    </p>
-                  </td>
-                   <td className="py-3 lg:px-5 px-2 mx-5 flex flex-row justify-evenly align-center md:mt-[20%] mt-[12%] border border-gray-100">
-                    <button className="text-gray-500 px-2 lg:text-md text-sm text-center" onClick={decreaseQuantity}>
-                      -
-                    </button>
-                    <span className="mx-2 px-2 text-center lg:text-md text-sm"> {quantity} </span>
-                    <button className=" text-gray-500 px-2 lg:text-md text-sm text-center" onClick={increaseQuantity}>
-                      +
-                    </button>
-                  </td>
-                  <td className="w-1/6">
-                  <p className="text-sm md:text-md lg:text-lg font-semibold text-center">P 0.00</p>
-                  </td>
-                  <td className="w-1/6 m-5">
-                    <BsTrash3 className="text-gray-400 cursor-pointer lg:m-5 m-2 mr-4" />
-                  </td>
-                </tr>
-                <tr className="py-[100px] border border-b">
-                  <td>
-                    <Image src="/Hardware04.jpg" height={100} width={100} alt="Hardware Photo" className="md:h-[100px] md:w-[100px] h-[50px] w-[50px]  m-5 p-5 border cursor-pointer"/>
-                    
-                  </td>
-                  <td className="py-2 px-4 md:w-1/3 w-auto">
-                    <p className="md:text-sm text-xs text-start w-full text-gray-500">
-                      Stainelss Steel Bathroom Hardware WWG17220
-                    </p>
-                  </td>
-                  <td className="py-3 lg:px-5 px-2 mx-5 flex flex-row justify-evenly align-center md:mt-[20%] mt-[12%] border border-gray-100">
-                    <button className="text-gray-500 px-2 lg:text-md text-sm text-center">
-                      -
-                    </button>
-                    <span className="mx-2 px-2 text-center lg:text-md text-sm"> 1 </span>
-                    <button className=" text-gray-500 px-2 lg:text-md text-sm text-center">
-                      +
-                    </button>
-                  </td>
-                  <td className="w-1/6">
-                  <p className="text-sm md:text-md lg:text-lg font-semibold text-center">P 0.00</p>
-                  </td>
-                  <td className="w-1/6 m-5">
-                  <BsTrash3 className="text-gray-400 cursor-pointer lg:m-5 m-2 mr-4" />
-                  </td>
-                </tr>
-                <tr className="py-[100px] border border-b">
-                  <td>
-                  <Image src="/Hardware04.jpg" height={100} width={100} alt="Hardware Photo" className="md:h-[100px] md:w-[100px] h-[50px] w-[50px]  m-5 p-5 border cursor-pointer"/>
-                   </td>
-                  <td className="py-2 px-4 md:w-1/3 w-auto">
-                    <p className="md:text-sm text-xs text-start w-full text-gray-500">
-                      Stainless Steel Bathroom Hardware WWG17220
-                    </p>
-                  </td>
-                  <td className="py-3 lg:px-5 px-2 mx-5 flex flex-row justify-evenly align-center md:mt-[20%] mt-[12%] border border-gray-100">
-                    <button className="text-gray-500 px-2 lg:text-md text-sm text-center">
-                      -
-                    </button>
-                    <span className="mx-2 px-2 text-center lg:text-md text-sm"> 1 </span>
-                    <button className=" text-gray-500 px-2 lg:text-md text-sm text-center">
-                      +
-                    </button>
-                  </td>
-                  <td className="w-1/6">
-                  <p className="text-sm md:text-md lg:text-lg font-semibold text-center">P 0.00</p>
-                  </td>
-                  <td className="w-1/6 m-5">
-                  <BsTrash3 className="text-gray-400 cursor-pointer lg:m-5 m-2 mr-4" />
-                  </td>
-                </tr>
-              </tbody>
+              {/* Items in cart */}
+        <tbody>
+          {cartItems && cartItems.length > 0 ? (
+            cartItems.map((item, index) => (
+              <CartItem
+                key={item.id}
+                item={item}
+                onDecrease={() => handleDecrease(index)}
+                onIncrease={() => handleIncrease(index)}
+                onDelete={() => handleDelete(item.id)}
+              />
+            ))
+          ) : (
+            <tr className="text-center py-10">
+              <td colSpan="5">
+                <p className="text-gray-400">Your cart is empty.</p>
+              </td>
+            </tr>
+          )}
+        </tbody>
+
+              {/* end of items in cart */}
             </table>
           </div>
           <div className=" h-auto lg:w-[30%] md:w-[50%] w-[80%] mx-auto  lg:mx-5">
