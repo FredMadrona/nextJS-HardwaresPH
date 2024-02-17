@@ -1,7 +1,25 @@
-import React from "react";
-
+import React, { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+
+  const handleSubscribe = () => {
+    if (email) {
+      // Perform subscription logic (e.g., send API request, etc.)
+      // For now, just simulate a successful subscription
+      setSubscribeSuccess(true);
+
+      // Clear the input box
+      setEmail("");
+
+      // Clear the success message after a delay (e.g., 3 seconds)
+      setTimeout(() => {
+        setSubscribeSuccess(false);
+      }, 3000);
+    }
+  };
+
   return (
     <div className="py-5 flex justify-center m-5 ">
       <div className="mx-5"></div>
@@ -58,7 +76,6 @@ const Footer = () => {
           <br></br>
           <div className="flex  text-sm text-gray-500">
             {" "}
-    
             <ul>
               <li className="mb-2 cursor-pointer hover:text-gray-800">
                 {" "}
@@ -122,11 +139,24 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full py-2 px-4 bg-gray-200 text-black border border-gray-500 rounded focus:outline-none"
                 />
+                {subscribeSuccess && (
+                  <div
+                    className="bg-green-500 text-white p-4 mt-2 rounded"
+                    role="alert"
+                  >
+                    <span className="font-bold">Subscribed successfully!</span>
+                  </div>
+                )}
               </li>
               <li className="mb-2">
-                <button className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none">
+                <button
+                  onClick={handleSubscribe}
+                  className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none"
+                >
                   Subscribe
                 </button>
               </li>
@@ -139,7 +169,7 @@ const Footer = () => {
       </div>
       <div className="mx-5"></div>
     </div>
-  )
+  );
 };
 
 export default Footer;

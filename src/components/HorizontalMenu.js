@@ -19,10 +19,12 @@ const HorizontalMenu = () => {
       <div className="col-span-1"> </div>
       <div className="col-span-10 grid grid-cols-9 justify-evenly ml-5">
         {menuItems.map((item, index) => (
-          <Link href="/" className="col-span-1 text-xs text-white text-center py-2 rounded-lg hover:text-gray-200 cursor-pointer" key={index}>
-        
-              {item}
-         
+          <Link
+            href="/"
+            className="col-span-1 text-xs text-white text-center py-2 rounded-lg hover:text-gray-200 cursor-pointer"
+            key={index}
+          >
+            {item}
           </Link>
         ))}
       </div>

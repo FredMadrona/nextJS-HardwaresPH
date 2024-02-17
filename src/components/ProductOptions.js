@@ -37,7 +37,7 @@ const ProductOptions = () => {
       image: "/Hardware04.jpg",
       name: "Stainless Steel Bathroom Hardware WWG17220",
       quantity,
-      total: 0.00,
+      total: 0.0,
     };
 
     // Update cartData array
@@ -50,13 +50,18 @@ const ProductOptions = () => {
   return (
     <div className="mt-[5%]">
       <div className=" ml-[5%]">
-        <Link href="/"> <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
-          Home /
-        </span></Link>
-        <Link href="/catalog" ><span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
+        <Link href="/">
           {" "}
-          Category /
-        </span></Link>
+          <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
+            Home /
+          </span>
+        </Link>
+        <Link href="/catalog">
+          <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
+            {" "}
+            Category /
+          </span>
+        </Link>
         <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
           {" "}
           Shop /
@@ -69,7 +74,14 @@ const ProductOptions = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-[60px] ">
         <div className="cols-span-1 flex lg:flex-col flex-row ">
           <div className="flex w-full justify-center">
-            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="lg:m-5 m-1  cursor-pointer "/>
+            <Image
+              src="/Hardware04.jpg"
+              layout="responsive"
+              width={100}
+              height={100}
+              alt="Hardware Image"
+              className="lg:m-5 m-1  cursor-pointer "
+            />
             {/* <StaticImage
               src="../ProductImages/Hardware04.jpg"
               className="lg:m-5 m-1  cursor-pointer "
@@ -77,7 +89,14 @@ const ProductOptions = () => {
           </div>
           <div className="flex lg:flex-row flex-col  gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto">
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg"  layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
+              <Image
+                src="/Hardware04.jpg"
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer "
+              />
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -85,7 +104,14 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
+              <Image
+                src="/Hardware04.jpg"
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer "
+              />
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -93,7 +119,14 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100} alt="Hardware Image" className="hover:cursor-pointer "/>
+              <Image
+                src="/Hardware04.jpg"
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer "
+              />
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -101,7 +134,14 @@ const ProductOptions = () => {
               ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-            <Image src="/Hardware04.jpg" layout="responsive" width={100} height={100}  alt="Hardware Image" className="hover:cursor-pointer "/>
+              <Image
+                src="/Hardware04.jpg"
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer "
+              />
 
               {/* <StaticImage
                 src="../ProductImages/Hardware04.jpg"
@@ -125,11 +165,17 @@ const ProductOptions = () => {
             </p>
           </div>
           <div className="mt-5">
-            <h6 className="font-semibold lg:text-md text-sm lg:mb-3 mb-1"> Price:</h6>
+            <h6 className="font-semibold lg:text-md text-sm lg:mb-3 mb-1">
+              {" "}
+              Price:
+            </h6>
             <p className="lg:text-xl text-md font-bold"> 0.00</p>
           </div>
           <div className="lg:my-5 my-2">
-            <p className="font-semibold lg:text-md text-sm cursor-pointer"> Sizes:</p>
+            <p className="font-semibold lg:text-md text-sm cursor-pointer">
+              {" "}
+              Sizes:
+            </p>
             <div
               onClick={toggleDropdown}
               onKeyPress={(e) => {
@@ -218,12 +264,12 @@ const ProductOptions = () => {
               </div>
               <div className="w-1/4 lg:w-full">
                 <Link href="/checkout">
-                <button
-                  className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
-                  onClick={handleAddToCart}
-                >
-                  Add to Cart
-                </button>
+                  <button
+                    className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
+                    onClick={handleAddToCart}
+                  >
+                    Add to Cart
+                  </button>
                 </Link>
               </div>
             </div>

@@ -14,13 +14,11 @@ function products() {
   };
   return (
     <div>
-     <Navbar cartItems={cartItems} updateCart={updateCart}/>
-       <HorizontalMenu />
-      <ProductGrid/>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductGrid />
     </div>
   );
 }
-
-
 
 export default withAuth(products);

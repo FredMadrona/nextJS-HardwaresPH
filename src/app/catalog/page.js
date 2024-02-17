@@ -15,15 +15,12 @@ function products() {
   };
   return (
     <div>
-     <Navbar cartItems={cartItems} updateCart={updateCart}/>
-       <HorizontalMenu />
-      <ProductGrid/>
-      <Footer/>
-
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductGrid />
+      <Footer />
     </div>
   );
 }
-
-
 
 export default withAuth(products);

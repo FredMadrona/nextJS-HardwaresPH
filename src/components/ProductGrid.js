@@ -5,8 +5,6 @@ import { BsCart2, BsHeart } from "react-icons/bs";
 import Link from "next/link";
 
 const ProductGrid = () => {
-
-
   const allProducts = [
     {
       id: 1,
@@ -1168,51 +1166,56 @@ const ProductGrid = () => {
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedFeatures, setSelectedFeatures] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState([]);
-  const [selectedPriceRange, setSelectedPriceRange] = useState([])
+  const [selectedPriceRange, setSelectedPriceRange] = useState([]);
   const [products, setProducts] = useState([]); // State for filtered products
-  
-  
+
   const filterProducts = () => {
     let filteredProducts = allProducts;
 
     // Filter by selected colors
     if (selectedColors.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        selectedColors.includes(product.color)
+        selectedColors.includes(product.color),
       );
     }
 
     // Filter by selected brands
     if (selectedBrands.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        selectedBrands.includes(product.brand)
+        selectedBrands.includes(product.brand),
       );
     }
- // Filter by selected Feature
+    // Filter by selected Feature
     if (selectedFeatures.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        selectedFeatures.includes(product.feature)
+        selectedFeatures.includes(product.feature),
       );
     }
     // Filter by selected category
     if (selectedCategory.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        selectedCategory.includes(product.category)
+        selectedCategory.includes(product.category),
       );
     }
     // Filter by selected Price Rage
     if (selectedPriceRange.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        selectedPriceRange.includes(product.priceRange)
+        selectedPriceRange.includes(product.priceRange),
       );
     }
-  
+
     setProducts(filteredProducts);
   };
 
   useEffect(() => {
     filterProducts(); // Call the filter function when the component mounts or when filtering options are selected
-  }, [selectedColors, selectedBrands, selectedFeatures, selectedCategory, selectedPriceRange]);
+  }, [
+    selectedColors,
+    selectedBrands,
+    selectedFeatures,
+    selectedCategory,
+    selectedPriceRange,
+  ]);
 
   const handleFilterChange = (event, filterType) => {
     const value = event.target.value;
@@ -1233,7 +1236,7 @@ const ProductGrid = () => {
     } else if (filterType === "feature") {
       if (selectedFeatures.includes(value)) {
         setSelectedFeatures(
-          selectedFeatures.filter((feature) => feature !== value)
+          selectedFeatures.filter((feature) => feature !== value),
         );
       } else {
         setSelectedFeatures([...selectedFeatures, value]);
@@ -1241,7 +1244,7 @@ const ProductGrid = () => {
     } else if (filterType === "category") {
       if (selectedCategory.includes(value)) {
         setSelectedCategory(
-          selectedCategory.filter((category) => category !== value)
+          selectedCategory.filter((category) => category !== value),
         );
       } else {
         setSelectedCategory([...selectedCategory, value]);
@@ -1249,13 +1252,12 @@ const ProductGrid = () => {
     } else if (filterType === "priceRange") {
       if (selectedPriceRange.includes(value)) {
         setSelectedPriceRange(
-          selectedPriceRange.filter((priceRange) => priceRange !== value)
+          selectedPriceRange.filter((priceRange) => priceRange !== value),
         );
       } else {
         setSelectedPriceRange([...selectedPriceRange, value]);
       }
     }
-
   };
 
   // for Accordion
@@ -1285,10 +1287,9 @@ const ProductGrid = () => {
     setColorVisible(!colorVisible);
   };
 
-
   // State to track the current page
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   // Number of items to display per page
   const itemsPerPage = 9;
 
@@ -1298,7 +1299,7 @@ const ProductGrid = () => {
   // Calculate the start and end index of the products to display on the current page
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  
+
   // Slice the products array to get the products for the current page
   const currentProducts = products.slice(startIndex, endIndex);
 
@@ -1307,7 +1308,6 @@ const ProductGrid = () => {
     setCurrentPage(newPage);
   };
 
-  
   return (
     <div>
       <div className="bg-gray-100 p-4 grid grid-cols-9 gap-4 ">
@@ -1522,23 +1522,33 @@ const ProductGrid = () => {
                     priceVisible ? "" : "hidden"
                   }`}
                 >
-                <label className="flex items-center text-left">
+                  <label className="flex items-center text-left">
                     <input
                       type="checkbox"
                       value="below"
-                      onChange={(event) => handleFilterChange(event, "priceRange")}
+                      onChange={(event) =>
+                        handleFilterChange(event, "priceRange")
+                      }
                       checked={selectedPriceRange.includes("below")}
-                      />
-                    <span className="ml-2 text-gray-600 cursor-pointer"> Below Php500.00 </span>
+                    />
+                    <span className="ml-2 text-gray-600 cursor-pointer">
+                      {" "}
+                      Below Php500.00{" "}
+                    </span>
                   </label>
                   <label className="flex items-center">
                     <input
                       type="checkbox"
                       value="above"
-                      onChange={(event) => handleFilterChange(event, "priceRange")}
+                      onChange={(event) =>
+                        handleFilterChange(event, "priceRange")
+                      }
                       checked={selectedPriceRange.includes("above")}
                     />
-                    <span className="ml-2 text-gray-600 cursor-pointer "> Above Php500.00</span>
+                    <span className="ml-2 text-gray-600 cursor-pointer ">
+                      {" "}
+                      Above Php500.00
+                    </span>
                   </label>
                 </div>
               </div>
@@ -1670,46 +1680,55 @@ const ProductGrid = () => {
 
         {/* Products */}
         <div className="col-span-5 flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {currentProducts.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {currentProducts.map((product) => (
+              <div
+                key={product.id}
+                className="bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg"
+              >
+                <Image
+                  src={product.img}
+                  height={100}
+                  width={100}
+                  layout="responsive"
+                  alt={product.name}
+                />
+                {/* <Img fluid={product.img} alt={product.name} /> */}
 
-            <Image src={product.img} height={100} width={100}  layout="responsive"  alt={product.name}/>
-            {/* <Img fluid={product.img} alt={product.name} /> */}
-
-            <p className="text-sm text-gray-500 mb-3 h-10">{product.name}</p>
-            <div className="flex justify-between mb-3">
-              <p className="text-sm font-semibold">{product.price}</p>
-              <p>
-                <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
-              </p>
-            </div>
-           <Link href="/cart">
-              <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-                Add to cart <BsCart2 className="mx-2" />
-              </button>
-              </Link>
+                <p className="text-sm text-gray-500 mb-3 h-10">
+                  {product.name}
+                </p>
+                <div className="flex justify-between mb-3">
+                  <p className="text-sm font-semibold">{product.price}</p>
+                  <p>
+                    <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
+                  </p>
+                </div>
+                <Link href="/cart">
+                  <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
+                    Add to cart <BsCart2 className="mx-2" />
+                  </button>
+                </Link>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      {/* Pagination buttons */}
-      <div className="flex justify-center mt-4">
-        {Array.from({ length: totalPages }).map((_, i) => (
-          <button
-            key={i + 1}
-            className={`mx-2 p-3 rounded text-sm ${
-              i + 1 === currentPage ? 'bg-primary text-white ' : 'bg-gray-300 '
-            }`}
-            onClick={() => handlePageChange(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+          {/* Pagination buttons */}
+          <div className="flex justify-center mt-4">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i + 1}
+                className={`mx-2 p-3 rounded text-sm ${
+                  i + 1 === currentPage
+                    ? "bg-primary text-white "
+                    : "bg-gray-300 "
+                }`}
+                onClick={() => handlePageChange(i + 1)}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
