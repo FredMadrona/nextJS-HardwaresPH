@@ -12,22 +12,28 @@ import withAuth from "@/hoc/withAuth";
 function Checkout() {
   const [cartItems, setCartItems] = useState(cartData);
   const [totalItemsInCart, setTotalItemsInCart] = useState(
-    cartItems.reduce((acc, item) => acc + item.quantity, 0)
+    cartItems.reduce((acc, item) => acc + item.quantity, 0),
   );
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
-    setTotalItemsInCart(updatedCart.reduce((acc, item) => acc + item.quantity, 0));
+    setTotalItemsInCart(
+      updatedCart.reduce((acc, item) => acc + item.quantity, 0),
+    );
   };
 
   return (
     <div>
-      <Navbar cartItems={cartItems} totalItems={totalItemsInCart} updateCart={updateCart} />
+      <Navbar
+        cartItems={cartItems}
+        totalItems={totalItemsInCart}
+        updateCart={updateCart}
+      />
       <HorizontalMenu />
-      <CartNavTrail/>
+      <CartNavTrail />
       <CartContent cartItems={cartItems} updateCart={updateCart} />
-      <ShippingDetails/>
-      <Footer/>
+      <ShippingDetails />
+      <Footer />
     </div>
   );
 }

@@ -16,14 +16,12 @@ function home() {
   };
   return (
     <div>
-      <Navbar cartItems={cartItems} updateCart={updateCart}/>
-       <HorizontalMenu />
-        <ProductCards/>    
-        <Footer/>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductCards />
+      <Footer />
     </div>
   );
 }
-
-
 
 export default withAuth(home);

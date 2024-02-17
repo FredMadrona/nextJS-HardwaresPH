@@ -3,19 +3,24 @@ import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 
-const Navbar = ({cartItems}) => {
-
-  const totalItemsInCart = cartItems && cartItems.length > 0
-  ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
-  : 0;
+const Navbar = ({ cartItems }) => {
+  const totalItemsInCart =
+    cartItems && cartItems.length > 0
+      ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
+      : 0;
 
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
       <div className="flex items-center justify-center col-span-4  ">
-       <Link href="/">
-       <Image src="/Hardware_Logo.svg" height={100} width={250} alt="Hardwares Logo "></Image>
-       </Link>
+        <Link href="/">
+          <Image
+            src="/Hardware_Logo.svg"
+            height={100}
+            width={250}
+            alt="Hardwares Logo "
+          ></Image>
+        </Link>
       </div>
       {/* End of Column 1 */}
 
@@ -30,20 +35,18 @@ const Navbar = ({cartItems}) => {
           <BsSearch className="absolute right-3 top-3 text-primary" />
         </div>
         {/* End of Column 2 */}
-
-       
       </div>
       {/* End of Column 2 */}
 
-
-       {/* Column 3: Login and Cart */}
-       <div className="md:flex flex-no-wrap hidden items-start justify-center gap-4 w-full md:col-span-4 col-span-2 ">
+      {/* Column 3: Login and Cart */}
+      <div className="md:flex flex-no-wrap hidden items-start justify-center gap-4 w-full md:col-span-4 col-span-2 ">
         <div className="flex flex-row items-center  gap-1 lg:mr-5">
           <BsPerson className="h-6 w-6 text-primary cursor-pointer " />
           {` `}
-        <Link href="/" className="text-primary mr-5">Profile</Link>
-        {` `}
-          
+          <Link href="/" className="text-primary mr-5">
+            Profile
+          </Link>
+          {` `}
         </div>
 
         <div className="relative flex flex-row items-center ">

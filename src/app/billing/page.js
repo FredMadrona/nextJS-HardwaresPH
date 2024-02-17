@@ -10,20 +10,20 @@ import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
 function Billing() {
-    const [cartItems, setCartItems] = useState(cartData);
+  const [cartItems, setCartItems] = useState(cartData);
 
-    const updateCart = (updatedCart) => {
-      setCartItems(updatedCart);
-    };
-    return (
-        <div>   
-        <Navbar cartItems={cartItems} updateCart={updateCart}/>
-        <HorizontalMenu />
-        <BillingNavTrail />
-        <BillingContent />
-        <Footer />
-        </div>
-    );
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
+  return (
+    <div>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <BillingNavTrail />
+      <BillingContent />
+      <Footer />
+    </div>
+  );
 }
 
 export default withAuth(Billing);

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Footer = () => {
   return (
     <div className="py-5 flex justify-center m-5 ">
@@ -58,7 +57,6 @@ const Footer = () => {
           <br></br>
           <div className="flex  text-sm text-gray-500">
             {" "}
-    
             <ul>
               <li className="mb-2 cursor-pointer hover:text-gray-800">
                 {" "}
@@ -139,7 +137,7 @@ const Footer = () => {
       </div>
       <div className="mx-5"></div>
     </div>
-  )
+  );
 };
 
 export default Footer;

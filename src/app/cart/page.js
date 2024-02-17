@@ -1,5 +1,5 @@
 // cart.js
-"use client"
+"use client";
 import React, { useState } from "react";
 import { CartProvider } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";

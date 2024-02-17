@@ -1,6 +1,6 @@
 // _app.js
 import { CartProvider } from "@/components/CartContext";
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
