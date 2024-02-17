@@ -19,6 +19,7 @@ function products() {
       <HorizontalMenu />
       <ProductGrid />
       <Footer />
+
     </div>
   );
 }
