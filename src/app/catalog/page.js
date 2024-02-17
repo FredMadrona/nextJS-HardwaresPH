@@ -8,21 +8,19 @@ import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
 
 function products() {
-    const [cartItems, setCartItems] = useState(cartData);
+  const [cartItems, setCartItems] = useState(cartData);
 
-    const updateCart = (updatedCart) => {
-        setCartItems(updatedCart);
-    };
-    return (
-        <div>
-            <Navbar cartItems={cartItems} updateCart={updateCart}/>
-            <HorizontalMenu />
-            <ProductGrid/>
-            <Footer/>
-        </div>
-    );
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
+  return (
+    <div>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductGrid />
+      <Footer />
+    </div>
+  );
 }
-
-
 
 export default withAuth(products);
