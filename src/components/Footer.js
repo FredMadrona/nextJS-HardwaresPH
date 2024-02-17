@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribeSuccess, setSubscribeSuccess] = useState(false);
