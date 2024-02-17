@@ -56,7 +56,7 @@ const ProductOptions = () => {
             Home /
           </span>
         </Link>
-        <Link href="/catalog">
+        <Link href="/catalog?username=admin">
           <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
             {" "}
             Category /
@@ -263,7 +263,7 @@ const ProductOptions = () => {
                 </button>
               </div>
               <div className="w-1/4 lg:w-full">
-                <Link href="/checkout">
+                <Link href="/checkout?username=admin">
                   <button
                     className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
                     onClick={handleAddToCart}

@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -20,14 +21,12 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     if (username === "admin" && password === "password") {
-      localStorage.setItem("isLoggedIn", "true");
-
+      localStorage.setItem("isLoggedIn", "admin");
       router.push("/home?username=admin");
     } else {
       alert("Invalid username or password");
     }
   };
-
   return (
     <div>
       <div className="grid grid-cols-12 w-full  h-screen">
@@ -38,11 +37,12 @@ const LoginPage = () => {
               className="mx-auto"
               height={250}
               width={250}
+              alt="Hardwares PH logo"
             />
 
             <p className="font-semibold mb-1 text-md text-center">
               {" "}
-              Welcome Back !
+              Welcome!
             </p>
 
             <p className="text-center text-sm text-grey">
@@ -71,7 +71,7 @@ const LoginPage = () => {
                     <span> Password </span>
                     <span className="hover:text-gray-900 cursor-pointer">
                       {" "}
-                      Forgot Password
+                      <Link href="/forgotPassword"> Forgot Password </Link>
                     </span>
                   </div>
                   <div className="relative">
@@ -123,7 +123,7 @@ const LoginPage = () => {
               </div>
             </div>
             <div className="flex w-full justify-center mt-10 align-middle">
-              <p className="text-xs text-gray-400">Don't have an account ?</p>{" "}
+              <p className="text-xs text-gray-400"> Dont have an account ?</p>{" "}
               <span className="text-xs text-primary font-bold ml-1 cursor-pointer hover:underline">
                 Sign up now
               </span>

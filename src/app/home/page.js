@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
+import ImageSlider from "@/components/ImageSlider";
 
 // Use either the function keyword
 function home() {
@@ -18,6 +19,7 @@ function home() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
+      <ImageSlider/>
       <ProductCards />
       <Footer />
     </div>
