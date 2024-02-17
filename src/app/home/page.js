@@ -9,7 +9,7 @@ import withAuth from "@/hoc/withAuth";
 import ImageSlider from "@/components/ImageSlider";
 
 // Use either the function keyword
-function home() {
+function Home() {
   const [cartItems, setCartItems] = useState(cartData);
 
   const updateCart = (updatedCart) => {
@@ -19,11 +19,11 @@ function home() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
-      <ImageSlider/>
+      <ImageSlider />
       <ProductCards />
       <Footer />
     </div>
   );
 }
 
-export default withAuth(home);
+export default withAuth(Home);

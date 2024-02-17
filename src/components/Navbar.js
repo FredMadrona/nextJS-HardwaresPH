@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 import LogoutButton from "./LogoutButton";
 const Navbar = ({ cartItems }) => {
   const totalItemsInCart =
@@ -10,11 +10,9 @@ const Navbar = ({ cartItems }) => {
       ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
       : 0;
 
+  const searchParams = useSearchParams();
+  const username = searchParams.get("username");
 
-      const searchParams = useSearchParams()
-      const username = searchParams.get('username')
-
-      
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
@@ -54,7 +52,7 @@ const Navbar = ({ cartItems }) => {
           </Link>
           {` `}
         </div>
-        <LogoutButton/>
+        <LogoutButton />
         <div className="relative flex flex-row items-center ">
           <svg
             className="h-8 w-8 text-primary cursor-pointer "

@@ -23,6 +23,7 @@ const CartItem = ({ item, onDecrease, onIncrease, onDelete }) => {
           src={item.image}
           width={100}
           height={100}
+          alt="Item Image"
           className="md:h-[100px] md:w-[100px] h-[50px] w-[50px] m-5 p-5 border cursor-pointer"
         />
       </td>

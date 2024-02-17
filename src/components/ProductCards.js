@@ -44,7 +44,12 @@ const ProductCards = () => {
         <div className="md:col-span-2 col-span-1"></div>
         <div className="col-span-10 md:col-span-8 grid lg:grid-cols-4 grid-cols-2 justify-evenly gap-5">
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware03.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware03.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Stainless Steel Bathroom Hardware{" "}
@@ -63,7 +68,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware02.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware02.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Stainless Steel Bathroom Hardware{" "}
@@ -82,7 +92,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware04.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware04.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Exposed Door Closer Series{" "}
@@ -101,7 +116,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware02.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware02.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Intelligent Door Lock N6700{" "}
@@ -142,7 +162,12 @@ const ProductCards = () => {
         <div className="col-span-1 md:col-span-2"></div>
         <div className="col-span-10 md:col-span-8 grid lg:grid-cols-4 grid-cols-2 justify-evenly gap-5">
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware03.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware03.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Stainless Steel Bathroom Hardware{" "}
@@ -161,7 +186,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware02.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware02.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Stainless Steel Bathroom Hardware{" "}
@@ -180,7 +210,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware04.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware04.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Exposed Door Closer Series{" "}
@@ -199,7 +234,12 @@ const ProductCards = () => {
             </button>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image src="/Hardware02.jpg" width={200} height={150}></Image>
+            <Image
+              src="/Hardware02.jpg"
+              width={200}
+              height={150}
+              alt="Hardware Image"
+            ></Image>
             <p className="text-sm text-gray-500 mb-3 h-10">
               {" "}
               Intelligent Door Lock N6700{" "}
@@ -230,6 +270,7 @@ const ProductCards = () => {
               src="/IndexPageImage01.png"
               width={150}
               height={150}
+              alt="Hardware Image"
               className="w-full h-full cursor-pointer hover:shadow-md rounded"
             ></Image>
           </div>
@@ -239,6 +280,7 @@ const ProductCards = () => {
               src="/IndexPageImage02.png"
               width={150}
               height={150}
+              alt="Hardware Image"
               className="w-full h-full cursor-pointer hover:shadow-md rounded"
             ></Image>
           </div>

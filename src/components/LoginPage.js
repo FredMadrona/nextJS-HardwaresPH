@@ -40,10 +40,7 @@ const LoginPage = () => {
               alt="Hardwares PH logo"
             />
 
-            <p className="font-semibold mb-1 text-md text-center">
-              {" "}
-              Welcome!
-            </p>
+            <p className="font-semibold mb-1 text-md text-center"> Welcome!</p>
 
             <p className="text-center text-sm text-grey">
               Sign in to continue to HardwaresPH
