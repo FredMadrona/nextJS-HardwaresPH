@@ -6,7 +6,7 @@ import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
 
-function products() {
+function Products() {
   const [cartItems, setCartItems] = useState(cartData);
 
   const updateCart = (updatedCart) => {
@@ -21,4 +21,4 @@ function products() {
   );
 }
 
-export default withAuth(products);
+export default withAuth(Products);

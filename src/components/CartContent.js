@@ -122,7 +122,7 @@ const CartContent = ({ cartItems, updateCart }) => {
                 <p className="text-gray-300 text-center"> or </p>
               </div>
               <div className="w-full flex justify-center mt-1 p-3">
-                <Link href="/billing" className="w-full">
+                <Link href="/billing?username=admin" className="w-full">
                   {" "}
                   <button className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
                     <p className="font-semibold hover:underline text-xs md:text-md">

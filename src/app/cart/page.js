@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
-function cart() {
+function Cart() {
   const [cartItems, setCartItems] = useState(cartData);
 
   const updateCart = (updatedCart) => {
@@ -30,4 +30,4 @@ function cart() {
   );
 }
 
-export default withAuth(cart);
+export default withAuth(Cart);

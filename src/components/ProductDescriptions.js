@@ -174,6 +174,7 @@ const ProductDescriptions = () => {
               src="/Hardware04.jpg"
               height={100}
               width={100}
+              alt="Hardware Image"
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
@@ -198,6 +199,7 @@ const ProductDescriptions = () => {
               src="/Hardware01.jpg"
               height={100}
               width={100}
+              alt="Hardware Image"
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
@@ -222,6 +224,7 @@ const ProductDescriptions = () => {
               src="/Hardware02.jpg"
               height={100}
               width={100}
+              alt="Hardware Image"
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
@@ -246,6 +249,7 @@ const ProductDescriptions = () => {
               src="/Hardware03.jpg"
               height={100}
               width={100}
+              alt="Hardware Image"
               layout="responsive"
             />
             {/* <StaticImage src="../ProductImages/Hardware03.jpg"></StaticImage> */}

@@ -2,12 +2,16 @@ import React from "react";
 import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
-
+import { useSearchParams } from "next/navigation";
+import LogoutButton from "./LogoutButton";
 const Navbar = ({ cartItems }) => {
   const totalItemsInCart =
     cartItems && cartItems.length > 0
       ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
       : 0;
+
+  const searchParams = useSearchParams();
+  const username = searchParams.get("username");
 
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
@@ -44,11 +48,11 @@ const Navbar = ({ cartItems }) => {
           <BsPerson className="h-6 w-6 text-primary cursor-pointer " />
           {` `}
           <Link href="/" className="text-primary mr-5">
-            Profile
+            {username}
           </Link>
           {` `}
         </div>
-
+        <LogoutButton />
         <div className="relative flex flex-row items-center ">
           <svg
             className="h-8 w-8 text-primary cursor-pointer "
@@ -58,7 +62,7 @@ const Navbar = ({ cartItems }) => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <Link href="/">
+            <Link href="/cart">
               <BsCart2 />
             </Link>
           </svg>
