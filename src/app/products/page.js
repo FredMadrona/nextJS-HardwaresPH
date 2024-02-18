@@ -6,19 +6,19 @@ import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
 
-function products() {
-  const [cartItems, setCartItems] = useState(cartData);
+function Products() {
+    const [cartItems, setCartItems] = useState(cartData);
 
-  const updateCart = (updatedCart) => {
-    setCartItems(updatedCart);
-  };
-  return (
-    <div>
-      <Navbar cartItems={cartItems} updateCart={updateCart} />
-      <HorizontalMenu />
-      <ProductGrid />
-    </div>
-  );
+    const updateCart = (updatedCart) => {
+        setCartItems(updatedCart);
+    };
+    return (
+        <div>
+            <Navbar cartItems={cartItems} updateCart={updateCart} />
+            <HorizontalMenu />
+            <ProductGrid />
+        </div>
+    );
 }
 
-export default withAuth(products);
+export default withAuth(Products);

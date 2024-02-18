@@ -6,22 +6,24 @@ import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
+import ImageSlider from "@/components/ImageSlider";
 
 // Use either the function keyword
-function home() {
-  const [cartItems, setCartItems] = useState(cartData);
+function Home() {
+    const [cartItems, setCartItems] = useState(cartData);
 
-  const updateCart = (updatedCart) => {
-    setCartItems(updatedCart);
-  };
-  return (
-    <div>
-      <Navbar cartItems={cartItems} updateCart={updateCart} />
-      <HorizontalMenu />
-      <ProductCards />
-      <Footer />
-    </div>
-  );
+    const updateCart = (updatedCart) => {
+        setCartItems(updatedCart);
+    };
+    return (
+        <div>
+            <Navbar cartItems={cartItems} updateCart={updateCart} />
+            <HorizontalMenu />
+            <ImageSlider />
+            <ProductCards />
+            <Footer />
+        </div>
+    );
 }
 
-export default withAuth(home);
+export default withAuth(Home);
