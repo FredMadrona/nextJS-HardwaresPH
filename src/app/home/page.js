@@ -10,20 +10,20 @@ import ImageSlider from "@/components/ImageSlider";
 
 // Use either the function keyword
 function Home() {
-    const [cartItems, setCartItems] = useState(cartData);
+  const [cartItems, setCartItems] = useState(cartData);
 
-    const updateCart = (updatedCart) => {
-        setCartItems(updatedCart);
-    };
-    return (
-        <div>
-            <Navbar cartItems={cartItems} updateCart={updateCart} />
-            <HorizontalMenu />
-            <ImageSlider />
-            <ProductCards />
-            <Footer />
-        </div>
-    );
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
+  return (
+    <div>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ImageSlider />
+      <ProductCards />
+      <Footer />
+    </div>
+  );
 }
 
 export default withAuth(Home);
