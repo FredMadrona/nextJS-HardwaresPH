@@ -1,9 +1,12 @@
+// Products.js
 "use client";
+import React, { useState, useEffect } from "react";
+import { CartProvider } from "@/components/CartContext"; // Make sure to import CartProvider if it's needed
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
-import React, { useState, useEffect } from "react";
+import cartData from "@/components/cartData"; // Import the cartData file
 import withAuth from "@/hoc/withAuth";
 
 function Products() {
@@ -23,12 +26,12 @@ function Products() {
   };
 
   return (
-    <div>
+    <CartProvider>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
       <ProductGrid />
       <Footer />
-    </div>
+    </CartProvider>
   );
 }
 

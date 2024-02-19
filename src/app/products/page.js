@@ -23,6 +23,8 @@ function Products() {
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
+    // Update local storage with the new cart
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   };
 
   return (

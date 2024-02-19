@@ -10,18 +10,16 @@ import Footer from "@/components/Footer";
 import withAuth from "@/hoc/withAuth";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    // Load cart items from local storage when component mounts
+  // Load cart items from localStorage on component mount
+  const [cartItems, setCartItems] = useState(() => {
     const storedCartItems = localStorage.getItem("cartItems");
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
-    } else {
-      // If no data in local storage, use default cartData
-      setCartItems(cartData);
-    }
-  }, []);
+    return storedCartItems ? JSON.parse(storedCartItems) : [];
+  });
+
+  // Update local storage when cartItems change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
