@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CartItem from "./CartItem";
@@ -6,25 +6,38 @@ import CartItem from "./CartItem";
 const CartContent = ({ cartItems, updateCart }) => {
   const [cartItemsState, setCartItemsState] = useState(cartItems);
 
+  useEffect(() => {
+    // Update local storage when cartItems change
+    localStorage.setItem("cartItems", JSON.stringify(cartItemsState));
+  }, [cartItemsState]);
+
   const handleDecrease = (index) => {
-    const updatedCart = [...cartItems];
+    const updatedCart = [...cartItemsState];
     updatedCart[index].quantity -= 1;
-    updateCart(updatedCart); // Update the state
+    setCartItemsState(updatedCart); // Update the local state
+    updateCart(updatedCart); // Update the prop state
   };
 
   const handleIncrease = (index) => {
-    const updatedCart = [...cartItems];
+    const updatedCart = [...cartItemsState];
     updatedCart[index].quantity += 1;
-    updateCart(updatedCart); // Update the state
+    setCartItemsState(updatedCart); // Update the local state
+    updateCart(updatedCart); // Update the prop state
   };
 
   const handleDelete = (itemId) => {
-    const index = cartItems.findIndex((item) => item.id === itemId); // Find the index of the item to remove
+    const index = cartItems.findIndex((item) => item.id === itemId);
+
     if (index !== -1) {
       const updatedCart = [...cartItemsState];
-      cartItems.splice(index, 1); // Remove the item at the found index
-      updateCart(cartItems);
-      setCartItemsState(updatedCart); // Update the cart with the modified array
+      updatedCart.splice(index, 1);
+
+      // Update local state and prop state with the modified array
+      updateCart(updatedCart);
+      setCartItemsState(updatedCart);
+
+      // Update local storage when cartItems change
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     }
   };
 
