@@ -28,13 +28,13 @@ function Cart() {
   };
 
   return (
-      <CartProvider>
-        <Navbar cartItems={cartItems} updateCart={updateCart} />
-        <HorizontalMenu />
-        <ProductOptions />
-        <ProductDescriptions />
-        <Footer />
-      </CartProvider>
+    <CartProvider>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductOptions />
+      <ProductDescriptions />
+      <Footer />
+    </CartProvider>
   );
 }
 

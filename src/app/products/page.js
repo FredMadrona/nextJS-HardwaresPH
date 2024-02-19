@@ -10,29 +10,29 @@ import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
 function Products() {
-    // Load cart items from localStorage on component mount
-    const [cartItems, setCartItems] = useState(() => {
-        const storedCartItems = localStorage.getItem("cartItems");
-        return storedCartItems ? JSON.parse(storedCartItems) : cartData;
-    });
+  // Load cart items from localStorage on component mount
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+  });
 
-    // Update local storage when cartItems change
-    useEffect(() => {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }, [cartItems]);
+  // Update local storage when cartItems change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
-    const updateCart = (updatedCart) => {
-        setCartItems(updatedCart);
-    };
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
 
-    return (
-        <CartProvider>
-            <Navbar cartItems={cartItems} updateCart={updateCart} />
-            <HorizontalMenu />
-            <ProductGrid />
-            <Footer />
-        </CartProvider>
-    );
+  return (
+    <CartProvider>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductGrid />
+      <Footer />
+    </CartProvider>
+  );
 }
 
 export default withAuth(Products);

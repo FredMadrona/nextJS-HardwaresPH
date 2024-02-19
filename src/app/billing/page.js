@@ -10,29 +10,29 @@ import BillingContent from "@/components/BillingContent";
 import withAuth from "@/hoc/withAuth";
 
 function Billing() {
-    const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-    useEffect(() => {
-        // Load cart items from local storage when component mounts
-        const storedCartItems = localStorage.getItem("cartItems");
-        if (storedCartItems) {
-            setCartItems(JSON.parse(storedCartItems));
-        }
-    }, []);
+  useEffect(() => {
+    // Load cart items from local storage when component mounts
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
+  }, []);
 
-    const updateCart = (updatedCart) => {
-        setCartItems(updatedCart);
-    };
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
 
-    return (
-        <CartProvider>
-            <Navbar cartItems={cartItems} updateCart={updateCart} />
-            <HorizontalMenu />
-            <BillingNavTrail />
-            <BillingContent />
-            <Footer />
-        </CartProvider>
-    );
+  return (
+    <CartProvider>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <BillingNavTrail />
+      <BillingContent />
+      <Footer />
+    </CartProvider>
+  );
 }
 
 export default withAuth(Billing);

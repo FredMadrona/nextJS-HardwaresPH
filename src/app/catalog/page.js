@@ -7,29 +7,29 @@ import React, { useState, useEffect } from "react";
 import withAuth from "@/hoc/withAuth";
 
 function Products() {
-    // Load cart items from localStorage on component mount
-    const [cartItems, setCartItems] = useState(() => {
-        const storedCartItems = localStorage.getItem("cartItems");
-        return storedCartItems ? JSON.parse(storedCartItems) : cartData;
-    });
+  // Load cart items from localStorage on component mount
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+  });
 
-    // Update local storage when cartItems change
-    useEffect(() => {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }, [cartItems]);
+  // Update local storage when cartItems change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
-    const updateCart = (updatedCart) => {
-        setCartItems(updatedCart);
-    };
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+  };
 
-    return (
-        <div>
-            <Navbar cartItems={cartItems} updateCart={updateCart} />
-            <HorizontalMenu />
-            <ProductGrid />
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Navbar cartItems={cartItems} updateCart={updateCart} />
+      <HorizontalMenu />
+      <ProductGrid />
+      <Footer />
+    </div>
+  );
 }
 
 export default withAuth(Products);
