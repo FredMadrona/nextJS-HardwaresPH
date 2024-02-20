@@ -71,9 +71,6 @@ const Navbar = ({ cartItems }) => {
             {totalItemsInCart}
           </span>
         </div>
-        {/* Display the total price of the cart */}
-        <p className="text-primary text-sm ">0.00</p>
-        {/* Render CartContent */}
       </div>
       {/* End of Column 3 */}
     </nav>
