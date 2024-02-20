@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="" />
+    <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/billing/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/billing/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/cart/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/catalog/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/catalog/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/products/page.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,12 +23,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MarkRMNDZ"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarkRMNDZ&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -33,10 +40,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2cUDLGnXPMLtobcMklw0JUOmFrm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,6 +53,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/cart-map-from-localstorage",
     "last_opened_file_path": "D:/HWPH-Proj/nextJS-HardwaresPH",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -101,6 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708157207098</updated>
       <workItem from="1708157208609" duration="8814000" />
+      <workItem from="1708323501763" duration="14521000" />
     </task>
     <servers />
   </component>

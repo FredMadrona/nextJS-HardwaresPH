@@ -33,7 +33,7 @@ const ProductOptions = () => {
 
   const handleAddToCart = () => {
     const newItem = {
-      id: cartData.length + 1, // Generate a unique ID (you may use a library for this)
+      id: cartData.length + 1,
       image: "/Hardware04.jpg",
       name: "Stainless Steel Bathroom Hardware WWG17220",
       quantity,
@@ -45,6 +45,20 @@ const ProductOptions = () => {
 
     // Call addToCart from your context
     addToCart(newItem);
+
+    // Retrieve existing cart items from local storage
+    const storedCartItems = localStorage.getItem("cartItems");
+
+    // Parse existing cart items or initialize an empty array
+    const existingCartItems = storedCartItems
+      ? JSON.parse(storedCartItems)
+      : [];
+
+    // Update local storage with the new item
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify([...existingCartItems, newItem]),
+    );
   };
 
   return (
