@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-
 const BillingContent = ({ updateCart }) => {
   const [subscribeSuccess, setSubscribeSuccess] = useState(false); // New state for notification
   const router = useRouter(); // Next.js router
@@ -412,20 +411,20 @@ const BillingContent = ({ updateCart }) => {
             {/* Place Order button */}
             <div className="w-full flex justify-center mt-1 p-3">
               <button
-                  onClick={handlePlaceOrder}
-                  className="bg-red-600 hover:bg-red-700 h-16 w-[48%] hover:shadow-md rounded mt-1 flex items-center justify-center border"
+                onClick={handlePlaceOrder}
+                className="bg-red-600 hover:bg-red-700 h-16 w-[48%] hover:shadow-md rounded mt-1 flex items-center justify-center border"
               >
-          <span className="text-white font-semibold text-md md:text-lg">
-            PLACE ORDER
-          </span>
+                <span className="text-white font-semibold text-md md:text-lg">
+                  PLACE ORDER
+                </span>
               </button>
             </div>
 
             {/* Notification */}
             {subscribeSuccess && (
-                <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded">
-                  <span className="font-bold">Your order has been placed!</span>
-                </div>
+              <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded">
+                <span className="font-bold">Your order has been placed!</span>
+              </div>
             )}
           </div>
         </div>
