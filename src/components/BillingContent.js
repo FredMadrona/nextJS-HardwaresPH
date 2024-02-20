@@ -42,18 +42,12 @@ const BillingContent = ({ updateCart }) => {
   };
 
   const handlePlaceOrder = () => {
-    // Perform actions to place the order
-
-    // Clear local storage cart
     localStorage.removeItem("cartItems");
-
-    // Update cartItems state to reflect the change
     updateCart([]);
-
-    // Show success notification
     setSubscribeSuccess(true);
-
-    // Redirect to /home?username=admin
+    setTimeout(() => {
+      setSubscribeSuccess(false);
+    }, 99999);
     router.push("/home?username=admin");
   };
 
@@ -420,9 +414,8 @@ const BillingContent = ({ updateCart }) => {
               </button>
             </div>
 
-            {/* Notification */}
             {subscribeSuccess && (
-              <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded">
+              <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-green-500 text-white rounded z-50">
                 <span className="font-bold">Your order has been placed!</span>
               </div>
             )}
