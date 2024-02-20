@@ -11,21 +11,30 @@ import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
 function Home() {
-  // Load cart items from localStorage on component mount
+  // Load cart items from localStorage on the client side
   const [cartItems, setCartItems] = useState(() => {
-    const storedCartItems = localStorage.getItem("cartItems");
-    return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    if (typeof localStorage !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    } else {
+      return cartData;
+    }
   });
 
   // Update local storage when cartItems change
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    // Check if localStorage is available before using it
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
-    // Update local storage with the new cart
-    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    // Update local storage with the new cart (if available)
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    }
   };
 
   return (

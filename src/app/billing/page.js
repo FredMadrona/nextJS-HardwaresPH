@@ -1,4 +1,3 @@
-// Billing.js
 "use client";
 import React, { useState, useEffect } from "react";
 import { CartProvider, useCart } from "@/components/CartContext";
@@ -33,7 +32,8 @@ function Billing() {
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
       <BillingNavTrail />
-      <BillingContent />
+      <BillingContent updateCart={updateCart} />{" "}
+      {/* Pass updateCart to BillingContent */}
       <Footer />
     </CartProvider>
   );
