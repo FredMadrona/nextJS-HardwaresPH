@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import CartItem from "./CartItem";
 
 const BillingContent = ({ updateCart }) => {
   const [subscribeSuccess, setSubscribeSuccess] = useState(false); // New state for notification
@@ -27,6 +28,11 @@ const BillingContent = ({ updateCart }) => {
     cvv: "",
   });
   const [showCreditCardDropdown, setShowCreditCardDropdown] = useState(false);
+
+
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleCreditCardButtonClick = () => {
     // Toggle visibility of the credit card dropdown
@@ -57,8 +63,6 @@ const BillingContent = ({ updateCart }) => {
     { name: "Stainless Steel Bathroom Hardware", quantity: 1, price: 0.0 },
     { name: "Stainless Steel Bathroom Hardware", quantity: 1, price: 0.0 },
   ];
-  const subtotal = products.reduce((sum, product) => sum + product.price, 0);
-
   return (
     <div className="w-full grid grid-cols-12  bg-gray-100 pt-5">
       <div className="col-span-1 "> </div>
@@ -209,17 +213,14 @@ const BillingContent = ({ updateCart }) => {
                 Subtotal
               </span>
             </h1>
-            {/* Dummy Product List */}
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="flex justify-between items-center mb-2"
-              >
-                <p className="text-gray-500">
-                  {product.name} x {product.quantity}
-                </p>
-                <p className="text-gray-500">${product.price.toFixed(2)}</p>
-              </div>
+            {/* Render only item name, quantity, and total */}
+            {cartItems.map((item, index) => (
+                <div key={index} className="flex justify-between items-center mb-2">
+                  <p className="text-gray-500">
+                    {item.name} x {item.quantity}
+                  </p>
+                  <p className="text-gray-500">${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
             ))}
           </div>
           <div>
