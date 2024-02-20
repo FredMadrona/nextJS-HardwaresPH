@@ -29,10 +29,12 @@ const BillingContent = ({ updateCart }) => {
   });
   const [showCreditCardDropdown, setShowCreditCardDropdown] = useState(false);
 
-
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   const handleCreditCardButtonClick = () => {
     // Toggle visibility of the credit card dropdown
@@ -215,12 +217,17 @@ const BillingContent = ({ updateCart }) => {
             </h1>
             {/* Render only item name, quantity, and total */}
             {cartItems.map((item, index) => (
-                <div key={index} className="flex justify-between items-center mb-2">
-                  <p className="text-gray-500">
-                    {item.name} x {item.quantity}
-                  </p>
-                  <p className="text-gray-500">${(item.price * item.quantity).toFixed(2)}</p>
-                </div>
+              <div
+                key={index}
+                className="flex justify-between items-center mb-2"
+              >
+                <p className="text-gray-500">
+                  {item.name} x {item.quantity}
+                </p>
+                <p className="text-gray-500">
+                  ${(item.price * item.quantity).toFixed(2)}
+                </p>
+              </div>
             ))}
           </div>
           <div>
