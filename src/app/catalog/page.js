@@ -30,7 +30,7 @@ function Products() {
     <CartProvider>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
-      <NavTrail/>
+      <NavTrail />
       <ProductGrid />
       <Footer />
     </CartProvider>

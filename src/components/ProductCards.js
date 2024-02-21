@@ -29,12 +29,10 @@ const ProductCards = () => {
         <div className="md:col-span-2 col-span-1 "></div>
         <div className="md:col-span-8 col-span-10">
           {" "}
-         
-            <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold ">
-              {" "}
-              Popular Products
-            </h1>{" "}
-         
+          <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold ">
+            {" "}
+            Popular Products
+          </h1>{" "}
         </div>
         <div className="md:col-span-2 col-span-1 "></div>
       </div>
