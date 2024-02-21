@@ -17,7 +17,7 @@ const Navbar = ({ cartItems }) => {
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
       <div className="flex items-center justify-center col-span-4  ">
-        <Link href="/">
+        <Link href="/home?username=admin">
           <Image
             src="/Hardware_Logo.svg"
             height={100}
@@ -47,9 +47,9 @@ const Navbar = ({ cartItems }) => {
         <div className="flex flex-row items-center  gap-1 lg:mr-5">
           <BsPerson className="h-6 w-6 text-primary cursor-pointer " />
           {` `}
-          <Link href="/" className="text-primary mr-5">
+          <span href="/" className="text-primary mr-5 cursor-pointer">
             {username}
-          </Link>
+          </span>
           {` `}
         </div>
         <LogoutButton />

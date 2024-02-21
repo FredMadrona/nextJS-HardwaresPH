@@ -5,7 +5,6 @@ import ProductGrid from "@/components/ProductGrid";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
-
 function Products() {
   const [cartItems, setCartItems] = useState(cartData);
 
@@ -16,6 +15,7 @@ function Products() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
+      
       <ProductGrid />
     </div>
   );

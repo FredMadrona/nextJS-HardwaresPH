@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
+import NavTrail from "@/components/NavTrail";
 
 function Products() {
   const [cartItems, setCartItems] = useState(cartData);
@@ -17,6 +18,7 @@ function Products() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
+      <NavTrail/>
       <ProductGrid />
       <Footer />
     </div>
