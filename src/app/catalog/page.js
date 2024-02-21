@@ -8,6 +8,7 @@ import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 import cartData from "@/components/cartData"; // Import the cartData file
 import withAuth from "@/hoc/withAuth";
+import NavTrail from "@/components/NavTrail";
 
 function Products() {
   // Load cart items from localStorage on component mount
@@ -29,6 +30,7 @@ function Products() {
     <CartProvider>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
+      <NavTrail/>
       <ProductGrid />
       <Footer />
     </CartProvider>

@@ -8,7 +8,6 @@ import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
-
 function Products() {
   // Load cart items from localStorage on component mount
   const [cartItems, setCartItems] = useState(() => {
@@ -31,6 +30,7 @@ function Products() {
     <CartProvider>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
+      
       <ProductGrid />
       <Footer />
     </CartProvider>
