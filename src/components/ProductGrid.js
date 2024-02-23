@@ -55,10 +55,8 @@ const ProductGrid = () => {
       );
     }
 
-    if (MenuItems !== "") {
-      filteredProducts = allProducts.filter(
-        (allProducts) => allProducts.category === MenuItems,
-      );
+    if (MenuItems !== ''){
+      filteredProducts = allProducts.filter(allProducts => allProducts.category === MenuItems)
     }
 
     setProducts(filteredProducts);
