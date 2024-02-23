@@ -58,7 +58,7 @@ const ProductGrid = () => {
     }
 
     if (MenuItems !== ''){
-      filteredProducts = allProducts.filter(allProducts => allProducts.category === MenuItems)
+      filteredProducts = filteredProducts.filter(filteredProducts => filteredProducts.category === MenuItems)
     }
 
     setProducts(filteredProducts);
