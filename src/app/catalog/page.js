@@ -1,4 +1,3 @@
-// Products.js
 "use client";
 import React, { useState, useEffect } from "react";
 import { CartProvider } from "@/components/CartContext"; // Make sure to import CartProvider if it's needed
