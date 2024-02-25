@@ -1,4 +1,4 @@
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const menuItems = [
   "Door and Window",
@@ -20,9 +20,11 @@ const Menu = () => {
   };
 
   return (
-    <nav className="w-full py-1 px-1const handleMenuItemClick = (menuItem) => {
+    <nav
+      className="w-full py-1 px-1const handleMenuItemClick = (menuItem) => {
       router.push(`/home/catalog?username=admin&${menuItem.toLowerCase().replace(/\s+/g, '-')}`);
-    }; z-10 bg-primary md:grid hidden grid-cols-12">
+    }; z-10 bg-primary md:grid hidden grid-cols-12"
+    >
       <div className="col-span-1"> </div>
       <div className="col-span-10 grid grid-cols-9 justify-evenly ml-5">
         {menuItems.map((item, index) => (

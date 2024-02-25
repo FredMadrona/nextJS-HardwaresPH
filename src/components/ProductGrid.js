@@ -16,15 +16,12 @@ const ProductGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState([]);
   const [products, setProducts] = useState([]); // State for filtered products
-  
-  let filteredProducts = allProducts ;
 
-
+  let filteredProducts = allProducts;
 
   const filterProducts = () => {
     // let filteredProducts = allProducts;
 
-    
     // Filter by selected colors
     if (selectedColors.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
@@ -57,8 +54,10 @@ const ProductGrid = () => {
       );
     }
 
-    if (MenuItems !== ''){
-      filteredProducts = filteredProducts.filter(filteredProducts => filteredProducts.category === MenuItems)
+    if (MenuItems !== "") {
+      filteredProducts = filteredProducts.filter(
+        (filteredProducts) => filteredProducts.category === MenuItems,
+      );
     }
 
     setProducts(filteredProducts);
@@ -72,9 +71,8 @@ const ProductGrid = () => {
     selectedFeatures,
     selectedCategory,
     selectedPriceRange,
-    MenuItems
+    MenuItems,
   ]);
-
 
   const handleFilterChange = (event, filterType) => {
     const value = event.target.value;
@@ -117,7 +115,6 @@ const ProductGrid = () => {
         setSelectedPriceRange([...selectedPriceRange, value]);
       }
     }
-    
   };
 
   // for Accordion
@@ -137,7 +134,6 @@ const ProductGrid = () => {
   const toggleFeature = () => {
     setFeatureVisible(!featureVisible);
   };
-
 
   const toggleColor = () => {
     setColorVisible(!colorVisible);
@@ -469,7 +465,6 @@ const ProductGrid = () => {
             </div>
 
             {/** Categories */}
-            
           </div>
         </div>
 

@@ -12,7 +12,7 @@ const withAuth = (WrappedComponent) => {
         // User is not authenticated, redirect to login page
         router.push("/");
       }
-    }, []);
+    }, [router]);
 
     return <WrappedComponent {...props} />;
   };

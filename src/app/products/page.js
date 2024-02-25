@@ -15,7 +15,7 @@ function Products() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
-      
+
       <ProductGrid />
     </div>
   );

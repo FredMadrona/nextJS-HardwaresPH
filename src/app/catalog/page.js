@@ -18,7 +18,7 @@ function Products() {
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart} />
       <HorizontalMenu />
-      <NavTrail/>
+      <NavTrail />
       <ProductGrid />
       <Footer />
     </div>

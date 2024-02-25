@@ -12,6 +12,7 @@ const ProductCards = () => {
             width={100}
             height={100}
             layout="responsive"
+            alt="Door Control product"
             className="rounded cursor-pointer hover:shadow-md "
           ></Image>
         </div>
@@ -21,6 +22,7 @@ const ProductCards = () => {
             width={100}
             height={100}
             layout="responsive"
+            alt="Intelligent Door Lock Product"
             className="rounded cursor-pointer hover:shadow-md "
           ></Image>
         </div>
@@ -29,12 +31,10 @@ const ProductCards = () => {
         <div className="md:col-span-2 col-span-1 "></div>
         <div className="md:col-span-8 col-span-10">
           {" "}
-         
-            <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold ">
-              {" "}
-              Popular Products
-            </h1>{" "}
-         
+          <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold ">
+            {" "}
+            Popular Products
+          </h1>{" "}
         </div>
         <div className="md:col-span-2 col-span-1 "></div>
       </div>
@@ -290,6 +290,7 @@ const ProductCards = () => {
               src="/IndexPageImage03.png"
               width={150}
               height={150}
+              alt="Image"
               className="w-full h-full cursor-pointer hover:shadow-md rounded"
             ></Image>
           </div>
