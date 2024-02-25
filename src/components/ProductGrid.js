@@ -123,7 +123,6 @@ const ProductGrid = () => {
   const [brandVisible, setBrandVisible] = useState(false);
   const [priceVisible, setPriceVisible] = useState(false);
   const [featureVisible, setFeatureVisible] = useState(false);
-  const [categoriesVisible, setCategoriesVisible] = useState(false);
 
   const toggleBrand = () => {
     setBrandVisible(!brandVisible);
@@ -135,10 +134,6 @@ const ProductGrid = () => {
 
   const toggleFeature = () => {
     setFeatureVisible(!featureVisible);
-  };
-
-  const toggleCategories = () => {
-    setCategoriesVisible(!categoriesVisible);
   };
 
   const toggleColor = () => {
@@ -471,68 +466,6 @@ const ProductGrid = () => {
             </div>
 
             {/** Categories */}
-            <div className="accordion">
-              <div className="accordion-section">
-                <div
-                  role="button"
-                  tabIndex={0}
-                  className="accordion-header flex justify-between align-center mb-3 cursor-pointer"
-                  onClick={toggleCategories}
-                  onKeyPress={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      toggleCategories();
-                    }
-                  }}
-                >
-                  <h2 className="font-semibold"> Categories </h2>
-                  {categoriesVisible ? (
-                    <FaChevronDown className="mt-1 hover:cursor-pointer" />
-                  ) : (
-                    <FaChevronUp className="mt-1 hover:cursor-pointer" />
-                  )}
-                </div>
-
-                <div
-                  className={`accordion-content p-2 transition duration-300 ${
-                    categoriesVisible ? "" : "hidden"
-                  }`}
-                >
-                  <label className="flex items-center text-left">
-                    <input
-                      type="checkbox"
-                      value="A"
-                      onChange={(event) =>
-                        handleFilterChange(event, "category")
-                      }
-                      checked={selectedCategory.includes("A")}
-                    />
-                    <span className="ml-2 text-gray-600 ">Category A</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      value="B"
-                      onChange={(event) =>
-                        handleFilterChange(event, "category")
-                      }
-                      checked={selectedCategory.includes("B")}
-                    />
-                    <span className="ml-2 text-gray-600 ">Category B</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      value="C"
-                      onChange={(event) =>
-                        handleFilterChange(event, "category")
-                      }
-                      checked={selectedCategory.includes("C")}
-                    />
-                    <span className="ml-2 text-gray-600 ">Category C</span>
-                  </label>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -12,6 +12,7 @@ const ProductCards = () => {
             width={100}
             height={100}
             layout="responsive"
+            alt="Door Control product"
             className="rounded cursor-pointer hover:shadow-md "
           ></Image>
         </div>
@@ -21,6 +22,7 @@ const ProductCards = () => {
             width={100}
             height={100}
             layout="responsive"
+            alt="Intelligent Door Lock Product"
             className="rounded cursor-pointer hover:shadow-md "
           ></Image>
         </div>
@@ -288,6 +290,7 @@ const ProductCards = () => {
               src="/IndexPageImage03.png"
               width={150}
               height={150}
+              alt="Image"
               className="w-full h-full cursor-pointer hover:shadow-md rounded"
             ></Image>
           </div>
