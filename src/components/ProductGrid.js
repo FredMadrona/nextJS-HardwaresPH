@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
@@ -55,11 +55,13 @@ const ProductGrid = () => {
       );
     }
 
-    if (MenuItems !== ''){
-      filteredProducts = filteredProducts.filter(filteredProducts => filteredProducts.category === MenuItems)
+    if (MenuItems !== "") {
+      filteredProducts = filteredProducts.filter(
+        (filteredProducts) => filteredProducts.category === MenuItems,
+      );
     }
 
-    setProducts(filteredProducts)
+    setProducts(filteredProducts);
   };
 
   useEffect(() => {
