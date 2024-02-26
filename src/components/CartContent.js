@@ -14,7 +14,10 @@ const CartContent = ({ cartItems, updateCart }) => {
   const handleDecrease = (index) => {
     const updatedCart = [...cartItemsState];
     updatedCart[index].quantity -= 1;
-    updatedCart[index].total = (parseFloat(updatedCart[index].total) - parseFloat(updatedCart[index].price)).toFixed(2);
+    updatedCart[index].total = (
+      parseFloat(updatedCart[index].total) -
+      parseFloat(updatedCart[index].price)
+    ).toFixed(2);
     setCartItemsState(updatedCart); // Update the local state
     updateCart(updatedCart); // Update the prop state
   };
@@ -22,7 +25,10 @@ const CartContent = ({ cartItems, updateCart }) => {
   const handleIncrease = (index) => {
     const updatedCart = [...cartItemsState];
     updatedCart[index].quantity += 1;
-    updatedCart[index].total = (parseFloat(updatedCart[index].total) + parseFloat(updatedCart[index].price)).toFixed(2);
+    updatedCart[index].total = (
+      parseFloat(updatedCart[index].total) +
+      parseFloat(updatedCart[index].price)
+    ).toFixed(2);
     setCartItemsState(updatedCart); // Update the local state
     updateCart(updatedCart); // Update the prop state
   };
@@ -44,7 +50,10 @@ const CartContent = ({ cartItems, updateCart }) => {
   };
 
   // Calculate subtotal, VAT, and grand total
-  const subtotal = cartItems.reduce((total, item) => total + parseFloat(item.total), 0);
+  const subtotal = cartItems.reduce(
+    (total, item) => total + parseFloat(item.total),
+    0,
+  );
   const vat = 0; // You need to calculate VAT based on your business rules
   const grandTotal = subtotal + vat;
 
@@ -98,44 +107,43 @@ const CartContent = ({ cartItems, updateCart }) => {
             <div className="bg-white rounded py-3">
               <h3 className="font-bold md:text-xl text-lg mt-1 m-5"> Total </h3>
               <div className="flex justify-between align-center border-b  pb-2">
-        <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
-          {" "}
-          Subtotal{" "}
-        </span>
+                <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
+                  {" "}
+                  Subtotal{" "}
+                </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
-          {" "}
+                  {" "}
                   {subtotal.toFixed(2)}{" "}
-        </span>
+                </span>
               </div>
               <div className="flex justify-between align-center border-b pb-2">
-        <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
-          {" "}
-          VAT{" "}
-        </span>
+                <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
+                  {" "}
+                  VAT{" "}
+                </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
-          {" "}
+                  {" "}
                   {vat.toFixed(2)}{" "}
-        </span>
+                </span>
               </div>
               <div className="flex justify-between align-center border-b pb-2">
-        <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
-          {" "}
-          Grand Total{" "}
-        </span>
+                <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
+                  {" "}
+                  Grand Total{" "}
+                </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
-          {" "}
+                  {" "}
                   {grandTotal.toFixed(2)}{" "}
-        </span>
+                </span>
               </div>
               <div className=" w-full flex justify-center mt-5 p-3">
-                <button
-                    className="bg-yellow-300 hover:bg-yellow-400 h-1/4 hover:shadow-md rounded  mt-1 flex items-center justify-center border w-full">
+                <button className="bg-yellow-300 hover:bg-yellow-400 h-1/4 hover:shadow-md rounded  mt-1 flex items-center justify-center border w-full">
                   <Image
-                      src="/paypalpng.png"
-                      className="md:h-[25%] h-[20%] md:w-[25%] w-[20%] m-3"
-                      height={50}
-                      width={50}
-                      alt="paypal"
+                    src="/paypalpng.png"
+                    className="md:h-[25%] h-[20%] md:w-[25%] w-[20%] m-3"
+                    height={50}
+                    width={50}
+                    alt="paypal"
                   />
                 </button>
               </div>
@@ -145,8 +153,7 @@ const CartContent = ({ cartItems, updateCart }) => {
               <div className="w-full flex justify-center mt-1 p-3">
                 <Link href="/billing?username=admin" className="w-full">
                   {" "}
-                  <button
-                      className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
+                  <button className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
                     <p className="font-semibold hover:underline text-xs md:text-md">
                       PROCEED TO CHECKOUT
                     </p>
@@ -156,32 +163,32 @@ const CartContent = ({ cartItems, updateCart }) => {
             </div>
             <div className="w-full flex flex-row justify-center gap-1 mt-5">
               <Image
-                  src="/Paypal-logo.png"
-                  className="w-[50px] h-[30px] cursor-pointer object-cover"
-                  width={50}
-                  height={50}
-                  alt="Paypal"
+                src="/Paypal-logo.png"
+                className="w-[50px] h-[30px] cursor-pointer object-cover"
+                width={50}
+                height={50}
+                alt="Paypal"
               />
               <Image
-                  src="/Visa-logo.png"
-                  className="w-[50px] h-[30px] cursor-pointer object-cover"
-                  width={50}
-                  height={50}
-                  alt="Visa"
+                src="/Visa-logo.png"
+                className="w-[50px] h-[30px] cursor-pointer object-cover"
+                width={50}
+                height={50}
+                alt="Visa"
               />
               <Image
-                  src="/Mastercard-logo.png"
-                  className="w-[50px] h-[30px] cursor-pointer object-cover"
-                  width={50}
-                  height={50}
-                  alt="MasterCard"
+                src="/Mastercard-logo.png"
+                className="w-[50px] h-[30px] cursor-pointer object-cover"
+                width={50}
+                height={50}
+                alt="MasterCard"
               />
               <Image
-                  src="/AmericanExpressPng.png"
-                  className="w-[50px] h-[30px] cursor-pointer object-cover"
-                  width={50}
-                  height={50}
-                  alt="American Express"
+                src="/AmericanExpressPng.png"
+                className="w-[50px] h-[30px] cursor-pointer object-cover"
+                width={50}
+                height={50}
+                alt="American Express"
               />
             </div>
           </div>

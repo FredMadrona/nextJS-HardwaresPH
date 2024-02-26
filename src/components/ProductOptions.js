@@ -54,13 +54,13 @@ const ProductOptions = () => {
 
     // Parse existing cart items or initialize an empty array
     const existingCartItems = storedCartItems
-        ? JSON.parse(storedCartItems)
-        : [];
+      ? JSON.parse(storedCartItems)
+      : [];
 
     // Update local storage with the new item
     localStorage.setItem(
-        "cartItems",
-        JSON.stringify([...existingCartItems, newItem]),
+      "cartItems",
+      JSON.stringify([...existingCartItems, newItem]),
     );
   };
 
