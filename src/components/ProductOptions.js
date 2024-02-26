@@ -4,6 +4,7 @@ import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { useCart } from "./CartContext";
 import cartData from "./cartData";
+import allProducts from "@/data/allProducts";
 
 const ProductOptions = () => {
   const options = ["Small", "Medium", "Large"];
@@ -32,12 +33,14 @@ const ProductOptions = () => {
   };
 
   const handleAddToCart = () => {
+    const selectedItem = allProducts.find((product) => product.id === 36); // Replace 36 with the actual product ID
     const newItem = {
-      id: cartData.length + 1,
-      image: "/Hardware04.jpg",
-      name: "Stainless Steel Bathroom Hardware WWG17220",
+      id: selectedItem.id,
+      image: selectedItem.img,
+      name: selectedItem.name,
+      price: selectedItem.price, // Make sure to include the price property
       quantity,
-      total: 0.0,
+      total: (selectedItem.price * quantity).toFixed(2), // Calculate the total based on price and quantity
     };
 
     // Update cartData array
@@ -51,13 +54,13 @@ const ProductOptions = () => {
 
     // Parse existing cart items or initialize an empty array
     const existingCartItems = storedCartItems
-      ? JSON.parse(storedCartItems)
-      : [];
+        ? JSON.parse(storedCartItems)
+        : [];
 
     // Update local storage with the new item
     localStorage.setItem(
-      "cartItems",
-      JSON.stringify([...existingCartItems, newItem]),
+        "cartItems",
+        JSON.stringify([...existingCartItems, newItem]),
     );
   };
 
