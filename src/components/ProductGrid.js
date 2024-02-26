@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
-import { BsCart2, BsHeart } from "react-icons/bs";
+import { BsCart2, BsHeart, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import allProducts from "@/data/allProducts";
 import { useSearchParams } from "next/navigation";
@@ -17,6 +17,11 @@ const ProductGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState([]);
   const [products, setProducts] = useState([]); // State for filtered products
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   let filteredProducts = allProducts;
 
@@ -61,6 +66,12 @@ const ProductGrid = () => {
       );
     }
 
+    if (searchQuery) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+    }
+
     setProducts(filteredProducts);
   };
 
@@ -73,6 +84,7 @@ const ProductGrid = () => {
     selectedCategory,
     selectedPriceRange,
     MenuItems,
+    searchQuery,
   ]);
 
   const handleFilterChange = (event, filterType) => {
