@@ -10,15 +10,15 @@ const CartNavTrail = () => {
         {/* Links to other pages */}
         <div>
           <ol className="list-none flex space-x-2">
-            <Link href="/">
+            <Link href="/home">
               {" "}
               <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
                 Home /
               </li>{" "}
             </Link>
-            <Link href="/">
+            <Link href="/catalog?username=admin&menuItems=">
               <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
-                Category /{" "}
+                catalog /{" "}
               </li>
             </Link>
             <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary font-semibold">

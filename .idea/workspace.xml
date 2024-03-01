@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductGrid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/remove-total-cart-amount-on-nav",
+    "git-widget-placeholder": "update/price-multiplier-on-qty-button",
     "last_opened_file_path": "D:/HWPH-Proj/nextJS-HardwaresPH",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -61,10 +62,11 @@
     "npm.run linter.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "D:\\HWPH-Proj\\nextJS-HardwaresPH\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.lint">
+  <component name="RunManager" selected="npm.prettier">
     <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />

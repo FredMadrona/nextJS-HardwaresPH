@@ -37,12 +37,16 @@ const ProductOptions = () => {
   };
 
   const handleAddToCart = () => {
+    const selectedItem = allProducts.find(
+      (product) => product.id === ProductIndex,
+    ); // Replace 36 with the actual product ID
     const newItem = {
-      id: cartData.length + 1,
-      image: "/Hardware04.jpg",
-      name: "Stainless Steel Bathroom Hardware WWG17220",
+      id: allProducts[ProductIndex].id,
+      image: allProducts[ProductIndex].img,
+      name: allProducts[ProductIndex].name,
+      price: allProducts[ProductIndex].price, // Make sure to include the price property
       quantity,
-      total: 0.0,
+      total: (allProducts[ProductIndex].price * quantity).toFixed(2), // Calculate the total based on price and quantity
     };
 
     // Update cartData array
