@@ -14,6 +14,10 @@ const CartContent = ({ cartItems, updateCart }) => {
   const handleDecrease = (index) => {
     const updatedCart = [...cartItemsState];
     updatedCart[index].quantity -= 1;
+    updatedCart[index].total = (
+      parseFloat(updatedCart[index].total) -
+      parseFloat(updatedCart[index].price)
+    ).toFixed(2);
     setCartItemsState(updatedCart); // Update the local state
     updateCart(updatedCart); // Update the prop state
   };
@@ -21,6 +25,10 @@ const CartContent = ({ cartItems, updateCart }) => {
   const handleIncrease = (index) => {
     const updatedCart = [...cartItemsState];
     updatedCart[index].quantity += 1;
+    updatedCart[index].total = (
+      parseFloat(updatedCart[index].total) +
+      parseFloat(updatedCart[index].price)
+    ).toFixed(2);
     setCartItemsState(updatedCart); // Update the local state
     updateCart(updatedCart); // Update the prop state
   };
@@ -40,6 +48,14 @@ const CartContent = ({ cartItems, updateCart }) => {
       localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     }
   };
+
+  // Calculate subtotal, VAT, and grand total
+  const subtotal = cartItems.reduce(
+    (total, item) => total + parseFloat(item.total),
+    0,
+  );
+  const vat = 0; // You need to calculate VAT based on your business rules
+  const grandTotal = subtotal + vat;
 
   return (
     <div>
@@ -97,7 +113,7 @@ const CartContent = ({ cartItems, updateCart }) => {
                 </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
                   {" "}
-                  0.00{" "}
+                  {subtotal.toFixed(2)}{" "}
                 </span>
               </div>
               <div className="flex justify-between align-center border-b pb-2">
@@ -107,7 +123,7 @@ const CartContent = ({ cartItems, updateCart }) => {
                 </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
                   {" "}
-                  0{" "}
+                  {vat.toFixed(2)}{" "}
                 </span>
               </div>
               <div className="flex justify-between align-center border-b pb-2">
@@ -117,7 +133,7 @@ const CartContent = ({ cartItems, updateCart }) => {
                 </span>
                 <span className="text-black md:text-md text-sm mx-5 mt-1 font-bold cursor-pointer">
                   {" "}
-                  0.00{" "}
+                  {grandTotal.toFixed(2)}{" "}
                 </span>
               </div>
               <div className=" w-full flex justify-center mt-5 p-3">
