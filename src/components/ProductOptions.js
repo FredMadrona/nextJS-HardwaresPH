@@ -5,11 +5,13 @@ import Link from "next/link";
 import { useCart } from "./CartContext";
 import cartData from "./cartData";
 import allProducts from "@/data/allProducts";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+
 
 const ProductOptions = () => {
   const ProductParams = useSearchParams();
   const ProductIndex = ProductParams.get("PopProduct");
+  const CartRouter = useRouter();
 
   const options = ["Small", "Medium", "Large"];
   const { addToCart } = useCart();
@@ -37,14 +39,13 @@ const ProductOptions = () => {
   };
 
   const handleAddToCart = () => {
-    const selectedItem = allProducts.find(
-      (product) => product.id === ProductIndex,
-    ); // Replace 36 with the actual product ID
+    // CartRouter.push(`/checkout?username=admin&PopProduct=${ProductIndex}`);
+    console.log(ProductIndex)
     const newItem = {
       id: allProducts[ProductIndex].id,
       image: allProducts[ProductIndex].img,
       name: allProducts[ProductIndex].name,
-      price: allProducts[ProductIndex].price, // Make sure to include the price property
+      price: allProducts[ProductIndex], // Make sure to include the price property
       quantity,
       total: (allProducts[ProductIndex].price * quantity).toFixed(2), // Calculate the total based on price and quantity
     };
@@ -302,3 +303,4 @@ const renderDivBlocks = (count) => {
 };
 
 export default ProductOptions;
+ProductOptions;
