@@ -17,9 +17,9 @@ const BillingNavTrail = () => {
               </li>{" "}
             </Link>
             {/* <Link href="/cart?username=admin&PopProduct="> */}
-              <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
-                Cart /{""}
-              </li>
+            <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
+              Cart /{""}
+            </li>
             {/* </Link> */}
             <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary font-semibold">
               Checkout

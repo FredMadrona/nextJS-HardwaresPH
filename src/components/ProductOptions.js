@@ -7,7 +7,6 @@ import cartData from "./cartData";
 import allProducts from "@/data/allProducts";
 import { useSearchParams, useRouter } from "next/navigation";
 
-
 const ProductOptions = () => {
   const ProductParams = useSearchParams();
   const ProductIndex = ProductParams.get("PopProduct");
@@ -40,7 +39,7 @@ const ProductOptions = () => {
 
   const handleAddToCart = () => {
     // CartRouter.push(`/checkout?username=admin&PopProduct=${ProductIndex}`);
-    console.log(ProductIndex)
+    console.log(ProductIndex);
     const newItem = {
       id: allProducts[ProductIndex].id,
       image: allProducts[ProductIndex].img,

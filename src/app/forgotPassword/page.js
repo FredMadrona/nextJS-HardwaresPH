@@ -6,14 +6,20 @@ import background from "/public/forgotPasswordBG.svg";
 import image from "/public/FPicon2.svg";
 import { useState } from "react";
 import Link from "next/link";
+import { Spinner } from "@nextui-org/spinner";
 
 const ForgotPassword = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
-    // Add any submission logic here
-    setIsSubmitted(true);
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsLoading(false);
+    }, 2000);
   };
   const handleChange = (event) => {
     setEmail(event.target.value);
@@ -67,24 +73,38 @@ const ForgotPassword = () => {
                 {" "}
                 Submit{" "}
               </button>
-              {isSubmitted && (
-                <div className="mt-5">
-                  <p className="text-xs text-gray-500 text-center">
-                    {" "}
-                    Email Verified, account reset successful
-                  </p>
-                  <p className="text-xs text-red-500 text-center">
-                    {" "}
-                    Username: admin Password: password{" "}
-                  </p>
-                  <Link href="/">
-                    {" "}
-                    <p className="text-sm  text-center mt-4 cursor-pointer hover:text-primary hover:underline">
+              {isLoading ? (
+                <>
+                  <div className=" w-full p-3 mt-3 flex justify-center items-center">
+                    <Spinner
+                      className=""
+                      label="Loading"
+                      color="success"
+                      labelColor="success"
+                      size="md"
+                    />
+                  </div>
+                </>
+              ) : (
+                isSubmitted && (
+                  <div className="mt-5">
+                    <p className="text-xs text-gray-500 text-center">
                       {" "}
-                      Go back to login page{" "}
+                      Email Verified, account reset successful
                     </p>
-                  </Link>
-                </div>
+                    <p className="text-xs text-red-500 text-center">
+                      {" "}
+                      Username: admin Password: password{" "}
+                    </p>
+                    <Link href="/">
+                      {" "}
+                      <p className="text-sm  text-center mt-4 cursor-pointer hover:text-primary hover:underline">
+                        {" "}
+                        Go back to login page{" "}
+                      </p>
+                    </Link>
+                  </div>
+                )
               )}
             </div>
           </div>
