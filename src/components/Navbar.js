@@ -22,6 +22,10 @@ const Navbar = ({ cartItems }) => {
     setSearchQuery(event.target.value);
   };
 
+const Sample = (event)  =>{
+router.push(`/checkout?username=admin`);
+  }
+
   const handleSearchEnter = (event) => {
     if (event.key === "Enter") {
       let modifiedSearchQuery = searchQuery;
@@ -201,6 +205,7 @@ const Navbar = ({ cartItems }) => {
         </div>
         <LogoutButton />
         <div className="relative flex flex-row items-center ">
+        <a onClick={Sample}> 
           <svg
             className="h-8 w-8 text-primary cursor-pointer "
             fill="none"
@@ -209,10 +214,11 @@ const Navbar = ({ cartItems }) => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <Link href="/cart">
+           
               <BsCart2 />
-            </Link>
+       
           </svg>
+          </a>
           {/* items in cart counter */}
           <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
             {totalItemsInCart}
