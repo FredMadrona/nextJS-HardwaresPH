@@ -23,7 +23,7 @@ const Navbar = ({ cartItems }) => {
   };
 
   const Sample = (event) => {
-    router.push(`/checkout?username=admin`);
+    router.push(`/cart?username=admin`);
   };
 
   const handleSearchEnter = (event) => {

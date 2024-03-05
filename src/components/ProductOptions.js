@@ -262,7 +262,7 @@ const ProductOptions = () => {
                 </button>
               </div>
               <div className="w-1/4 lg:w-full">
-                <Link href="/checkout?username=admin">
+                <Link href="/cart?username=admin">
                   <button
                     className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
                     onClick={handleAddToCart}

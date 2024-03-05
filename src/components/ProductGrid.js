@@ -12,7 +12,7 @@ const ProductGrid = () => {
 
   const handleCatalogToCart = (index) => {
     console.log(index);
-    CatalogRouter.push(`/cart?username=admin&PopProduct=${index}`);
+    CatalogRouter.push(`/product?username=admin&PopProduct=${index}`);
   };
 
   const searchParams = useSearchParams();
