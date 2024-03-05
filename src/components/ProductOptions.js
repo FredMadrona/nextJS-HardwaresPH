@@ -5,8 +5,13 @@ import Link from "next/link";
 import { useCart } from "./CartContext";
 import cartData from "./cartData";
 import allProducts from "@/data/allProducts";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const ProductOptions = () => {
+  const ProductParams = useSearchParams();
+  const ProductIndex = ProductParams.get("PopProduct");
+  const CartRouter = useRouter();
+
   const options = ["Small", "Medium", "Large"];
   const { addToCart } = useCart();
   const [selectedOption, setSelectedOption] = useState(null);
@@ -33,14 +38,15 @@ const ProductOptions = () => {
   };
 
   const handleAddToCart = () => {
-    const selectedItem = allProducts.find((product) => product.id === 36); // Replace 36 with the actual product ID
+    // CartRouter.push(`/checkout?username=admin&PopProduct=${ProductIndex}`);
+    console.log(ProductIndex);
     const newItem = {
-      id: selectedItem.id,
-      image: selectedItem.img,
-      name: selectedItem.name,
-      price: selectedItem.price, // Make sure to include the price property
+      id: allProducts[ProductIndex].id,
+      image: allProducts[ProductIndex].img,
+      name: allProducts[ProductIndex].name,
+      price: allProducts[ProductIndex], // Make sure to include the price property
       quantity,
-      total: (selectedItem.price * quantity).toFixed(2), // Calculate the total based on price and quantity
+      total: (allProducts[ProductIndex].price * quantity).toFixed(2), // Calculate the total based on price and quantity
     };
 
     // Update cartData array
@@ -67,35 +73,31 @@ const ProductOptions = () => {
   return (
     <div className="mt-[5%]">
       <div className=" ml-[5%]">
-        <Link href="/">
+        <Link href="/home">
           {" "}
           <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
             Home /
           </span>
         </Link>
-        <Link href="/catalog?username=admin">
+        <Link href="/catalog?username=admin&menuItems=">
           <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
             {" "}
-            Category /
+            Catalog /
           </span>
         </Link>
         <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
           {" "}
-          Shop /
-        </span>
-        <span className="text-sm text-gray-500 cursor-pointer hover:text-primary">
-          {" "}
-          Stainless Steel Bathroom Hardware WWG17220{" "}
+          {allProducts[ProductIndex].name}
         </span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-[60px] ">
         <div className="cols-span-1 flex lg:flex-col flex-row ">
-          <div className="flex w-full justify-center">
+          <div className="flex w-[80%] p-5 justify-center">
             <Image
-              src="/Hardware04.jpg"
+              src={allProducts[ProductIndex].img}
               layout="responsive"
-              width={100}
-              height={100}
+              width={50}
+              height={50}
               alt="Hardware Image"
               className="lg:m-5 m-1  cursor-pointer "
             />
@@ -107,63 +109,43 @@ const ProductOptions = () => {
           <div className="flex lg:flex-row flex-col  gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto">
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
               <Image
-                src="/Hardware04.jpg"
+                src={allProducts[ProductIndex].img}
                 layout="responsive"
                 width={100}
                 height={100}
                 alt="Hardware Image"
-                className="hover:cursor-pointer "
+                className="hover:cursor-pointer"
               />
-
-              {/* <StaticImage
-                src="../ProductImages/Hardware04.jpg"
-                className="hover:cursor-pointer "
-              ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
               <Image
-                src="/Hardware04.jpg"
+                src={allProducts[ProductIndex].img}
                 layout="responsive"
                 width={100}
                 height={100}
                 alt="Hardware Image"
-                className="hover:cursor-pointer "
+                className="hover:cursor-pointer"
               />
-
-              {/* <StaticImage
-                src="../ProductImages/Hardware04.jpg"
-                className="hover:cursor-pointer "
-              ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
               <Image
-                src="/Hardware04.jpg"
+                src={allProducts[ProductIndex].img}
                 layout="responsive"
                 width={100}
                 height={100}
                 alt="Hardware Image"
-                className="hover:cursor-pointer "
+                className="hover:cursor-pointer"
               />
-
-              {/* <StaticImage
-                src="../ProductImages/Hardware04.jpg"
-                className="hover:cursor-pointer "
-              ></StaticImage> */}
             </div>
             <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
               <Image
-                src="/Hardware04.jpg"
+                src={allProducts[ProductIndex].img}
                 layout="responsive"
                 width={100}
                 height={100}
                 alt="Hardware Image"
-                className="hover:cursor-pointer "
+                className="hover:cursor-pointer"
               />
-
-              {/* <StaticImage
-                src="../ProductImages/Hardware04.jpg"
-                className="hover:cursor-pointer "
-              ></StaticImage> */}
             </div>
           </div>
         </div>
@@ -172,7 +154,7 @@ const ProductOptions = () => {
           <div className="w-3/4 mt-5">
             <h1 className="lg:text-2xl text-xl text-black text-left font-bold cursor-pointer">
               {" "}
-              Stainless Steel Bathroom Hardware WWG17220
+              {allProducts[ProductIndex].name}
             </h1>
           </div>
           <div className="w-3/4 mt-2">
@@ -297,4 +279,27 @@ const ProductOptions = () => {
   );
 };
 
+const renderDivBlocks = (count) => {
+  const divBlocks = [];
+  for (let i = 0; i < 4; i++) {
+    divBlocks.push(
+      <div
+        key={i}
+        className="w-auto border hover:shadow-md border-black lg:p-3 p-1"
+      >
+        <Image
+          src={allProducts[ProductIndex].img}
+          layout="responsive"
+          width={100}
+          height={100}
+          alt="Hardware Image"
+          className="hover:cursor-pointer"
+        />
+      </div>,
+    );
+  }
+  return divBlocks;
+};
+
 export default ProductOptions;
+ProductOptions;

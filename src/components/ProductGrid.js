@@ -5,9 +5,16 @@ import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { BsCart2, BsHeart, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import allProducts from "@/data/allProducts";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const ProductGrid = () => {
+  const CatalogRouter = useRouter();
+
+  const handleCatalogToCart = (index) => {
+    console.log(index);
+    CatalogRouter.push(`/cart?username=admin&PopProduct=${index}`);
+  };
+
   const searchParams = useSearchParams();
   const MenuItems = searchParams.get("menuItems");
 
@@ -507,11 +514,13 @@ const ProductGrid = () => {
                     <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
                   </p>
                 </div>
-                <Link href="/cart?username=admin">
-                  <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-                    Add to cart <BsCart2 className="mx-2" />
-                  </button>
-                </Link>
+
+                <button
+                  onClick={() => handleCatalogToCart(product.id)}
+                  className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary"
+                >
+                  Add to cart <BsCart2 className="mx-2" />
+                </button>
               </div>
             ))}
           </div>

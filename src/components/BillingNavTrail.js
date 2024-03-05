@@ -10,17 +10,17 @@ const BillingNavTrail = () => {
         {/* Links to other pages */}
         <div>
           <ol className="list-none flex space-x-2">
-            <Link href="/">
+            <Link href="/home">
               {" "}
               <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
                 Home /
               </li>{" "}
             </Link>
-            <Link href="/">
-              <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
-                Cart /{" "}
-              </li>
-            </Link>
+            {/* <Link href="/cart?username=admin&PopProduct="> */}
+            <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary">
+              Cart /{""}
+            </li>
+            {/* </Link> */}
             <li className="flex items-center text-gray-500 hover:text-underline hover:cursor-pointer hover:text-primary font-semibold">
               Checkout
             </li>

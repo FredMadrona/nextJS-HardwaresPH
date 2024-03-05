@@ -1,6 +1,6 @@
 const allProducts = [
   {
-    id: 1,
+    id: 0,
     name: "Dotfloor Vinyl Tiles 12 Inches",
     color: "Wheat",
     price: "1,000.00",
@@ -11,8 +11,8 @@ const allProducts = [
     img: "/Flooring(1).png",
   },
   {
-    id: 2,
-    name: "	LINKCOO 100% Blackout Roller Window Shades",
+    id: 1,
+    name: "LINKCOO 100% Blackout Roller Window Shades",
     color: "Navy",
     price: "300.00",
     priceRange: "above",
@@ -22,7 +22,7 @@ const allProducts = [
     img: "/Window(1).png",
   },
   {
-    id: 3,
+    id: 2,
     name: "5/20pcs Blue Vinyl Floor Tiles",
     color: "White",
     price: "800.00",
@@ -33,7 +33,7 @@ const allProducts = [
     img: "/Tiles(1).png",
   },
   {
-    id: 4,
+    id: 3,
     name: "AVATTO WiFi Smart IR Central Control Panel",
     color: "Wheat",
     price: "500.00",
@@ -44,7 +44,7 @@ const allProducts = [
     img: "/SmartDevice(1).png",
   },
   {
-    id: 5,
+    id: 4,
     name: "Lunarx Globe Post Lamp Lighting",
     color: "White",
     price: "1,000.00",
@@ -55,7 +55,7 @@ const allProducts = [
     img: "/OutdoorLighting(1).png",
   },
   {
-    id: 6,
+    id: 5,
     name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
     color: "Yellow",
     price: "1,000.00",
@@ -66,7 +66,7 @@ const allProducts = [
     img: "/SafetyProduct(1).png",
   },
   {
-    id: 7,
+    id: 6,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "Stone",
     price: "500.00",
@@ -76,7 +76,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 8,
+    id: 7,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "Black",
     price: "300.00",
@@ -87,7 +87,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 9,
+    id: 8,
     name: "Stainless Steel Bathroom Hardware WJY1201A",
     color: "Khaki",
     price: "500.00",
@@ -98,7 +98,7 @@ const allProducts = [
     img: "/Hardware01.jpg",
   },
   {
-    id: 10,
+    id: 9,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "White",
     price: "1,000.00",
@@ -109,7 +109,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 11,
+    id: 10,
     name: "Lite Kit with Glass 24inx24in Drk Bronze",
     color: "Black",
     price: "300.00",
@@ -120,7 +120,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 12,
+    id: 11,
     name: "Tile Dosso Peel And Stick Beehive Mosaic",
     color: "Khaki",
     price: "800.00",
@@ -131,7 +131,7 @@ const allProducts = [
     img: "/Tiles(2).png",
   },
   {
-    id: 13,
+    id: 12,
     name: "Lanbon Smart Light Switch,  For Light Or Curtain",
     color: "Wheat",
     price: "500.00",
@@ -142,7 +142,7 @@ const allProducts = [
     img: "/SmartDevice(2).png",
   },
   {
-    id: 14,
+    id: 13,
     name: "Fimilo Up Down Wall Lights Outdoor",
     color: "White",
     price: "1,000.00",
@@ -153,7 +153,7 @@ const allProducts = [
     img: "/OutdoorLighting(2).png",
   },
   {
-    id: 15,
+    id: 14,
     name: "Coated Gloves ANSI/ISEA Abrasion",
     color: "Yellow",
     price: "1,000.00",
@@ -164,7 +164,7 @@ const allProducts = [
     img: "/SafetyProduct(2).png",
   },
   {
-    id: 16,
+    id: 15,
     name: "PVC Pipe Blue & Orange Waterline and Electrical",
     color: "Stone",
     price: "500.00",
@@ -174,7 +174,7 @@ const allProducts = [
     img: "/Pipeline(2).png",
   },
   {
-    id: 17,
+    id: 16,
     name: "Small pixel pitch series Pixel pitch",
     color: "Black",
     price: "300.00",
@@ -185,7 +185,7 @@ const allProducts = [
     img: "/LEDScreen(2).png",
   },
   {
-    id: 18,
+    id: 17,
     name: "Exposed Door Closer Series B4C01/B4C02",
     color: "Khaki",
     price: "500.00",
@@ -194,6 +194,17 @@ const allProducts = [
     feature: "E",
     category: "Others",
     img: "/Hardware02.jpg",
+  },
+  {
+    id: 18,
+    name: "Dotfloor Vinyl Tiles 12 Inches",
+    color: "Black",
+    price: "1,000.00",
+    priceRange: "above",
+    brand: "X",
+    feature: "E",
+    category: "Flooring",
+    img: "/Flooring(1).png",
   },
   {
     id: 19,
@@ -252,17 +263,6 @@ const allProducts = [
   },
   {
     id: 24,
-    name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
-    color: "Navy",
-    price: "1,000.00",
-    priceRange: "below",
-    brand: "Y",
-    feature: "Q",
-    category: "Safety Products",
-    img: "/SafetyProduct(1).png",
-  },
-  {
-    id: 25,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "Yellow",
     price: "500.00",
@@ -272,7 +272,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 26,
+    id: 25,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "White",
     price: "300.00",
@@ -283,7 +283,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 27,
+    id: 26,
     name: "Intelligent Door Lock N6700",
     color: "Yellow",
     price: "500.00",
@@ -294,7 +294,7 @@ const allProducts = [
     img: "/Hardware03.jpg",
   },
   {
-    id: 28,
+    id: 27,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "Black",
     price: "1,000.00",
@@ -305,7 +305,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 29,
+    id: 28,
     name: "LINKCOO 100% Blackout Roller Window Shades",
     color: "Khaki",
     price: "300.00",
@@ -316,7 +316,7 @@ const allProducts = [
     img: "/Window(1).png",
   },
   {
-    id: 30,
+    id: 29,
     name: "Tile Dosso Peel And Stick Beehive Mosaic",
     color: "Khaki",
     price: "800.00",
@@ -327,7 +327,7 @@ const allProducts = [
     img: "/Tiles(2).png",
   },
   {
-    id: 31,
+    id: 30,
     name: "Lanbon Smart Light Switch,  For Light Or Curtain",
     color: "Wheat",
     price: "500.00",
@@ -338,7 +338,7 @@ const allProducts = [
     img: "/SmartDevice(2).png",
   },
   {
-    id: 32,
+    id: 31,
     name: "Fimilo Up Down Wall Lights Outdoor",
     color: "Black",
     price: "1,000.00",
@@ -349,7 +349,7 @@ const allProducts = [
     img: "/OutdoorLighting(2).png",
   },
   {
-    id: 33,
+    id: 32,
     name: "Coated Gloves ANSI/ISEA Abrasion",
     color: "Yellow",
     price: "1,000.00",
@@ -360,7 +360,7 @@ const allProducts = [
     img: "/SafetyProduct(2).png",
   },
   {
-    id: 34,
+    id: 33,
     name: "PVC Pipe Blue & Orange Waterline and Electrical",
     color: "White",
     price: "500.00",
@@ -370,7 +370,7 @@ const allProducts = [
     img: "/Pipeline(2).png",
   },
   {
-    id: 35,
+    id: 34,
     name: "Small pixel pitch series Pixel pitch",
     color: "White",
     price: "300.00",
@@ -381,7 +381,7 @@ const allProducts = [
     img: "/LEDScreen(2).png",
   },
   {
-    id: 36,
+    id: 35,
     name: "Stainless Steel Bathroom Hardware WWG17220",
     color: "Yellow",
     price: "500.00",
@@ -392,7 +392,7 @@ const allProducts = [
     img: "/Hardware04.jpg",
   },
   {
-    id: 37,
+    id: 36,
     name: "Dotfloor Vinyl Tiles 12 Inches",
     color: "Stone",
     price: "1,000.00",
@@ -403,7 +403,7 @@ const allProducts = [
     img: "/Flooring(1).png",
   },
   {
-    id: 38,
+    id: 37,
     name: "LINKCOO 100% Blackout Roller Window Shades",
     color: "White",
     price: "300.00",
@@ -414,7 +414,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 39,
+    id: 38,
     name: "5/20pcs Blue Vinyl Floor Tiles",
     color: "Stone",
     price: "800.00",
@@ -425,7 +425,7 @@ const allProducts = [
     img: "/Tiles(1).png",
   },
   {
-    id: 40,
+    id: 39,
     name: "AVATTO WiFi Smart IR Central Control Panel",
     color: "Wheat",
     price: "500.00",
@@ -436,7 +436,7 @@ const allProducts = [
     img: "/SmartDevice(1).png",
   },
   {
-    id: 41,
+    id: 40,
     name: "Lunarx Globe Post Lamp Lighting",
     color: "White",
     price: "1,000.00",
@@ -447,7 +447,7 @@ const allProducts = [
     img: "/OutdoorLighting(1).png",
   },
   {
-    id: 42,
+    id: 41,
     name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
     color: "White",
     price: "1,000.00",
@@ -458,7 +458,7 @@ const allProducts = [
     img: "/SafetyProduct(1).png",
   },
   {
-    id: 43,
+    id: 42,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "White",
     price: "500.00",
@@ -468,7 +468,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 44,
+    id: 43,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "Khaki",
     price: "300.00",
@@ -479,7 +479,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 45,
+    id: 44,
     name: "Stainless Steel Bathroom Hardware WJY1201A",
     color: "Khaki",
     price: "500.00",
@@ -490,7 +490,7 @@ const allProducts = [
     img: "/Hardware01.jpg",
   },
   {
-    id: 46,
+    id: 45,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "Black",
     price: "1,000.00",
@@ -501,7 +501,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 47,
+    id: 46,
     name: "	Lite Kit with Glass 24inx24in Drk Bronze",
     color: "Stone",
     price: "300.00",
@@ -512,7 +512,7 @@ const allProducts = [
     img: "/Window(1).png",
   },
   {
-    id: 48,
+    id: 47,
     name: "Tile Dosso Peel And Stick Beehive Mosaic",
     color: "Khaki",
     price: "800.00",
@@ -523,7 +523,7 @@ const allProducts = [
     img: "/Tiles(2).png",
   },
   {
-    id: 49,
+    id: 48,
     name: "Lanbon Smart Light Switch,  For Light Or Curtain",
     color: "Wheat",
     price: "500.00",
@@ -534,7 +534,7 @@ const allProducts = [
     img: "/SmartDevice(2).png",
   },
   {
-    id: 50,
+    id: 49,
     name: "Fimilo Up Down Wall Lights Outdoor",
     color: "White",
     price: "1,000.00",
@@ -545,7 +545,7 @@ const allProducts = [
     img: "/OutdoorLighting(2).png",
   },
   {
-    id: 51,
+    id: 50,
     name: "Coated Gloves ANSI/ISEA Abrasion",
     color: "White",
     price: "1,000.00",
@@ -556,7 +556,7 @@ const allProducts = [
     img: "/SafetyProduct(2).png",
   },
   {
-    id: 52,
+    id: 51,
     name: "PVC Pipe Blue & Orange Waterline and Electrical",
     color: "Yellow",
     price: "500.00",
@@ -566,7 +566,7 @@ const allProducts = [
     img: "/Pipeline(2).png",
   },
   {
-    id: 53,
+    id: 52,
     name: "Small pixel pitch series Pixel pitch",
     color: "Khaki",
     price: "300.00",
@@ -577,7 +577,7 @@ const allProducts = [
     img: "/LEDScreen(2).png",
   },
   {
-    id: 54,
+    id: 53,
     name: "Stainless Steel Bathroom Hardware WWG17220",
     color: "Khaki",
     price: "500.00",
@@ -588,7 +588,7 @@ const allProducts = [
     img: "/Hardware04.jpg",
   },
   {
-    id: 55,
+    id: 54,
     name: "Dotfloor Vinyl Tiles 12 Inches",
     color: "Black",
     price: "1,000.00",
@@ -599,7 +599,7 @@ const allProducts = [
     img: "/Flooring(1).png",
   },
   {
-    id: 56,
+    id: 55,
     name: "	Lite Kit with Glass 24inx24in Drk Bronze",
     color: "Orange",
     price: "300.00",
@@ -610,7 +610,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 57,
+    id: 56,
     name: "5/20pcs Blue Vinyl Floor Tiles",
     color: "Yellow",
     price: "800.00",
@@ -621,7 +621,7 @@ const allProducts = [
     img: "/Tiles(1).png",
   },
   {
-    id: 58,
+    id: 57,
     name: "AVATTO WiFi Smart IR Central Control Panel",
     color: "Wheat",
     price: "500.00",
@@ -632,7 +632,7 @@ const allProducts = [
     img: "/SmartDevice(1).png",
   },
   {
-    id: 59,
+    id: 58,
     name: "Lunarx Globe Post Lamp Lighting",
     color: "Stone",
     price: "1,000.00",
@@ -643,7 +643,7 @@ const allProducts = [
     img: "/OutdoorLighting(1).png",
   },
   {
-    id: 60,
+    id: 59,
     name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
     color: "Black",
     price: "1,000.00",
@@ -654,7 +654,7 @@ const allProducts = [
     img: "/SafetyProduct(1).png",
   },
   {
-    id: 61,
+    id: 60,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "Yellow",
     price: "500.00",
@@ -664,7 +664,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 62,
+    id: 61,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "Yellow",
     price: "300.00",
@@ -675,7 +675,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 63,
+    id: 62,
     name: "Exposed Door Closer Series B4C01/B4C02",
     color: "Khaki",
     price: "500.00",
@@ -686,7 +686,7 @@ const allProducts = [
     img: "/Hardware02.jpg",
   },
   {
-    id: 64,
+    id: 63,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "Black",
     price: "1,000.00",
@@ -697,7 +697,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 65,
+    id: 64,
     name: "	LINKCOO 100% Blackout Roller Window Shades",
     color: "White",
     price: "300.00",
@@ -708,7 +708,7 @@ const allProducts = [
     img: "/Window(1).png",
   },
   {
-    id: 66,
+    id: 65,
     name: "Tile Dosso Peel And Stick Beehive Mosaic",
     color: "Khaki",
     price: "800.00",
@@ -719,7 +719,7 @@ const allProducts = [
     img: "/Tiles(2).png",
   },
   {
-    id: 67,
+    id: 66,
     name: "Lanbon Smart Light Switch,  For Light Or Curtain",
     color: "Wheat",
     price: "500.00",
@@ -730,7 +730,7 @@ const allProducts = [
     img: "/SmartDevice(2).png",
   },
   {
-    id: 68,
+    id: 67,
     name: "Fimilo Up Down Wall Lights Outdoor",
     color: "Stone",
     price: "1,000.00",
@@ -741,7 +741,7 @@ const allProducts = [
     img: "/OutdoorLighting(2).png",
   },
   {
-    id: 69,
+    id: 68,
     name: "Coated Gloves ANSI/ISEA Abrasion",
     color: "Black",
     price: "1,000.00",
@@ -752,7 +752,7 @@ const allProducts = [
     img: "/SafetyProduct(2).png",
   },
   {
-    id: 70,
+    id: 69,
     name: "PVC Pipe Blue & Orange Waterline and Electrical",
     color: "Yellow",
     price: "500.00",
@@ -762,7 +762,7 @@ const allProducts = [
     img: "/Pipeline(2).png",
   },
   {
-    id: 71,
+    id: 70,
     name: "Small pixel pitch series Pixel pitch",
     color: "Yellow",
     price: "300.00",
@@ -773,7 +773,7 @@ const allProducts = [
     img: "/LEDScreen(2).png",
   },
   {
-    id: 72,
+    id: 71,
     name: "Intelligent Door Lock N6700",
     color: "Black",
     price: "500.00",
@@ -784,7 +784,7 @@ const allProducts = [
     img: "/Hardware03.jpg",
   },
   {
-    id: 73,
+    id: 72,
     name: "Dotfloor Vinyl Tiles 12 Inches",
     color: "Yellow",
     price: "1,000.00",
@@ -795,7 +795,7 @@ const allProducts = [
     img: "/Flooring(1).png",
   },
   {
-    id: 74,
+    id: 73,
     name: "	LINKCOO 100% Blackout Roller Window Shades",
     color: "Wheat",
     price: "300.00",
@@ -806,7 +806,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 75,
+    id: 74,
     name: "5/20pcs Blue Vinyl Floor Tiles",
     color: "Khaki",
     price: "800.00",
@@ -817,7 +817,7 @@ const allProducts = [
     img: "/Tiles(1).png",
   },
   {
-    id: 76,
+    id: 75,
     name: "AVATTO WiFi Smart IR Central Control Panel",
     color: "Wheat",
     price: "500.00",
@@ -828,7 +828,7 @@ const allProducts = [
     img: "/SmartDevice(1).png",
   },
   {
-    id: 77,
+    id: 76,
     name: "Lunarx Globe Post Lamp Lighting",
     color: "Khaki",
     price: "1,000.00",
@@ -839,7 +839,7 @@ const allProducts = [
     img: "/OutdoorLighting(1).png",
   },
   {
-    id: 78,
+    id: 77,
     name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
     color: "Black",
     price: "1,000.00",
@@ -850,7 +850,7 @@ const allProducts = [
     img: "/SafetyProduct(1).png",
   },
   {
-    id: 79,
+    id: 78,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "Yellow",
     price: "500.00",
@@ -860,7 +860,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 80,
+    id: 79,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "Black",
     price: "300.00",
@@ -871,7 +871,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 81,
+    id: 80,
     name: "Stainless Steel Bathroom Hardware WWG17220",
     color: "Black",
     price: "500.00",
@@ -882,7 +882,7 @@ const allProducts = [
     img: "/Hardware04.jpg",
   },
   {
-    id: 82,
+    id: 81,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "Black",
     price: "1,000.00",
@@ -893,7 +893,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 83,
+    id: 82,
     name: "	LINKCOO 100% Blackout Roller Window Shades",
     color: "Navy",
     price: "300.00",
@@ -904,7 +904,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 84,
+    id: 83,
     name: "Tile Dosso Peel And Stick Beehive Mosaic",
     color: "Khaki",
     price: "800.00",
@@ -915,7 +915,7 @@ const allProducts = [
     img: "/Tiles(2).png",
   },
   {
-    id: 85,
+    id: 84,
     name: "Lanbon Smart Light Switch,  For Light Or Curtain",
     color: "Wheat",
     price: "500.00",
@@ -926,7 +926,7 @@ const allProducts = [
     img: "/SmartDevice(2).png",
   },
   {
-    id: 86,
+    id: 85,
     name: "Fimilo Up Down Wall Lights Outdoor",
     color: "Khaki",
     price: "1,000.00",
@@ -937,7 +937,7 @@ const allProducts = [
     img: "/OutdoorLighting(2).png",
   },
   {
-    id: 87,
+    id: 86,
     name: "Coated Gloves ANSI/ISEA Abrasion",
     color: "Black",
     price: "1,000.00",
@@ -948,7 +948,7 @@ const allProducts = [
     img: "/SafetyProduct(2).png",
   },
   {
-    id: 88,
+    id: 87,
     name: "PVC Pipe Blue & Orange Waterline and Electrical",
     color: "Yellow",
     price: "500.00",
@@ -958,7 +958,7 @@ const allProducts = [
     img: "/Pipeline(2).png",
   },
   {
-    id: 89,
+    id: 88,
     name: "Small pixel pitch series Pixel pitch",
     color: "Black",
     price: "300.00",
@@ -969,7 +969,7 @@ const allProducts = [
     img: "/LEDScreen(2).png",
   },
   {
-    id: 90,
+    id: 89,
     name: "Stainless Steel Bathroom Hardware WJY1201A",
     color: "Black",
     price: "500.00",
@@ -980,7 +980,7 @@ const allProducts = [
     img: "/Hardware01.jpg",
   },
   {
-    id: 91,
+    id: 90,
     name: "MULGREAT Peel and Stick Floor Tile",
     color: "Black",
     price: "1,000.00",
@@ -991,7 +991,7 @@ const allProducts = [
     img: "/Flooring(2).png",
   },
   {
-    id: 92,
+    id: 91,
     name: "	LINKCOO 100% Blackout Roller Window Shades",
     color: "Navy",
     price: "300.00",
@@ -1002,7 +1002,7 @@ const allProducts = [
     img: "/Window(2).png",
   },
   {
-    id: 93,
+    id: 92,
     name: "5/20pcs Blue Vinyl Floor Tiles",
     color: "Khaki",
     price: "800.00",
@@ -1013,7 +1013,7 @@ const allProducts = [
     img: "/Tiles(1).png",
   },
   {
-    id: 94,
+    id: 93,
     name: "AVATTO WiFi Smart IR Central Control Panel",
     color: "Wheat",
     price: "500.00",
@@ -1024,7 +1024,7 @@ const allProducts = [
     img: "/SmartDevice(1).png",
   },
   {
-    id: 95,
+    id: 94,
     name: "Lunarx Globe Post Lamp Lighting",
     color: "Yellow",
     price: "1,000.00",
@@ -1035,7 +1035,7 @@ const allProducts = [
     img: "/OutdoorLighting(1).png",
   },
   {
-    id: 96,
+    id: 95,
     name: "Shengshiyu Self Retracting Lifeline With Rebar Hook",
     color: "Yellow",
     price: "1,000.00",
@@ -1046,7 +1046,7 @@ const allProducts = [
     img: "/SafetyProduct(1).png",
   },
   {
-    id: 97,
+    id: 96,
     name: "OSK YC275 Pipe Flaring Tool & Swagging Tool Kit",
     color: "Yellow",
     price: "500.00",
@@ -1056,7 +1056,7 @@ const allProducts = [
     img: "/Pipeline(1).png",
   },
   {
-    id: 98,
+    id: 97,
     name: "Boe 55-Inch Lcd Splicing Screen",
     color: "Black",
     price: "300.00",
@@ -1067,7 +1067,7 @@ const allProducts = [
     img: "/LEDScreen(1).png",
   },
   {
-    id: 99,
+    id: 98,
     name: "Exposed Door Closer Series B4C01/B4C02",
     color: "Yellow",
     price: "500.00",
@@ -1078,7 +1078,7 @@ const allProducts = [
     img: "/Hardware02.jpg",
   },
   {
-    id: 100,
+    id: 99,
     name: "Dotfloor Vinyl Tiles 12 Inches",
     color: "Yellow",
     price: "1,000.00",
