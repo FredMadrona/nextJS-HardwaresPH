@@ -14,6 +14,7 @@ function home() {
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
   };
+    console.log('test')
   return (
     <div>
       <Navbar cartItems={cartItems} updateCart={updateCart}/>
