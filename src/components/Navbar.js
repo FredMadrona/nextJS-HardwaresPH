@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
@@ -161,23 +161,40 @@ const Navbar = ({ cartItems }) => {
     setSearchQuery("");
   };
 
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set the breakpoint according to your design
+    };
+
+    handleResize(); // Call once to set the initial state
+    window.addEventListener('resize', handleResize); // Listen for resize events
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup
+    };
+  }, []);
+
+
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
-      {/* Column 1: Logo */}
-      <div className="flex items-center justify-center col-span-4  ">
+            {/* Column 1: Logo */}
+            <div className="flex items-center justify-center col-span-3 md:col-span-4 p-1">
         <Link href="/home?username=admin">
           <Image
-            src="/Hardware_Logo.svg"
-            height={100}
-            width={250}
-            alt="Hardwares Logo "
-          ></Image>
+            src={isMobile ? '/Hardware_Logo_Mobile.png' : '/Hardware_Logo.svg'}
+            height={isMobile ? 50 : 100} // Set different heights for mobile and desktop
+            width={isMobile ? 75 : 200} // Set different widths for mobile and desktop
+            alt="Hardwares Logo"
+         />
         </Link>
       </div>
       {/* End of Column 1 */}
 
       {/* Column 2: Search */}
-      <div className="flex items center md:col-span-4 col-span-6">
+      <div className="flex items center md:col-span-4 col-span-5">
         <div className="relative flex items-start q w-full ">
           <input
             type="text"
@@ -194,20 +211,22 @@ const Navbar = ({ cartItems }) => {
       {/* End of Column 2 */}
 
       {/* Column 3: Login and Cart */}
-      <div className="md:flex flex-no-wrap hidden items-start justify-center gap-4 w-full md:col-span-4 col-span-2 ">
-        <div className="flex flex-row items-center  gap-1 lg:mr-5">
-          <BsPerson className="h-6 w-6 text-primary cursor-pointer " />
+      <div className="flex flex-no-wrap items-start justify-center lg:gap-10 gap-3 w-full  col-span-4 ">
+        <div className="flex flex-row items-center ">
+          <BsPerson className="h-8 w-8  text-primary cursor-pointer " />
           {` `}
-          <span href="/" className="text-primary mr-5 cursor-pointer">
+          <span href="/" className="text-primary  cursor-pointer hidden md:flex ml-1">
             {username}
           </span>
           {` `}
         </div>
-        <LogoutButton />
+     
+        {/* cart */}
+        <div className="flex flex-row cursor-pointer">
         <div className="relative flex flex-row items-center ">
           <a onClick={Sample}>
             <svg
-              className="h-8 w-8 text-primary cursor-pointer "
+              className="h-10 w-10 text-primary cursor-pointer "
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -222,6 +241,12 @@ const Navbar = ({ cartItems }) => {
             {totalItemsInCart}
           </span>
         </div>
+        {/* <span className="hidden md:flex ml-2 "> Cart </span> */}
+        </div>
+
+       
+              <LogoutButton/>
+
       </div>
       {/* End of Column 3 */}
     </nav>
