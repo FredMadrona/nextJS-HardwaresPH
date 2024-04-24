@@ -181,7 +181,7 @@ const Navbar = ({ cartItems }) => {
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
             {/* Column 1: Logo */}
-            <div className="flex items-center justify-center col-span-3 md:col-span-4 p-1">
+            <div className="flex items-center justify-center col-span-3 md:col-span-4 ">
         <Link href="/home?username=admin">
           <Image
             src={isMobile ? '/Hardware_Logo_Mobile.png' : '/Hardware_Logo.svg'}

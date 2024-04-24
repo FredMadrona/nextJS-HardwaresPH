@@ -9,7 +9,7 @@ const PopularProducts = () => {
   const PopProducts = allProducts.slice(0, 5);
 
   const handleAddToCartClick = (index) => {
-    ProductRouter.push(`/cart?username=admin&PopProduct=${index}`);
+    ProductRouter.push(`/product?username=admin&PopProduct=${index}`);
   };
 
   const productItems = [];
@@ -18,7 +18,7 @@ const PopularProducts = () => {
     productItems.push(
       <div
         key={i}
-        className="bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg"
+        className={`bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg ${i === PopProducts.length - 1 && 'hidden lg:block'}`}
         onClick={() => handleAddToCartClick(i)}
       >
         <Image
@@ -28,16 +28,15 @@ const PopularProducts = () => {
           layout="responsive"
           alt={item.name}
         />
-        <p className="text-sm text-gray-500 mb-3 h-10 py-2">{item.name}</p>
-        <div className="flex justify-between mb-3">
+        <p className="text-sm text-gray-500 mb-3 h-10 py-2 truncate md:truncate-none">{item.name}</p>
+        <div className="flex justify-between lg:mb-3 lg:pt-1 pt-5">
           <p className="text-sm font-semibold">{item.price}</p>
           <p>
             <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
           </p>
         </div>
         <button
-          onClick={() => handleAddToCartClick(i)}
-          className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary"
+          className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 md:flex items-center justify-center w-full border hover:text-white hover:bg-primary hidden"
         >
           Add to cart <BsCart2 className="mx-2" />
         </button>
@@ -47,13 +46,13 @@ const PopularProducts = () => {
 
   return (
     <div className="grid grid-cols-12 bg-gray-100 pt-5 ">
-      <div className="md:col-span-2 col-span-1 "></div>
-      <div className="md:col-span-8 col-span-10">
-        <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="md:col-span-2 hidden lg:flex"></div>
+      <div className="md:col-span-8 col-span-12 m-1">
+        <div className="lg:p-4 grid grid-cols-3 lg:grid-cols-4 p-3 gap-2">
           {productItems}
         </div>
       </div>
-      <div className="md:col-span-2 col-span-1 "></div>
+      <div className="md:col-span-2 hidden "></div>
     </div>
   );
 };

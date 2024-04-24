@@ -6,7 +6,7 @@ import PopularProducts from "./PopularProducts";
 const ProductCards = () => {
   return (
     <div>
-      <div className="bg-white grid md:grid-cols-2 grid-cols-1 ">
+      <div className="bg-white hidden md:grid grid-cols-2  ">
         <div className="col-span-1 m-5">
           <Image
             src="/DoorControl.png"
