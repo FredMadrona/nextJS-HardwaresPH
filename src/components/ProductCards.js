@@ -3,6 +3,9 @@ import { BsHeart, BsCart2 } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 import PopularProducts from "./PopularProducts";
+import NewArrivalProducts from "./NewArrivalProducts";
+
+
 const ProductCards = () => {
   return (
     <div>
@@ -29,137 +32,37 @@ const ProductCards = () => {
         </div>
       </div>
       <div className="grid grid-cols-12 bg-gray-100 pt-5 ">
-        <div className="md:col-span-2 col-span-1 "></div>
-        <div className="md:col-span-8 col-span-10">
+
+      {/* Start of Popular Products */}
+      <div className="md:col-span-2 hidden md:flex"></div>
+        <div className="md:col-span-8 col-span-12 m-1">
           {" "}
-          <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold ">
+          <h1 className="text-3xl ml-5 text-primary align-center font-bold ">
             {" "}
             Popular Products
           </h1>{" "}
         </div>
         <div className="md:col-span-2 col-span-1 "></div>
       </div>
-
-      {/* Start of Popular Products */}
+  
       <PopularProducts></PopularProducts>
       {/* End of Popular Products */}
 
+      {/* Start of New Arrival */}
       <div className="grid grid-cols-12 bg-gray-100 pt-5 ">
-        <div className="col-span-1 md:col-span-2"></div>
-
-        <div className="col-span-10 md:col-span-8">
+      <div className="md:col-span-2 hidden md:flex"></div>
+        <div className="md:col-span-8 col-span-12 m-1">
           {" "}
-          <h1 className="text-2xl lg:text-3xl ml-5 text-primary align-center font-bold hover:underline cursor-pointer">
+          <h1 className="text-3xl ml-5 text-primary align-center font-bold ">
             {" "}
-            New Arrival{" "}
+            New Arrival 
           </h1>{" "}
         </div>
-        <div className="col-span-1 md:col-span-2"></div>
+        <div className="md:col-span-2 col-span-1 "></div>
       </div>
 
-      {/* Start of New Arrival */}
-      <div className="grid grid-cols-12 gap-4 bg-gray-100 p-5 ">
-        <div className="col-span-1 md:col-span-2"></div>
-        <div className="col-span-10 md:col-span-8 grid lg:grid-cols-4 grid-cols-2 justify-evenly gap-5">
-          <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image
-              src="/Hardware03.jpg"
-              width={200}
-              height={150}
-              alt="Hardware Image"
-            ></Image>
-            <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Stainless Steel Bathroom Hardware{" "}
-            </p>
-            <div className="flex justify-between mb-3">
-              <p className="text-sm font-semibold"> Product Price </p>
-              {/* Heart Icon */}
-              <p>
-                {" "}
-                <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
-              </p>
-            </div>
-            <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-              Add to cart <BsCart2 className="mx-2" />
-              {/* Cart Icon */}
-            </button>
-          </div>
-          <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image
-              src="/Hardware02.jpg"
-              width={200}
-              height={150}
-              alt="Hardware Image"
-            ></Image>
-            <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Stainless Steel Bathroom Hardware{" "}
-            </p>
-            <div className="flex justify-between mb-3">
-              <p className="text-sm font-semibold"> Product Price </p>
-              {/* Heart Icon */}
-              <p>
-                {" "}
-                <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
-              </p>
-            </div>
-            <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-              Add to cart <BsCart2 className="mx-2" />
-              {/* Cart Icon */}
-            </button>
-          </div>
-          <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image
-              src="/Hardware04.jpg"
-              width={200}
-              height={150}
-              alt="Hardware Image"
-            ></Image>
-            <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Exposed Door Closer Series{" "}
-            </p>
-            <div className="flex justify-between mb-3">
-              <p className="text-sm font-semibold"> Product Price </p>
-              {/* Heart Icon */}
-              <p>
-                {" "}
-                <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
-              </p>
-            </div>
-            <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-              Add to cart <BsCart2 className="mx-2" />
-              {/* Cart Icon */}
-            </button>
-          </div>
-          <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer border hover:shadow-lg">
-            <Image
-              src="/Hardware02.jpg"
-              width={200}
-              height={150}
-              alt="Hardware Image"
-            ></Image>
-            <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Intelligent Door Lock N6700{" "}
-            </p>
-            <div className="flex justify-between mb-3">
-              <p className="text-sm font-semibold"> Product Price </p>
-              {/* Heart Icon */}
-              <p>
-                {" "}
-                <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
-              </p>
-            </div>
-            <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  p-2 flex items-center justify-center w-full border hover:text-white hover:bg-primary">
-              Add to cart <BsCart2 className="mx-2" />
-              {/* Cart Icon */}
-            </button>
-          </div>
-        </div>
-        <div className="col-span-1 md:col-span-2"></div>
-      </div>
+      <NewArrivalProducts></NewArrivalProducts>
+      
       {/* End of New Arrival */}
 
       <div className="grid grid-cols-12 bg-white p-5 ">

@@ -3,10 +3,10 @@ import { BsCart2, BsHeart } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const PopularProducts = () => {
+const NewArrivalProducts = () => {
   const ProductRouter = useRouter();
 
-  const PopProducts = allProducts.slice(0, 5);
+  const PopProducts = allProducts.slice(5, 10);
 
   const handleAddToCartClick = (index) => {
     ProductRouter.push(`/product?username=admin&PopProduct=${index}`);
@@ -57,4 +57,4 @@ const PopularProducts = () => {
   );
 };
 
-export default PopularProducts;
+export default NewArrivalProducts;
