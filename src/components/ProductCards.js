@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import PopularProducts from "./PopularProducts";
 import NewArrivalProducts from "./NewArrivalProducts";
-
+import IndexPageImage01 from "/public/images/IndexPageImage01.png"
+import IndexPageImage02 from "/public/images/IndexPageImage02.png"
+import IndexPageImage03 from "/public/images/IndexPageImage03.png"
 
 const ProductCards = () => {
   return (
@@ -65,40 +67,32 @@ const ProductCards = () => {
       
       {/* End of New Arrival */}
 
-      <div className="grid grid-cols-12 bg-white p-5 ">
-        <div className="col-span-1 md:col-span-2"></div>
-        <div className="col-span-10 md:col-span-8 grid md:grid-cols-3 grid-cols-1 gap-5">
-          <div className="col-span-1">
-            <Image
-              src="/IndexPageImage01.png"
-              width={150}
-              height={150}
-              alt="Hardware Image"
-              className="w-full h-full cursor-pointer hover:shadow-md rounded"
-            ></Image>
-          </div>
-
-          <div className="col-span-1">
-            <Image
-              src="/IndexPageImage02.png"
-              width={150}
-              height={150}
-              alt="Hardware Image"
-              className="w-full h-full cursor-pointer hover:shadow-md rounded"
-            ></Image>
-          </div>
-
-          <div className="col-span-1 bg-red text-white">
-            <Image
-              src="/IndexPageImage03.png"
-              width={150}
-              height={150}
-              alt="Image"
-              className="w-full h-full cursor-pointer hover:shadow-md rounded"
-            ></Image>
-          </div>
-        </div>
-        <div className="col-span-1 md:col-span-2"></div>
+      <div className="grid grid-cols-12 bg-white lg:p-5 p-1">
+        <div className="md:col-span-2 hidden md:flex"></div>
+          <div className="md:col-span-8 col-span-12 flex flex-row border border-black md:gap-3 gap-1 p-1">
+              <div>
+                <Image
+                src={IndexPageImage01}
+                alt="Indexpage01"
+                >
+                </Image>
+              </div>
+              <div>
+                <Image
+                src={IndexPageImage02}
+                alt="Indexpage02"
+                >
+                </Image>
+              </div>
+              <div>
+                <Image
+                src={IndexPageImage03}
+                alt="Indexpage03"
+                >
+                </Image>
+              </div>
+             </div>
+         <div className="md:col-span-2 hidden md:flex"></div>
       </div>
     </div>
   );

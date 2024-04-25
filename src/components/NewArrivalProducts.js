@@ -28,8 +28,8 @@ const NewArrivalProducts = () => {
           layout="responsive"
           alt={item.name}
         />
-        <p className="text-sm text-gray-500 mb-3 h-10 py-2 truncate md:truncate-none">{item.name}</p>
-        <div className="flex justify-between lg:mb-3 lg:pt-1 pt-5">
+        <p className="text-sm text-gray-500 mb-3 h-10 pt-2 truncate md:truncate-none">{item.name}</p>
+        <div className="flex justify-between lg:mb-3 lg:pt-1">
           <p className="text-sm font-bold ">{item.price}</p>
           <p>
             <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
