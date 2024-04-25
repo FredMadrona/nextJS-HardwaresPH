@@ -8,6 +8,7 @@ import IndexPageImage01 from "/public/images/IndexPageImage01.png"
 import IndexPageImage02 from "/public/images/IndexPageImage02.png"
 import IndexPageImage03 from "/public/images/IndexPageImage03.png"
 import HomePagecategories from "./HomePageCategories";
+import SuggestedProducts from "./SuggestedProducts";
 
 const ProductCards = () => {
   return (
@@ -70,9 +71,9 @@ const ProductCards = () => {
 
       <HomePagecategories></HomePagecategories>
 
-      <div className="grid grid-cols-12 bg-white lg:p-5 p-1">
+      <div className="grid grid-cols-12 bg-gray-100 lg:p-5 py-3 px-1">
         <div className="md:col-span-2 hidden md:flex"></div>
-          <div className="md:col-span-8 col-span-12 flex flex-row border border-black md:gap-3 gap-1 p-1">
+          <div className="md:col-span-8 col-span-12 flex flex-row md:gap-3 gap-1 p-1">
               <div>
                 <Image
                 src={IndexPageImage01}
@@ -97,6 +98,9 @@ const ProductCards = () => {
              </div>
          <div className="md:col-span-2 hidden md:flex"></div>
       </div>
+
+      <SuggestedProducts> </SuggestedProducts>
+
     </div>
   );
 };
