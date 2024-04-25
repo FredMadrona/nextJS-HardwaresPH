@@ -39,7 +39,7 @@ const PopularProducts = () => {
         >
           Add to cart <BsCart2 className="mx-2" />
         </button>
-      </div>,
+      </div>
     );
   }
 
