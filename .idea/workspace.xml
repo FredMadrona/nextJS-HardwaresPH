@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/cart/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/catalog/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/catalog/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/checkout/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/checkout/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/product/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/product/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/products/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BillingNavTrail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingNavTrail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartNavTrail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartNavTrail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCards.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,17 +41,16 @@
     &quot;assignee&quot;: &quot;MarkRMNDZ&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="d055f7ee-5c7a-4bb9-9191-3f36403749d5" />
-        <option name="url" value="https://github.com/FredMadrona/nextJS-HardwaresPH.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FredMadrona/nextJS-HardwaresPH&quot;,
+    &quot;accountId&quot;: &quot;d055f7ee-5c7a-4bb9-9191-3f36403749d5&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,27 +60,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "update/price-multiplier-on-qty-button",
-    "last_opened_file_path": "D:/HWPH-Proj/nextJS-HardwaresPH",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.lint.executor": "Run",
-    "npm.prettier.executor": "Run",
-    "npm.run linter.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\HWPH-Proj\\nextJS-HardwaresPH\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/nextJS-HardwaresPH&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.prettier.executor&quot;: &quot;Run&quot;,
+    &quot;npm.run linter.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\HWPH-Proj\\nextJS-HardwaresPH\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="npm.prettier">
+}</component>
+  <component name="RunManager" selected="npm.lint">
     <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -95,7 +109,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
       </set>
     </attachedChunks>
   </component>
@@ -110,6 +125,9 @@
       <workItem from="1708157208609" duration="8814000" />
       <workItem from="1708323501763" duration="15733000" />
       <workItem from="1708391216803" duration="16383000" />
+      <workItem from="1713503954179" duration="3135000" />
+      <workItem from="1713610334337" duration="1457000" />
+      <workItem from="1713839506837" duration="2734000" />
     </task>
     <servers />
   </component>

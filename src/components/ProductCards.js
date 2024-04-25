@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { BsHeart, BsCart2 } from "react-icons/bs";
 import Image from "next/image";
