@@ -3,9 +3,9 @@ import Image from "next/image";
 import { BsHeart } from "react-icons/bs";
 
 export default function SuggestedProducts() {
-    return (
-        <div className="container flex md:hidden bg-gray-100 ">
-          <div className="grid grid-cols-12 gap-4 bg-gray-100 pt-[25px] pb-[50px]">
+  return (
+    <div className="container flex md:hidden bg-gray-100 ">
+      <div className="grid grid-cols-12 gap-4 bg-gray-100 pt-[25px] pb-[50px]">
         <div className="col-span-1"></div>
         <div className="col-span-10 grid md:grid-cols-4 grid-cols-2 justify-evenly gap-5">
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
@@ -27,7 +27,7 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
             <Image
@@ -39,7 +39,7 @@ export default function SuggestedProducts() {
             />
             <p className="text-sm text-gray-500 mb-3 h-10 mt-3">
               {" "}
-              Stainless Steel Bathroom Hardware {" "}
+              Stainless Steel Bathroom Hardware{" "}
             </p>
             <div className="flex justify-between">
               <p className="text-sm font-semibold"> Product Price </p>
@@ -48,7 +48,7 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
             <Image
@@ -69,7 +69,7 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
             <Image
@@ -90,7 +90,7 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
             <Image
@@ -111,11 +111,11 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
           <div className="col-span-1 bg-white p-4 rounded shadow-sm hover:cursor-pointer hover:shadow-lg">
             <Image
-             src="/SmartDevice(2).png"
+              src="/SmartDevice(2).png"
               height={100}
               width={100}
               alt="Hardware Image"
@@ -132,11 +132,11 @@ export default function SuggestedProducts() {
                 {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer mt-1 hover:text-primary" />
               </p>
-            </div>         
+            </div>
           </div>
         </div>
         <div className="col-span-1"></div>
       </div>
-        </div>
-    );
+    </div>
+  );
 }

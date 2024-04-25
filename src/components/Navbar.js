@@ -161,7 +161,6 @@ const Navbar = ({ cartItems }) => {
     setSearchQuery("");
   };
 
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -170,25 +169,24 @@ const Navbar = ({ cartItems }) => {
     };
 
     handleResize(); // Call once to set the initial state
-    window.addEventListener('resize', handleResize); // Listen for resize events
+    window.addEventListener("resize", handleResize); // Listen for resize events
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Cleanup
+      window.removeEventListener("resize", handleResize); // Cleanup
     };
   }, []);
 
-
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
-            {/* Column 1: Logo */}
-            <div className="flex items-center justify-center col-span-3 md:col-span-4 ">
+      {/* Column 1: Logo */}
+      <div className="flex items-center justify-center col-span-3 md:col-span-4 ">
         <Link href="/home?username=admin">
           <Image
-            src={isMobile ? '/Hardware_Logo_Mobile.png' : '/Hardware_Logo.svg'}
+            src={isMobile ? "/Hardware_Logo_Mobile.png" : "/Hardware_Logo.svg"}
             height={isMobile ? 50 : 100} // Set different heights for mobile and desktop
             width={isMobile ? 75 : 200} // Set different widths for mobile and desktop
             alt="Hardwares Logo"
-         />
+          />
         </Link>
       </div>
       {/* End of Column 1 */}
@@ -215,38 +213,39 @@ const Navbar = ({ cartItems }) => {
         <div className="flex flex-row items-center ">
           <BsPerson className="h-8 w-8  text-primary cursor-pointer " />
           {` `}
-          <span href="/" className="text-primary  cursor-pointer hidden md:flex ml-1">
+          <span
+            href="/"
+            className="text-primary  cursor-pointer hidden md:flex ml-1"
+          >
             {username}
           </span>
           {` `}
         </div>
-     
+
         {/* cart */}
         <div className="flex flex-row cursor-pointer">
-        <div className="relative flex flex-row items-center ">
-          <a onClick={Sample}>
-            <svg
-              className="h-10 w-10 text-primary cursor-pointer "
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <BsCart2 />
-            </svg>
-          </a>
-          {/* items in cart counter */}
-          <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
-            {totalItemsInCart}
-          </span>
-        </div>
-        {/* <span className="hidden md:flex ml-2 "> Cart </span> */}
+          <div className="relative flex flex-row items-center ">
+            <a onClick={Sample}>
+              <svg
+                className="h-10 w-10 text-primary cursor-pointer "
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <BsCart2 />
+              </svg>
+            </a>
+            {/* items in cart counter */}
+            <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
+              {totalItemsInCart}
+            </span>
+          </div>
+          {/* <span className="hidden md:flex ml-2 "> Cart </span> */}
         </div>
 
-       
-              <LogoutButton/>
-
+        <LogoutButton />
       </div>
       {/* End of Column 3 */}
     </nav>

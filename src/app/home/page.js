@@ -37,15 +37,15 @@ function Home() {
   };
 
   return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <CartProvider>
-          <Navbar cartItems={cartItems} updateCart={updateCart} />
-          <HorizontalMenu />
-          <ImageSlider />
-          <ProductCards />
-          <Footer />
-        </CartProvider>
-      </Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar cartItems={cartItems} updateCart={updateCart} />
+        <HorizontalMenu />
+        <ImageSlider />
+        <ProductCards />
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 

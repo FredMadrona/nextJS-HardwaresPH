@@ -18,7 +18,7 @@ const NewArrivalProducts = () => {
     productItems.push(
       <div
         key={i}
-        className={`bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg ${i === PopProducts.length - 1 && 'hidden lg:block'}`}
+        className={`bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg ${i === PopProducts.length - 1 && "hidden lg:block"}`}
         onClick={() => handleAddToCartClick(i)}
       >
         <Image
@@ -28,16 +28,16 @@ const NewArrivalProducts = () => {
           layout="responsive"
           alt={item.name}
         />
-        <p className="text-sm text-gray-500 mb-3 h-10 pt-2 truncate md:truncate-none">{item.name}</p>
+        <p className="text-sm text-gray-500 mb-3 h-10 pt-2 truncate md:truncate-none">
+          {item.name}
+        </p>
         <div className="flex justify-between lg:mb-3 lg:pt-1">
           <p className="text-sm font-bold ">{item.price}</p>
           <p>
             <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
           </p>
         </div>
-        <button
-          className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 lg:mt-0 mt-3 flex items-center justify-center w-full border hover:text-white hover:bg-primary "
-        >
+        <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 lg:mt-0 mt-3 flex items-center justify-center w-full border hover:text-white hover:bg-primary ">
           Add to cart <BsCart2 className="mx-2" />
         </button>
       </div>,
