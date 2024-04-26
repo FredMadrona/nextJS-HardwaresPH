@@ -60,12 +60,12 @@ const CartContent = ({ cartItems, updateCart }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-12 bg-gray-100">
+      <div className="grid grid-cols-12 bg-gray-100 h-screen">
         <div className="cols-span-1"></div>
         <div className="col-span-10 flex flex-col lg:flex-row lg:p-5 gap-5   mt-2 ">
           <div className="w-auto lg:w-[90%]">
             <table className="w-full bg-white rounded">
-              <thead>
+              <thead className="hidden md:hidden">
                 <tr className="lg:py-[100px] py-[50px] border-b border-black">
                   <th className="w-1/6"></th>
                   <th className="py-2 px-4 w-1/3 text-gray-500 font-semibold cursor-pointer hover:text-gray-800">
@@ -106,7 +106,8 @@ const CartContent = ({ cartItems, updateCart }) => {
           </div>
           <div className=" h-auto lg:w-[30%] md:w-[50%] w-[80%] mx-auto  lg:mx-5">
             <div className="bg-white rounded py-3">
-              <h3 className="font-bold md:text-xl text-lg mt-1 m-5"> Total </h3>
+              <h3 className="font-bold md:text-xl text-lg mt-1 m-5 hidden md:block"> Total </h3>
+              <div className="hidden md:block">
               <div className="flex justify-between align-center border-b  pb-2">
                 <span className="text-gray-400 mx-5 mt-1 md:text-md text-sm hover:text-gray-600 cursor-pointer ">
                   {" "}
@@ -137,6 +138,8 @@ const CartContent = ({ cartItems, updateCart }) => {
                   {grandTotal.toFixed(2)}{" "}
                 </span>
               </div>
+              </div>
+              <div className="hidden md:block">
               <div className=" w-full flex justify-center mt-5 p-3">
                 <button className="bg-yellow-300 hover:bg-yellow-400 h-1/4 hover:shadow-md rounded  mt-1 flex items-center justify-center border w-full">
                   <Image
@@ -148,20 +151,25 @@ const CartContent = ({ cartItems, updateCart }) => {
                   />
                 </button>
               </div>
+
               <div className="w-full my-1">
                 <p className="text-gray-300 text-center"> or </p>
               </div>
-              <div className="w-full flex justify-center mt-1 p-3">
-                <Link href="/checkout?username=admin" className="w-full">
-                  {" "}
-                  <button className="w-full bg-red-600 py-3 rounded  border text-white hover:shadow-md hover:bg-red-700">
-                    <p className="font-semibold hover:underline text-xs md:text-md">
-                      PROCEED TO CHECKOUT
-                    </p>
-                  </button>
-                </Link>
               </div>
+              {/* Other cart content */}
+              {cartItems.length > 0 && ( // Conditionally render the button if cartItems array is not empty
+                  <div className="w-full flex justify-center mt-1 p-3">
+                    <Link href="/checkout?username=admin" className="w-full">
+                      <button className="w-full bg-red-600 py-3 rounded border text-white hover:shadow-md hover:bg-red-700">
+                        <p className="font-semibold hover:underline text-xs md:text-md">
+                          PROCEED TO CHECKOUT
+                        </p>
+                      </button>
+                    </Link>
+                  </div>
+              )}
             </div>
+            <div className="hidden md:block">
             <div className="w-full flex flex-row justify-center gap-1 mt-5">
               <Image
                 src="/Paypal-logo.png"
@@ -191,6 +199,7 @@ const CartContent = ({ cartItems, updateCart }) => {
                 height={50}
                 alt="American Express"
               />
+            </div>
             </div>
           </div>
         </div>

@@ -21,6 +21,7 @@ const Footer = () => {
   };
 
   return (
+      <div className="hidden md:block">
     <div className="py-5 flex justify-center m-5 ">
       <div className="mx-5"></div>
       <div className="container flex flex-wrap justify-center items-start ml-10%">
@@ -169,6 +170,7 @@ const Footer = () => {
       </div>
       <div className="mx-5"></div>
     </div>
+      </div>
   );
 };
 

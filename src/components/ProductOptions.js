@@ -90,9 +90,9 @@ const ProductOptions = () => {
           {allProducts[ProductIndex].name}
         </span>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-[60px] ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-[20px] ">
         <div className="cols-span-1 flex lg:flex-col flex-row ">
-          <div className="flex w-[80%] p-5 justify-center">
+          <div className="flex w-[100%] p-5 justify-center">
             <Image
               src={allProducts[ProductIndex].img}
               layout="responsive"
@@ -106,8 +106,29 @@ const ProductOptions = () => {
               className="lg:m-5 m-1  cursor-pointer "
             ></StaticImage> */}
           </div>
-          <div className="flex lg:flex-row flex-col  gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto">
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
+          <div className="hidden md:block">
+          <div className="flex lg:flex-row flex-col gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto ">
+            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1  ">
+              <Image
+                src={allProducts[ProductIndex].img}
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer"
+              />
+            </div>
+            <div className=" w-auto border hover:shadow-md border-black lg:p-3 p-1 ">
+              <Image
+                src={allProducts[ProductIndex].img}
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Hardware Image"
+                className="hover:cursor-pointer"
+              />
+            </div>
+            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1 ">
               <Image
                 src={allProducts[ProductIndex].img}
                 layout="responsive"
@@ -127,25 +148,6 @@ const ProductOptions = () => {
                 className="hover:cursor-pointer"
               />
             </div>
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
-            </div>
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
             </div>
           </div>
         </div>
@@ -168,7 +170,7 @@ const ProductOptions = () => {
               {" "}
               Price:
             </h6>
-            <p className="lg:text-xl text-md font-bold"> 0.00</p>
+            <p className="lg:text-xl text-md font-bold"> {allProducts[ProductIndex].price}</p>
           </div>
           <div className="lg:my-5 my-2">
             <p className="font-semibold lg:text-md text-sm cursor-pointer">
@@ -176,64 +178,64 @@ const ProductOptions = () => {
               Sizes:
             </p>
             <div
-              onClick={toggleDropdown}
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === "Space") {
-                  toggleDropdown();
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              className="border border-gray-400 p-1 px-2 flex items-between justify-between w-1/2 lg:mt-5 mt-1 cursor-pointer"
+                onClick={toggleDropdown}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter" || e.key === "Space") {
+                    toggleDropdown();
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                className="border border-gray-400 p-1 px-2 flex items-between justify-between w-1/2 lg:mt-5 mt-1 cursor-pointer"
             >
               {selectedOption ? selectedOption : "Select Size"}
               {isOpen ? (
-                <FaChevronDown className=" mt-1 hover:cursor-pointer" />
+                  <FaChevronDown className=" mt-1 hover:cursor-pointer"/>
               ) : (
-                <FaChevronUp className=" mt-1 hover:cursor-pointer" />
+                  <FaChevronUp className=" mt-1 hover:cursor-pointer"/>
               )}
             </div>
 
             {/*   */}
             {isOpen && (
-              <ul className="bg-white border border-gray-300 w-1/2 cursor-pointer shadow-lg">
-                {options.map((option) => (
-                  <li
-                    key={option}
-                    className={
-                      ("p-2 cursor-pointer hover:bg-gray-200 text-end",
-                      option === selectedOption && "bg-gray-200")
-                    }
-                  >
-                    <button
-                      type="button"
-                      onClick={() => selectOption(option)}
-                      className="w-full h-full"
-                    >
-                      {option}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                <ul className="bg-white border border-gray-300 w-1/2 cursor-pointer shadow-lg">
+                  {options.map((option) => (
+                      <li
+                          key={option}
+                          className={
+                            ("p-2 cursor-pointer hover:bg-gray-200 text-end",
+                            option === selectedOption && "bg-gray-200")
+                          }
+                      >
+                        <button
+                            type="button"
+                            onClick={() => selectOption(option)}
+                            className="w-full h-full"
+                        >
+                          {option}
+                        </button>
+                      </li>
+                  ))}
+                </ul>
             )}
           </div>
           <div className="mt-5">
             <p className="font-semibold lg:text-md text-sm mb-3"> Colours: </p>
             <div className="flex flex-row gap-5">
               <button
-                className="rounded-full cursor-pointer p-5 border border-gray-400"
-                style={{ backgroundColor: "#ffcc99" }}
-                aria-label="Color: Light Orange"
+                  className="rounded-full cursor-pointer p-5 border border-gray-400"
+                  style={{backgroundColor: "#ffcc99"}}
+                  aria-label="Color: Light Orange"
               ></button>
               <button
-                className="rounded-full cursor-pointer p-5 border border-gray-400"
-                style={{ backgroundColor: "#333333" }}
-                aria-label="Color: Dark Gray"
+                  className="rounded-full cursor-pointer p-5 border border-gray-400"
+                  style={{backgroundColor: "#333333"}}
+                  aria-label="Color: Dark Gray"
               ></button>
               <button
-                className="rounded-full cursor-pointer p-5 border border-gray-400"
-                style={{ backgroundColor: "#666633" }}
-                aria-label="Color: Olive Green"
+                  className="rounded-full cursor-pointer p-5 border border-gray-400"
+                  style={{backgroundColor: "#666633"}}
+                  aria-label="Color: Olive Green"
               ></button>
             </div>
           </div>
@@ -242,8 +244,8 @@ const ProductOptions = () => {
             <div className="flex flex-row lg:w-3/4 lg:justify-between justify-start gap-3">
               <div className="cols-span-1 rounded flex flex-row">
                 <button
-                  className="text-md px-[20px] text-gray-500 border border-gray-500 flex items-center justify-center"
-                  onClick={decreaseQuantity}
+                    className="text-md px-[20px] text-gray-500 border border-gray-500 flex items-center justify-center"
+                    onClick={decreaseQuantity}
                 >
                   {" "}
                   -{" "}
@@ -254,25 +256,39 @@ const ProductOptions = () => {
                   {quantity}
                 </span>
                 <button
-                  className="text-md px-[20px]   border border-gray-500  text-lg flex items-center"
-                  onClick={increaseQuantity}
+                    className="text-md px-[20px]   border border-gray-500  text-lg flex items-center"
+                    onClick={increaseQuantity}
                 >
                   {" "}
                   +{" "}
                 </button>
               </div>
-              <div className="w-1/4 lg:w-full">
+              <div className="w-1/4 lg:w-full hidden md:block">
                 <Link href="/cart?username=admin">
                   <button
-                    className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
-                    onClick={handleAddToCart}
+                      className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-[60%]"
+                      onClick={handleAddToCart}
                   >
                     Add to Cart
                   </button>
                 </Link>
               </div>
+
             </div>
           </div>
+          <div className="w-1/2 lg:w-full lg:hidden mt-3 lg:mt-0"> {/* Add lg:hidden to hide in PC view */}
+            <Link href="/cart?username=admin">
+              <button
+                  className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
+                  onClick={handleAddToCart}
+                  style={{fontSize: '14px'}} // Set font size for mobile devices
+              >
+                Add to Cart
+              </button>
+            </Link>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -283,15 +299,15 @@ const renderDivBlocks = (count) => {
   const divBlocks = [];
   for (let i = 0; i < 4; i++) {
     divBlocks.push(
-      <div
-        key={i}
-        className="w-auto border hover:shadow-md border-black lg:p-3 p-1"
-      >
-        <Image
-          src={allProducts[ProductIndex].img}
-          layout="responsive"
-          width={100}
-          height={100}
+        <div
+            key={i}
+            className="w-auto border hover:shadow-md border-black lg:p-3 p-1"
+        >
+          <Image
+              src={allProducts[ProductIndex].img}
+              layout="responsive"
+              width={100}
+              height={100}
           alt="Hardware Image"
           className="hover:cursor-pointer"
         />

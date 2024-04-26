@@ -9,7 +9,7 @@ const PopularProducts = () => {
   const PopProducts = allProducts.slice(0, 5);
 
   const handleAddToCartClick = (index) => {
-    ProductRouter.push(`/cart?username=admin&PopProduct=${index}`);
+    ProductRouter.push(`/product?username=admin&PopProduct=${index}`);
   };
 
   const productItems = [];

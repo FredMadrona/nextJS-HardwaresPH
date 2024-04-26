@@ -34,12 +34,14 @@ const CartItem = ({ item, onDecrease, onIncrease, onDelete }) => {
         </p>
       </td>
       <td className="py-3 lg:px-5 px-2 mx-5 flex flex-row justify-evenly align-center md:mt-[20%] mt-[12%] border border-gray-100">
-        <button
-          className="text-gray-500 px-2 lg:text-md text-sm text-center"
-          onClick={decreaseQuantity}
-        >
-          -
-        </button>
+          {item.quantity > 1 && (
+              <button
+                  className="text-gray-500 px-2 lg:text-md text-sm text-center"
+                  onClick={decreaseQuantity}
+              >
+                  -
+              </button>
+          )}
         <span className="mx-2 px-2 text-center lg:text-md text-sm">
           {item.quantity}
         </span>
