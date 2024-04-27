@@ -3,10 +3,10 @@ import { BsCart2, BsHeart } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const PopularProducts = () => {
+const NewArrivalProducts = () => {
   const ProductRouter = useRouter();
 
-  const PopProducts = allProducts.slice(0, 5);
+  const PopProducts = allProducts.slice(5, 10);
 
   const handleAddToCartClick = (index) => {
     ProductRouter.push(`/product?username=admin&PopProduct=${index}`);
@@ -21,8 +21,14 @@ const PopularProducts = () => {
         className={`bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg ${i === PopProducts.length - 1 && "hidden lg:block"}`}
         onClick={() => handleAddToCartClick(i)}
       >
-        <Image src={item.img} height={250} width={250} alt={item.name} />
-        <p className="text-sm text-gray-500 mb-3 h-10 py-2 truncate md:truncate-none">
+        <Image
+          src={item.img}
+          height={250}
+          width={250}
+          layout="responsive"
+          alt={item.name}
+        />
+        <p className="text-sm text-gray-500 mb-3 h-10 pt-2 truncate md:truncate-none">
           {item.name}
         </p>
         <div className="flex justify-between lg:mb-3 lg:pt-1">
@@ -51,4 +57,4 @@ const PopularProducts = () => {
   );
 };
 
-export default PopularProducts;
+export default NewArrivalProducts;
