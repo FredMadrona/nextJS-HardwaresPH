@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { CartProvider, useCart } from "@/components/CartContext";
+// Checkout.js
+import React, { useState, useEffect, Suspense } from "react";
+import { CartProvider } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import CartNavTrail from "@/components/CartNavTrail";
@@ -12,14 +13,19 @@ import withAuth from "@/hoc/withAuth";
 
 function Checkout() {
   // Load cart items from localStorage initially
-  const storedCartItems = localStorage.getItem("cartItems");
-  const initialCartItems = storedCartItems
-    ? JSON.parse(storedCartItems)
-    : cartData;
+  const [cartItems, setCartItems] = useState(() => {
+    // Check if localStorage is defined (client-side)
+    if (typeof window !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    } else {
+      // Return default cart items if localStorage is not defined
+      return cartData;
+    }
+  });
 
-  const [cartItems, setCartItems] = useState(initialCartItems);
   const [totalItemsInCart, setTotalItemsInCart] = useState(
-    initialCartItems.reduce((acc, item) => acc + item.quantity, 0),
+    cartItems.reduce((acc, item) => acc + item.quantity, 0),
   );
 
   const updateCart = (updatedCart) => {
@@ -29,22 +35,26 @@ function Checkout() {
     );
 
     // Update local storage when cartItems change
-    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    }
   };
 
   return (
-    <CartProvider>
-      <Navbar
-        cartItems={cartItems}
-        totalItems={totalItemsInCart}
-        updateCart={updateCart}
-      />
-      <HorizontalMenu />
-      <CartNavTrail />
-      <CartContent cartItems={cartItems} updateCart={updateCart} />
-      <ShippingDetails />
-      <Footer />
-    </CartProvider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar
+          cartItems={cartItems}
+          totalItems={totalItemsInCart}
+          updateCart={updateCart}
+        />
+        <HorizontalMenu />
+        <CartNavTrail />
+        <CartContent cartItems={cartItems} updateCart={updateCart} />
+        <ShippingDetails />
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 

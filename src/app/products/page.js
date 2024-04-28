@@ -1,39 +1,53 @@
 // Products.js
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { CartProvider } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
-import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
+
+const ProductGrid = React.lazy(() => import("@/components/ProductGrid"));
+
 function Products() {
-  // Load cart items from localStorage on component mount
   const [cartItems, setCartItems] = useState(() => {
-    const storedCartItems = localStorage.getItem("cartItems");
-    return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    // Check if localStorage is defined (client-side)
+    if (typeof window !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    } else {
+      // Return default cart items if localStorage is not defined
+      return cartData;
+    }
   });
 
-  // Update local storage when cartItems change
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    // Check if localStorage is defined (client-side)
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
     // Update local storage with the new cart
-    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    }
   };
 
   return (
-    <CartProvider>
-      <Navbar cartItems={cartItems} updateCart={updateCart} />
-      <HorizontalMenu />
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar cartItems={cartItems} updateCart={updateCart} />
+        <HorizontalMenu />
 
-      <ProductGrid />
-      <Footer />
-    </CartProvider>
+        <ProductGrid />
+
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 

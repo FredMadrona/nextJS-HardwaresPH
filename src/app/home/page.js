@@ -1,6 +1,5 @@
-// Home.js
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { CartProvider } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
@@ -38,13 +37,15 @@ function Home() {
   };
 
   return (
-    <CartProvider>
-      <Navbar cartItems={cartItems} updateCart={updateCart} />
-      <HorizontalMenu />
-      <ImageSlider />
-      <ProductCards />
-      <Footer />
-    </CartProvider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar cartItems={cartItems} updateCart={updateCart} />
+        <HorizontalMenu />
+        <ImageSlider />
+        <ProductCards />
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 

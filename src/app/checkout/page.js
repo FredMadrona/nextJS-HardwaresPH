@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { CartProvider, useCart } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
@@ -28,14 +28,15 @@ function Billing() {
   };
 
   return (
-    <CartProvider>
-      <Navbar cartItems={cartItems} updateCart={updateCart} />
-      <HorizontalMenu />
-      <BillingNavTrail />
-      <BillingContent updateCart={updateCart} />{" "}
-      {/* Pass updateCart to BillingContent */}
-      <Footer />
-    </CartProvider>
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar cartItems={cartItems} updateCart={updateCart} />
+        <HorizontalMenu />
+        <BillingNavTrail />
+        <BillingContent updateCart={updateCart} />
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
+import { BsBoxArrowRight } from "react-icons/bs"; // Assuming you're using React Icons for the logout icon
 
-const LogoutButton = () => {
+const LogoutButton = ({ isMobile }) => {
   const router = useRouter();
 
   const handleLogout = () => {
@@ -11,8 +12,12 @@ const LogoutButton = () => {
   };
 
   return (
-    <button className="text-primary mr-5" onClick={handleLogout}>
-      Logout
+    <button
+      className="text-primary  mr-2 md:mr-1 lg:inline-flex"
+      onClick={handleLogout}
+    >
+      <BsBoxArrowRight className="h-7 w-7  mt-1" />
+      {/* <span className="hidden lg:flex ml-3"> Logout </span> */}
     </button>
   );
 };

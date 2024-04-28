@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { IoIosSquare } from "react-icons/io";
@@ -61,7 +62,7 @@ function ImageSlider() {
   };
 
   return (
-    <div className="h-[600px] w-full m-auto relative group">
+    <div className="h-[300px] lg:h-[600px] w-full m-auto relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full  bg-center bg-cover duration-500"
