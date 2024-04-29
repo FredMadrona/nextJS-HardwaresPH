@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import BillingNavTrail from "@/components/BillingNavTrail";
 import BillingContent from "@/components/BillingContent";
 import withAuth from "@/hoc/withAuth";
+import MobileBillingContent from "@/components/MobileBillingContent";
 
 function Billing() {
   // Load cart items from localStorage on component mount
@@ -33,7 +34,8 @@ function Billing() {
         <Navbar cartItems={cartItems} updateCart={updateCart} />
         <HorizontalMenu />
         <BillingNavTrail />
-        <BillingContent updateCart={updateCart} />
+        <BillingContent cartItems={cartItems} updateCart={updateCart} />
+        <MobileBillingContent updateCart={updateCart} />
         <Footer />
       </CartProvider>
     </Suspense>

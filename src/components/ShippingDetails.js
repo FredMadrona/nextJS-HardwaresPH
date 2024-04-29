@@ -2,7 +2,7 @@ import React from "react";
 
 const ShippingDetails = () => {
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="w-full grid grid-cols-12 bg-gray-100 pt-5">
         <div className="col-span-1 "> </div>
         <div className="col-span-10 w-full lg:justify-start justify-center  flex rounded p-5 ">

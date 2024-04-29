@@ -90,9 +90,9 @@ const ProductOptions = () => {
           {allProducts[ProductIndex].name}
         </span>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-[60px] ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-[20px] ">
         <div className="cols-span-1 flex lg:flex-col flex-row ">
-          <div className="flex w-[80%] p-5 justify-center">
+          <div className="flex w-[100%] p-5 justify-center">
             <Image
               src={allProducts[ProductIndex].img}
               layout="responsive"
@@ -106,46 +106,48 @@ const ProductOptions = () => {
               className="lg:m-5 m-1  cursor-pointer "
             ></StaticImage> */}
           </div>
-          <div className="flex lg:flex-row flex-col  gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto">
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
-            </div>
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
-            </div>
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
-            </div>
-            <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
-              <Image
-                src={allProducts[ProductIndex].img}
-                layout="responsive"
-                width={100}
-                height={100}
-                alt="Hardware Image"
-                className="hover:cursor-pointer"
-              />
+          <div className="hidden md:block">
+            <div className="flex lg:flex-row flex-col gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto ">
+              <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1  ">
+                <Image
+                  src={allProducts[ProductIndex].img}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  alt="Hardware Image"
+                  className="hover:cursor-pointer"
+                />
+              </div>
+              <div className=" w-auto border hover:shadow-md border-black lg:p-3 p-1 ">
+                <Image
+                  src={allProducts[ProductIndex].img}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  alt="Hardware Image"
+                  className="hover:cursor-pointer"
+                />
+              </div>
+              <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1 ">
+                <Image
+                  src={allProducts[ProductIndex].img}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  alt="Hardware Image"
+                  className="hover:cursor-pointer"
+                />
+              </div>
+              <div className="w-auto border hover:shadow-md border-black lg:p-3 p-1">
+                <Image
+                  src={allProducts[ProductIndex].img}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  alt="Hardware Image"
+                  className="hover:cursor-pointer"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -168,7 +170,10 @@ const ProductOptions = () => {
               {" "}
               Price:
             </h6>
-            <p className="lg:text-xl text-md font-bold"> 0.00</p>
+            <p className="lg:text-xl text-md font-bold">
+              {" "}
+              {allProducts[ProductIndex].price}
+            </p>
           </div>
           <div className="lg:my-5 my-2">
             <p className="font-semibold lg:text-md text-sm cursor-pointer">
@@ -261,10 +266,10 @@ const ProductOptions = () => {
                   +{" "}
                 </button>
               </div>
-              <div className="w-1/4 lg:w-full">
+              <div className="w-1/4 lg:w-full hidden md:block">
                 <Link href="/cart?username=admin">
                   <button
-                    className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
+                    className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-[60%]"
                     onClick={handleAddToCart}
                   >
                     Add to Cart
@@ -272,6 +277,19 @@ const ProductOptions = () => {
                 </Link>
               </div>
             </div>
+          </div>
+          <div className="w-1/2 lg:w-full lg:hidden mt-3 lg:mt-0">
+            {" "}
+            {/* Add lg:hidden to hide in PC view */}
+            <Link href="/cart?username=admin">
+              <button
+                className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2 w-full"
+                onClick={handleAddToCart}
+                style={{ fontSize: "14px" }} // Set font size for mobile devices
+              >
+                Add to Cart
+              </button>
+            </Link>
           </div>
         </div>
       </div>
