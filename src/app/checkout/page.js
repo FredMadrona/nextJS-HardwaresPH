@@ -34,8 +34,8 @@ function Billing() {
         <Navbar cartItems={cartItems} updateCart={updateCart} />
         <HorizontalMenu />
         <BillingNavTrail />
-        <BillingContent updateCart={updateCart} />
-        <MobileBillingContent updateCart={updateCart}/>
+        <BillingContent cartItems={cartItems} updateCart={updateCart} />
+        <MobileBillingContent updateCart={updateCart} />
         <Footer />
       </CartProvider>
     </Suspense>
