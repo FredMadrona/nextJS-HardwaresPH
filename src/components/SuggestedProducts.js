@@ -1,7 +1,7 @@
 import allProducts from "@/data/allProducts";
 import React from "react";
 import Image from "next/image";
-import { BsHeart, BsCart2 } from "react-icons/bs";
+import { BsHeart } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 
 export default function SuggestedProducts() {
@@ -39,9 +39,6 @@ export default function SuggestedProducts() {
             <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
           </p>
         </div>
-        <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 lg:mt-0 mt-3 flex items-center justify-center w-full border hover:text-white hover:bg-primary ">
-          Add to cart <BsCart2 className="mx-2" />
-        </button>
       </div>,
     );
   }

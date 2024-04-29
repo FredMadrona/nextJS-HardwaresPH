@@ -31,7 +31,7 @@ const PopularProducts = () => {
             <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
           </p>
         </div>
-        <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 lg:mt-0 mt-3 flex items-center justify-center w-full border hover:text-white hover:bg-primary ">
+        <button className="font-semibold text-black rounded-lg text-sm border-gray-300 br-md  py-3 px-1 lg:p-2 lg:mt-0 mt-3 hidden md:flex items-center justify-center w-full border hover:text-white hover:bg-primary ">
           Add to cart <BsCart2 className="mx-2" />
         </button>
       </div>,
