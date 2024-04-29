@@ -67,6 +67,7 @@ const BillingContent = ({ updateCart }) => {
     { name: "Stainless Steel Bathroom Hardware", quantity: 1, price: 0.0 },
   ];
   return (
+      <div className="hidden md:block">
     <div className="w-full grid grid-cols-12  bg-gray-100 pt-5">
       <div className="col-span-1 "> </div>
       <div className="col-span-6 lg:col-span-5 w-full lg:justify-start justify-center flex rounded p-5 space-y-5">
@@ -432,6 +433,9 @@ const BillingContent = ({ updateCart }) => {
         </div>
       </div>
     </div>
+      </div>
+
+
   );
 };
 

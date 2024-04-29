@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/checkout/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/checkout/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopularProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopularProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShippingDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShippingDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +50,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hot-fix/local-storage-errors&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update/catalog-and-cart-responsiveness&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/nextJS-HardwaresPH&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -120,7 +115,8 @@
       <workItem from="1713610334337" duration="1457000" />
       <workItem from="1713839506837" duration="5733000" />
       <workItem from="1713883273328" duration="1337000" />
-      <workItem from="1714100803399" duration="12553000" />
+      <workItem from="1714100803399" duration="13095000" />
+      <workItem from="1714357797982" duration="8185000" />
     </task>
     <servers />
   </component>
