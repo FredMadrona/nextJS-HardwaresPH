@@ -19,7 +19,7 @@ const NewArrivalProducts = () => {
       <div
         key={i}
         className={`bg-white p-4 rounded hover:cursor-pointer border hover:shadow-lg ${i === PopProducts.length - 1 && "hidden lg:block"}`}
-        onClick={() => handleAddToCartClick(i)}
+        onClick={() => handleAddToCartClick(i + 5)} //plus 5 to adjust the index of the product based on the corresponding item clicked
       >
         <Image
           src={item.img}

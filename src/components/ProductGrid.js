@@ -33,60 +33,60 @@ const ProductGrid = () => {
   useEffect(() => {
     const filterProducts = () => {
       let filteredProducts = allProducts; // Assuming `allProducts` is the initial list of products
-  
+
       // Filter by selected colors
       if (selectedColors.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedColors.includes(product.color)
+          selectedColors.includes(product.color),
         );
       }
-  
+
       // Filter by selected brands
       if (selectedBrands.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedBrands.includes(product.brand)
+          selectedBrands.includes(product.brand),
         );
       }
-  
+
       // Filter by selected features
       if (selectedFeatures.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedFeatures.includes(product.feature)
+          selectedFeatures.includes(product.feature),
         );
       }
-  
+
       // Filter by selected category
       if (selectedCategory.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedCategory.includes(product.category)
+          selectedCategory.includes(product.category),
         );
       }
-  
+
       // Filter by selected price range
       if (selectedPriceRange.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedPriceRange.includes(product.priceRange)
+          selectedPriceRange.includes(product.priceRange),
         );
       }
-  
+
       // Filter by selected menu items
       if (MenuItems !== "") {
         filteredProducts = filteredProducts.filter(
-          (product) => product.category === MenuItems
+          (product) => product.category === MenuItems,
         );
       }
-  
+
       // Filter by search query
       if (searchQuery) {
         filteredProducts = filteredProducts.filter((product) =>
-          product.name.toLowerCase().includes(searchQuery.toLowerCase())
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()),
         );
       }
-  
+
       // Update state with filtered products
       setProducts(filteredProducts);
     };
-  
+
     filterProducts(); // Call the filter function when the component mounts or when filtering options are selected
   }, [
     selectedColors,
@@ -97,7 +97,6 @@ const ProductGrid = () => {
     MenuItems,
     searchQuery,
   ]);
-  
 
   const handleFilterChange = (event, filterType) => {
     const value = event.target.value;
