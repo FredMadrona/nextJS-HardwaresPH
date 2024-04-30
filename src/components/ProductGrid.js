@@ -23,8 +23,6 @@ const ProductGrid = () => {
 
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
-  const [selectedFeatures, setSelectedFeatures] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState([]);
   const [products, setProducts] = useState([]); // State for filtered products
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,20 +46,6 @@ const ProductGrid = () => {
       if (selectedBrands.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
           selectedBrands.includes(product.brand)
-        );
-      }
-
-      // Filter by selected features
-      if (selectedFeatures.length > 0) {
-        filteredProducts = filteredProducts.filter((product) =>
-          selectedFeatures.includes(product.feature)
-        );
-      }
-
-      // Filter by selected category
-      if (selectedCategory.length > 0) {
-        filteredProducts = filteredProducts.filter((product) =>
-          selectedCategory.includes(product.category)
         );
       }
 
@@ -94,8 +78,6 @@ const ProductGrid = () => {
   }, [
     selectedColors,
     selectedBrands,
-    selectedFeatures,
-    selectedCategory,
     selectedPriceRange,
     MenuItems,
     searchQuery,
