@@ -117,22 +117,6 @@ const ProductGrid = () => {
       } else {
         setSelectedBrands([...selectedBrands, value]);
       }
-    } else if (filterType === "feature") {
-      if (selectedFeatures.includes(value)) {
-        setSelectedFeatures(
-          selectedFeatures.filter((feature) => feature !== value)
-        );
-      } else {
-        setSelectedFeatures([...selectedFeatures, value]);
-      }
-    } else if (filterType === "category") {
-      if (selectedCategory.includes(value)) {
-        setSelectedCategory(
-          selectedCategory.filter((category) => category !== value)
-        );
-      } else {
-        setSelectedCategory([...selectedCategory, value]);
-      }
     } else if (filterType === "priceRange") {
       if (selectedPriceRange.includes(value)) {
         setSelectedPriceRange(
