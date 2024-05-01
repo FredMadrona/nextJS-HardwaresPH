@@ -9,6 +9,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import BrandFilter from "./BrandFilter";
 import ColorFilter from "./ColorFilter";
 import PriceFilter from "./PriceFilter";
+import FilteringOptionsMobile from "./FilteringOptionsMobile";
 
 const ProductGrid = () => {
   const CatalogRouter = useRouter();
@@ -134,10 +135,10 @@ const ProductGrid = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 p-4 grid grid-cols-9 gap-4 ">
+      <div className="bg-gray-100 p-4 grid md:grid-cols-9 grid-cols-1 gap-4 items-start">
         <div className="col-span-1"></div>
         {/* Filter Checkbox */}
-        <div className=" col-span-3 lg:col-span-2 flex flex-col start  items-start">
+        <div className=" col-span-3 lg:col-span-2 hidden md:flex flex-col start  items-start">
           <h3 className=" text-md text-left text-primary font-semibold cursor-pointer">
             Shopping Options
           </h3>
@@ -160,10 +161,10 @@ const ProductGrid = () => {
           />
           </div>
         </div>
-
+        <FilteringOptionsMobile></FilteringOptionsMobile>
         {/* Products */}
-        <div className="col-span-5 flex flex-col justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="md:col-span-5 flex flex-col justify-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {currentProducts.map((product) => (
               <div
                 key={product.id}
