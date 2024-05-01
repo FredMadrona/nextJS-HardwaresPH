@@ -143,8 +143,13 @@ const ProductGrid = () => {
 
   return (
     <div>
+      
       <div className="bg-gray-100 p-4 grid md:grid-cols-9 grid-cols-1 gap-4 items-start">
-        <div className="col-span-1"></div>
+        <div className="md:col-span-1">
+        <div className="bg-slate-100 px-5 pb-0 pt-5  md:hidden">
+        <span className="text-2xl text-black font-bold ">{MenuItems}</span>
+      </div>
+        </div>
         {/* Filter Checkbox */}
         <div className=" col-span-3 lg:col-span-2 hidden md:flex flex-col start  items-start">
           <h3 className=" text-md text-left text-primary font-semibold cursor-pointer">
