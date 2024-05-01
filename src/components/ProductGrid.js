@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { FaSort, FaFilter, FaTimes } from "react-icons/fa";
 import { BsCart2, BsHeart, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import allProducts from "@/data/allProducts";
@@ -9,7 +9,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import BrandFilter from "./BrandFilter";
 import ColorFilter from "./ColorFilter";
 import PriceFilter from "./PriceFilter";
-import FilteringOptionsMobile from "./FilteringOptionsMobile";
+import CategoryFilter from "./CategoryFilter";
+// import FilteringOptionsMobile from "./FilteringOptionsMobile";
 
 const ProductGrid = () => {
   const CatalogRouter = useRouter();
@@ -31,6 +32,13 @@ const ProductGrid = () => {
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
 
   useEffect(() => {
     const filterProducts = () => {
@@ -161,7 +169,66 @@ const ProductGrid = () => {
           />
           </div>
         </div>
-        <FilteringOptionsMobile></FilteringOptionsMobile>
+         {/* Filtering options in Mobile Version */}
+        <div className="md:hidden grid grid-cols-5 w-full relative">
+      <div className="col-span-1 m-2 border">
+        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
+          Top Sales
+        </button>
+      </div>
+      <div className="col-span-1 m-2 border flex items-center justify-center">
+        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center">
+          Price <FaSort className="ml-1" />
+        </button>
+      </div>
+      <div className="col-span-1 m-2 border">
+        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
+          Discount
+        </button>
+      </div>
+      <div className="col-span-2 m-2 border">
+        <button
+          className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center"
+          onClick={toggleSidebar}
+        >
+          <FaFilter className="mr-2" /> More Options
+        </button>
+      
+      </div>
+      {sidebarOpen && (
+          <div className="fixed inset-0 z-50">
+            <div className="absolute top-0 right-0 w-64 h-full bg-white shadow-md">
+              <div className="flex justify-end p-2">
+                <button
+                  className="text-gray-500 hover:text-gray-800"
+                  onClick={toggleSidebar}
+                >
+                  <FaTimes />
+                </button>
+              </div>
+              <div className="p-4 "> <span className="font-bold text-2xl text-blue-900"> Filter </span>
+              <div>
+              <div className="space-y-2  mt-5 w-full pr-5 ">
+            {/**Brand Container */}
+            <BrandFilter
+            selectedBrands={selectedBrands}
+            handleFilterChange={handleFilterChange}
+          />
+            {/** Colour Container */}
+            <ColorFilter
+            selectedColors={selectedColors}
+            handleFilterChange={handleFilterChange}
+          />
+           {/** Category Container */}
+           <CategoryFilter></CategoryFilter>
+          </div>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        )}
+        </div>
         {/* Products */}
         <div className="md:col-span-5 flex flex-col justify-center">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
