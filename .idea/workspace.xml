@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
+    <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/checkout/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/checkout/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MobileBillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileBillingContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,10 +115,24 @@
       <workItem from="1714100803399" duration="13095000" />
       <workItem from="1714357797982" duration="10593000" />
     </task>
+    <task id="LOCAL-00001" summary="new updates">
+      <option name="closed" value="true" />
+      <created>1714602416331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714602416331</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test image" />
+    <MESSAGE value="new updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="new updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
