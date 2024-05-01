@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/checkout/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/checkout/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileBillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileBillingContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.module.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarkRMNDZ&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FredMadrona/nextJS-HardwaresPH&quot;,
+    &quot;accountId&quot;: &quot;d055f7ee-5c7a-4bb9-9191-3f36403749d5&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2cUDLGnXPMLtobcMklw0JUOmFrm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "update/product-cart-and-checkout-responsiveness",
+    "last_opened_file_path": "C:/laragon/www/nextJS-HardwaresPH",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.lint.executor": "Run",
+    "npm.prettier.executor": "Run",
+    "npm.run linter.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\HWPH-Proj\\nextJS-HardwaresPH\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.prettier">
+    <configuration name="lint" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prettier" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.lint" />
+      <item itemvalue="npm.prettier" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="" />
+      <created>1708157207098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708157207098</updated>
+      <workItem from="1708157208609" duration="8814000" />
+      <workItem from="1708323501763" duration="15733000" />
+      <workItem from="1708391216803" duration="16383000" />
+      <workItem from="1713503954179" duration="3135000" />
+      <workItem from="1713610334337" duration="1457000" />
+      <workItem from="1713839506837" duration="5733000" />
+      <workItem from="1713883273328" duration="1337000" />
+      <workItem from="1714100803399" duration="13095000" />
+      <workItem from="1714357797982" duration="10593000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

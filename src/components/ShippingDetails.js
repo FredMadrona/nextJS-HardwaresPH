@@ -2,7 +2,7 @@ import React from "react";
 
 const ShippingDetails = () => {
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="w-full grid grid-cols-12 bg-gray-100 pt-5">
         <div className="col-span-1 "> </div>
         <div className="col-span-10 w-full lg:justify-start justify-center  flex rounded p-5 ">
@@ -32,7 +32,10 @@ const ShippingDetails = () => {
               </h1>
               <div className="flex md:flex-row  flex-column">
                 <div className="my-3   w-full">
-                  <p className="text-black md:text-sm text-xs font-semibold"> Country* </p>
+                  <p className="text-black md:text-sm text-xs font-semibold">
+                    {" "}
+                    Country*{" "}
+                  </p>
                   <input
                     type="text"
                     placeholder="Philippines"
@@ -52,7 +55,10 @@ const ShippingDetails = () => {
                 </div>
               </div>
               <div className="my-3  w-full">
-                <p className="text-black md:text-sm text-xs font-semibold"> Post Code </p>
+                <p className="text-black md:text-sm text-xs font-semibold">
+                  {" "}
+                  Post Code{" "}
+                </p>
                 <input
                   type="text"
                   placeholder=""
@@ -64,7 +70,9 @@ const ShippingDetails = () => {
               </button>
               <div className="pt-5 flex flex-row gap-[100px]">
                 <div className="flex align-start flex-col">
-                  <p className="text-gray-400  md:text-sm text-xs">Regular Post - FREE</p>
+                  <p className="text-gray-400  md:text-sm text-xs">
+                    Regular Post - FREE
+                  </p>
                   <div>
                     <input
                       type="radio"
@@ -73,13 +81,18 @@ const ShippingDetails = () => {
                       value="regular"
                       className="mr-2 cursor-pointer"
                     />
-                    <label htmlFor="regularPost" className="font-semibold md:text-sm text-xs">
+                    <label
+                      htmlFor="regularPost"
+                      className="font-semibold md:text-sm text-xs"
+                    >
                       P0.00
                     </label>
                   </div>
                 </div>
                 <div className="flex align-start flex-col">
-                  <p className="text-gray-400  md:text-sm text-xs">Express Post</p>
+                  <p className="text-gray-400  md:text-sm text-xs">
+                    Express Post
+                  </p>
                   <div>
                     <input
                       type="radio"
@@ -88,14 +101,17 @@ const ShippingDetails = () => {
                       value="regular"
                       className="mr-2 cursor-pointer"
                     />
-                    <label htmlFor="regularPost" className="font-semibold md:text-sm text-xs">
+                    <label
+                      htmlFor="regularPost"
+                      className="font-semibold md:text-sm text-xs"
+                    >
                       P0.00
                     </label>
                   </div>
                 </div>
               </div>
               <button className=" md:w-[40%] w-[70%]   bg-black text-white font-semibold hover:shadow-sm p-2 px-5 md:text-sm text-xs my-5">
-               Select Shipping
+                Select Shipping
               </button>
             </div>
           </div>

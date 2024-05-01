@@ -1,26 +1,54 @@
+// Products.js
 "use client";
+import React, { useState, useEffect, Suspense } from "react";
+import { CartProvider } from "@/components/CartContext";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
-import ProductGrid from "@/components/ProductGrid";
+import Footer from "@/components/Footer";
 import cartData from "@/components/cartData";
-import React, { useState } from "react";
 import withAuth from "@/hoc/withAuth";
 
-function products() {
-  const [cartItems, setCartItems] = useState(cartData);
+const ProductGrid = React.lazy(() => import("@/components/ProductGrid"));
+
+function Products() {
+  const [cartItems, setCartItems] = useState(() => {
+    // Check if localStorage is defined (client-side)
+    if (typeof window !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : cartData;
+    } else {
+      // Return default cart items if localStorage is not defined
+      return cartData;
+    }
+  });
+
+  useEffect(() => {
+    // Check if localStorage is defined (client-side)
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
+    // Update local storage with the new cart
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    }
   };
+
   return (
-    <div>
-     <Navbar cartItems={cartItems} updateCart={updateCart}/>
-       <HorizontalMenu />
-      <ProductGrid/>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartProvider>
+        <Navbar cartItems={cartItems} updateCart={updateCart} />
+        <HorizontalMenu />
+
+        <ProductGrid />
+
+        <Footer />
+      </CartProvider>
+    </Suspense>
   );
 }
 
-
-
-export default withAuth(products);
+export default withAuth(Products);
