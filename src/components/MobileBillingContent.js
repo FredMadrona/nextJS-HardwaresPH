@@ -72,7 +72,7 @@ const MobileBillingContent = ({ updateCart }) => {
       {cartItems.map((item, index) => (
         <div key={index} className="flex items-center mb-4">
           <div className="flex items-center">
-            <Image src={item.image} alt={item.name} className="w-12 h-12 mr-4" />
+            <Image src={item.image} alt={item.name} className="w-12 h-12 mr-4" width={150} height={150}/>
             <div>
               <p className="text-gray-500 ">{item.name}</p>
               <p className="text-gray-500 font-semibold">
