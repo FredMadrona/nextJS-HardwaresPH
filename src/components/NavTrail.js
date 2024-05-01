@@ -6,7 +6,7 @@ const NavTrail = () => {
   const MenuItems = searchParams.get("menuItems");
 
   return (
-    <div className="w-full h-40 grid grid-cols-12 items-center px-5">
+    <div className="w-full h-40 hidden md:grid grid-cols-12 items-center px-5">
       <div className="col-span-1"></div>
       <div className="md:col-span-6 col-span-8 flex flex-col md:ml-3  pl-5 ">
         <h2 className="font-semibold text-xl pb-2">Catalog </h2>
