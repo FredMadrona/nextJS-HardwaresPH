@@ -39,7 +39,6 @@ const ProductGrid = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-
   useEffect(() => {
     const filterProducts = () => {
       let filteredProducts = allProducts; // Assuming `allProducts` is the initial list of products
@@ -47,35 +46,35 @@ const ProductGrid = () => {
       // Filter by selected colors
       if (selectedColors.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedColors.includes(product.color)
+          selectedColors.includes(product.color),
         );
       }
 
       // Filter by selected brands
       if (selectedBrands.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedBrands.includes(product.brand)
+          selectedBrands.includes(product.brand),
         );
       }
 
       // Filter by selected price range
       if (selectedPriceRange.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          selectedPriceRange.includes(product.priceRange)
+          selectedPriceRange.includes(product.priceRange),
         );
       }
 
       // Filter by selected menu items
       if (MenuItems !== "") {
         filteredProducts = filteredProducts.filter(
-          (product) => product.category === MenuItems
+          (product) => product.category === MenuItems,
         );
       }
 
       // Filter by search query
       if (searchQuery) {
         filteredProducts = filteredProducts.filter((product) =>
-          product.name.toLowerCase().includes(searchQuery.toLowerCase())
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()),
         );
       }
 
@@ -111,14 +110,13 @@ const ProductGrid = () => {
     } else if (filterType === "priceRange") {
       if (selectedPriceRange.includes(value)) {
         setSelectedPriceRange(
-          selectedPriceRange.filter((priceRange) => priceRange !== value)
+          selectedPriceRange.filter((priceRange) => priceRange !== value),
         );
       } else {
         setSelectedPriceRange([...selectedPriceRange, value]);
       }
     }
   };
-
 
   // State to track the current page
   const [currentPage, setCurrentPage] = useState(1);
@@ -143,12 +141,11 @@ const ProductGrid = () => {
 
   return (
     <div>
-      
       <div className="bg-gray-100 p-4 grid md:grid-cols-9 grid-cols-1 gap-4 items-start">
         <div className="md:col-span-1">
-        <div className="bg-slate-100 px-5 pb-0 pt-5  md:hidden">
-        <span className="text-2xl text-black font-bold ">{MenuItems}</span>
-      </div>
+          <div className="bg-slate-100 px-5 pb-0 pt-5  md:hidden">
+            <span className="text-2xl text-black font-bold ">{MenuItems}</span>
+          </div>
         </div>
         {/* Filter Checkbox */}
         <div className=" col-span-3 lg:col-span-2 hidden md:flex flex-col start  items-start">
@@ -158,81 +155,84 @@ const ProductGrid = () => {
           <div className="space-y-2  mt-5 w-full pr-5 ">
             {/**Brand Container */}
             <BrandFilter
-            selectedBrands={selectedBrands}
-            handleFilterChange={handleFilterChange}
-          />
+              selectedBrands={selectedBrands}
+              handleFilterChange={handleFilterChange}
+            />
             {/** Colour Container */}
             <ColorFilter
-            selectedColors={selectedColors}
-            handleFilterChange={handleFilterChange}
-          />
+              selectedColors={selectedColors}
+              handleFilterChange={handleFilterChange}
+            />
 
             {/** Price */}
             <PriceFilter
-            selectedPriceRange={selectedColors}
-            handleFilterChange={handleFilterChange}
-          />
+              selectedPriceRange={selectedColors}
+              handleFilterChange={handleFilterChange}
+            />
           </div>
         </div>
-         {/* Filtering options in Mobile Version */}
+        {/* Filtering options in Mobile Version */}
         <div className="md:hidden grid grid-cols-5 w-full relative">
-      <div className="col-span-1 m-2 border">
-        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
-          Top Sales
-        </button>
-      </div>
-      <div className="col-span-1 m-2 border flex items-center justify-center">
-        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center">
-          Price <FaSort className="ml-1" />
-        </button>
-      </div>
-      <div className="col-span-1 m-2 border">
-        <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
-          Discount
-        </button>
-      </div>
-      <div className="col-span-2 m-2 border">
-        <button
-          className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center"
-          onClick={toggleSidebar}
-        >
-          <FaFilter className="mr-2" /> More Options
-        </button>
-      
-      </div>
-      {sidebarOpen && (
-          <div className="fixed inset-0 z-50">
-            <div className="absolute top-0 right-0 w-64 h-full bg-white shadow-md">
-              <div className="flex justify-end p-2">
-                <button
-                  className="text-gray-500 hover:text-gray-800"
-                  onClick={toggleSidebar}
-                >
-                  <FaTimes />
-                </button>
-              </div>
-              <div className="p-4 "> <span className="font-bold text-2xl text-blue-900"> Filter </span>
-              <div>
-              <div className="space-y-2  mt-5 w-full pr-5 ">
-            {/**Brand Container */}
-            <BrandFilter
-            selectedBrands={selectedBrands}
-            handleFilterChange={handleFilterChange}
-          />
-            {/** Colour Container */}
-            <ColorFilter
-            selectedColors={selectedColors}
-            handleFilterChange={handleFilterChange}
-          />
-           {/** Category Container */}
-           <CategoryFilter></CategoryFilter>
+          <div className="col-span-1 m-2 border">
+            <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
+              Top Sales
+            </button>
           </div>
-              </div>
-              
+          <div className="col-span-1 m-2 border flex items-center justify-center">
+            <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center">
+              Price <FaSort className="ml-1" />
+            </button>
+          </div>
+          <div className="col-span-1 m-2 border">
+            <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
+              Discount
+            </button>
+          </div>
+          <div className="col-span-2 m-2 border">
+            <button
+              className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center"
+              onClick={toggleSidebar}
+            >
+              <FaFilter className="mr-2" /> More Options
+            </button>
+          </div>
+          {sidebarOpen && (
+            <div className="fixed inset-0 z-50">
+              <div className="absolute top-0 right-0 w-64 h-full bg-white shadow-md">
+                <div className="flex justify-end p-2">
+                  <button
+                    className="text-gray-500 hover:text-gray-800"
+                    onClick={toggleSidebar}
+                  >
+                    <FaTimes />
+                  </button>
+                </div>
+                <div className="p-4 ">
+                  {" "}
+                  <span className="font-bold text-2xl text-blue-900">
+                    {" "}
+                    Filter{" "}
+                  </span>
+                  <div>
+                    <div className="space-y-2  mt-5 w-full pr-5 ">
+                      {/**Brand Container */}
+                      <BrandFilter
+                        selectedBrands={selectedBrands}
+                        handleFilterChange={handleFilterChange}
+                      />
+                      {/** Colour Container */}
+                      <ColorFilter
+                        selectedColors={selectedColors}
+                        handleFilterChange={handleFilterChange}
+                      />
+                      {/** Category Container */}
+                      <CategoryFilter></CategoryFilter>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         </div>
         {/* Products */}
         <div className="md:col-span-5 flex flex-col justify-center">
