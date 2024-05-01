@@ -16,7 +16,7 @@ const LogoutButton = ({ isMobile }) => {
       className="text-primary  mr-2 md:mr-1 lg:inline-flex"
       onClick={handleLogout}
     >
-      <BsBoxArrowRight className="h-7 w-7  mt-1" />
+      <BsBoxArrowRight className="md:h-7 md:w-7 h-6 w-6 md:mt-1" />
       {/* <span className="hidden lg:flex ml-3"> Logout </span> */}
     </button>
   );

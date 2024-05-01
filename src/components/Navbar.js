@@ -209,9 +209,9 @@ const Navbar = ({ cartItems }) => {
       {/* End of Column 2 */}
 
       {/* Column 3: Login and Cart */}
-      <div className="flex flex-no-wrap items-start justify-center lg:gap-10 gap-3 w-full  col-span-4 ">
+      <div className="flex flex-no-wrap items-start justify-center lg:gap-10 md:gap-3 gap-5 w-full  col-span-4 ">
         <div className="flex flex-row items-center ">
-          <BsPerson className="h-8 w-8  text-primary cursor-pointer " />
+          <BsPerson className="md:h-8 md:w-8 h-6 w-6  text-primary cursor-pointer " />
           {` `}
           <span
             href="/"
@@ -227,7 +227,7 @@ const Navbar = ({ cartItems }) => {
           <div className="relative flex flex-row items-center ">
             <a onClick={Sample}>
               <svg
-                className="h-10 w-10 text-primary cursor-pointer "
+                className="md:h-10 md:w-10 h-8 w-8  text-primary cursor-pointer "
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -238,7 +238,7 @@ const Navbar = ({ cartItems }) => {
               </svg>
             </a>
             {/* items in cart counter */}
-            <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-sm">
+            <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full md:text-sm text-xs">
               {totalItemsInCart}
             </span>
           </div>
