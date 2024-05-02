@@ -2,8 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import background from "/public/forgotPasswordBG.svg";
-import image from "/public/FPicon2.svg";
 import { useState } from "react";
 import Link from "next/link";
 import { Spinner } from "@nextui-org/spinner";
@@ -30,7 +28,7 @@ const ForgotPassword = () => {
       <div className="relative w-full">
         <div className="absolute -z-10 w-full">
           <Image
-            src={background}
+            src="/forgotPasswordBG.svg"
             alt="background image"
             className="w-full"
             width={1000}
@@ -43,7 +41,7 @@ const ForgotPassword = () => {
               {" "}
               {/* Centering the Image */}
               <Image
-                src={image}
+                src="/FPicon2.svg"
                 alt="Forgot Password Icon"
                 width={200}
                 height={200}
