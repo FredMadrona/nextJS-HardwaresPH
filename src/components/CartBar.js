@@ -25,7 +25,7 @@ const CartBar = ({ cartItems, updateCart }) => {
 
     return (
         <nav
-            className="  sticky bottom-0 w-full  ">
+            className="  sticky bottom-0 w-full  lg:hidden ">
             <div className="flex justify-between align-center border-b  pb-2">
                   <span className="text-black mx-2 mt-1 md:text-md text-lg hover:text-gray-600 cursor-pointer font-semibold "
                         style={{ marginLeft: '20px' }} >
