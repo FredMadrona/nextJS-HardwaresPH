@@ -161,7 +161,7 @@ const CartContent = ({ cartItems, updateCart }) => {
               </div>
               {/* Other cart content */}
               {cartItems.length > 0 && ( // Conditionally render the button if cartItems array is not empty
-                <div className="w-full flex justify-center mt-1 p-3">
+                <div className="w-full flex justify-center mt-1 p-3 hidden md:block">
                   <Link href="/checkout?username=admin" className="w-full">
                     <button className="w-full bg-red-600 py-3 rounded border text-white hover:shadow-md hover:bg-red-700">
                       <p className="font-semibold hover:underline text-xs md:text-md">

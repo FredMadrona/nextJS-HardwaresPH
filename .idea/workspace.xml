@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/checkout/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/checkout/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BillingContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MobileBillingContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileBillingContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/cart/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,7 @@
     "npm.lint.executor": "Run",
     "npm.prettier.executor": "Run",
     "npm.run linter.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\HWPH-Proj\\nextJS-HardwaresPH\\node_modules\\prettier",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\GLENZ\\AppData\\Roaming\\npm\\node_modules\\prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
@@ -121,7 +114,8 @@
       <workItem from="1713839506837" duration="5733000" />
       <workItem from="1713883273328" duration="1337000" />
       <workItem from="1714100803399" duration="13095000" />
-      <workItem from="1714357797982" duration="10593000" />
+      <workItem from="1714357797982" duration="12016000" />
+      <workItem from="1714617050943" duration="2404000" />
     </task>
     <servers />
   </component>
