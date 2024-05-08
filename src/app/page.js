@@ -116,7 +116,7 @@ const LoginPage = () => {
               <form className="w-full flex justify-center flex-col gap-3 mx-1">
                 <div className="flex-col ">
                   <div className="flex justify-between text-sm text-gray-700 font-semibold mx-4">
-                    <span> Username </span>
+                    <span> Email or number </span>
                   </div>
                   <div className="relative">
                     <input
@@ -124,7 +124,7 @@ const LoginPage = () => {
                       type="text"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Username"
+                      placeholder=""
                       name="username"
                     />
                   </div>
@@ -141,7 +141,7 @@ const LoginPage = () => {
                   <div className="relative">
                     <input
                       className="border p-1 pl-3 mx-3 my-1 rounded bg-gray-100 focus:outline-none w-[95%]"
-                      placeholder="Enter password"
+                      placeholder=""
                       type={showPassword ? "text" : "password"}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
