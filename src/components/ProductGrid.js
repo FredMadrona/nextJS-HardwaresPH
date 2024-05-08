@@ -141,7 +141,7 @@ const ProductGrid = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 p-4 grid md:grid-cols-9 grid-cols-1 gap-4 items-start">
+      <div className="bg-gray-100 md:p-4 grid md:grid-cols-9 grid-cols-1 gap-4 items-start">
         <div className="md:col-span-1">
           <div className="bg-slate-100 px-5 pb-0 pt-5  md:hidden">
             <span className="text-2xl text-black font-bold ">{MenuItems}</span>
@@ -172,23 +172,23 @@ const ProductGrid = () => {
           </div>
         </div>
         {/* Filtering options in Mobile Version */}
-        <div className="md:hidden grid grid-cols-5 w-full relative">
-          <div className="col-span-1 m-2 border">
+        <div className="md:hidden grid grid-cols-5 px-2 w-full gap-1 relative">
+          <div className="col-span-1">
             <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
               Top Sales
             </button>
           </div>
-          <div className="col-span-1 m-2 border flex items-center justify-center">
+          <div className="col-span-1   flex items-center justify-center">
             <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center">
               Price <FaSort className="ml-1" />
             </button>
           </div>
-          <div className="col-span-1 m-2 border">
+          <div className="col-span-1 ">
             <button className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md">
               Discount
             </button>
           </div>
-          <div className="col-span-2 m-2 border">
+          <div className="col-span-2 ">
             <button
               className="bg-gray-200 shadow-sm text-blue-900 font-semibold text-xs text-center border w-full p-2 rounded hover:bg-gray-300 hover:text-blue-800 hover:shadow-md flex items-center justify-center"
               onClick={toggleSidebar}
@@ -235,7 +235,7 @@ const ProductGrid = () => {
           )}
         </div>
         {/* Products */}
-        <div className="md:col-span-5 flex flex-col justify-center">
+        <div className="md:col-span-5 flex flex-col justify-center px-3">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {currentProducts.map((product) => (
               <div
@@ -251,13 +251,13 @@ const ProductGrid = () => {
                 />
                 {/* <Img fluid={product.img} alt={product.name} /> */}
 
-                <p className="text-sm text-gray-500 mb-3 h-10">
+                <p className="text-xs text-gray-500 mb-3 h-10 py-2 ">
                   {product.name}
                 </p>
-                <div className="flex justify-between mb-3">
-                  <p className="text-sm font-semibold">{product.price}</p>
+                <div className="flex justify-between mb-3 pt-2">
+                  <p className="text-sm font-semibold ">{product.price}</p>
                   <p>
-                    <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
+                    <BsHeart className="text-gray-500 mt-1 hover:cursor-pointer hover:text-primary" />
                   </p>
                 </div>
 
