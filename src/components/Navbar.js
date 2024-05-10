@@ -179,12 +179,12 @@ const Navbar = ({ cartItems }) => {
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4">
       {/* Column 1: Logo */}
-      <div className="flex items-center justify-center col-span-3 md:col-span-4 ">
+      <div className="flex items-center justify-center pl-1 md:p-0 col-span-2 md:col-span-4 ">
         <Link href="/home?username=admin">
           <Image
             src={isMobile ? "/Hardware_Logo_Mobile.png" : "/Hardware_Logo.svg"}
             height={isMobile ? 50 : 100} // Set different heights for mobile and desktop
-            width={isMobile ? 75 : 200} // Set different widths for mobile and desktop
+            width={isMobile ? 60 : 200} // Set different widths for mobile and desktop
             alt="Hardwares Logo"
           />
         </Link>
@@ -192,7 +192,7 @@ const Navbar = ({ cartItems }) => {
       {/* End of Column 1 */}
 
       {/* Column 2: Search */}
-      <div className="flex items center md:col-span-4 col-span-5">
+      <div className="flex items center md:col-span-4 col-span-6">
         <div className="relative flex items-start q w-full ">
           <input
             type="text"
@@ -209,7 +209,7 @@ const Navbar = ({ cartItems }) => {
       {/* End of Column 2 */}
 
       {/* Column 3: Login and Cart */}
-      <div className="flex flex-no-wrap items-start justify-center lg:gap-10 md:gap-3 gap-5 w-full  col-span-4 ">
+      <div className="flex flex-no-wrap items-start justify-center md:p-1 py-4 lg:gap-10 md:gap-3 gap-3 w-full  col-span-4 ">
         <div className="flex flex-row items-center ">
           <BsPerson className="md:h-8 md:w-8 h-6 w-6  text-primary cursor-pointer " />
           {` `}

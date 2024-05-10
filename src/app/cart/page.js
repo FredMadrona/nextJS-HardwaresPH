@@ -8,6 +8,7 @@ import CartNavTrail from "@/components/CartNavTrail";
 import CartContent from "@/components/CartContent";
 import ShippingDetails from "@/components/ShippingDetails";
 import Footer from "@/components/Footer";
+import CartBar from "@/components/CartBar";
 import cartData from "@/components/cartData";
 import withAuth from "@/hoc/withAuth";
 
@@ -52,6 +53,7 @@ function Checkout() {
         <CartNavTrail />
         <CartContent cartItems={cartItems} updateCart={updateCart} />
         <ShippingDetails />
+        <CartBar cartItems={cartItems} updateCart={updateCart} />
         <Footer />
       </CartProvider>
     </Suspense>

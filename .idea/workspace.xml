@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="712d5072-2767-437a-9d63-4234e5752a9a" name="Changes" comment="new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/cart/page.js" afterDir="false" />
+=======
+>>>>>>> 99e7271f73a64561072cdc07bdf9acb445aa7b3f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "update/product-cart-and-checkout-responsiveness",
+    "last_opened_file_path": "C:/laragon/www/nextJS-HardwaresPH",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.lint.executor": "Run",
+    "npm.prettier.executor": "Run",
+    "npm.run linter.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\GLENZ\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -61,6 +85,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 99e7271f73a64561072cdc07bdf9acb445aa7b3f
   }
 }</component>
   <component name="RunManager" selected="npm.prettier">
@@ -113,7 +138,8 @@
       <workItem from="1713839506837" duration="5733000" />
       <workItem from="1713883273328" duration="1337000" />
       <workItem from="1714100803399" duration="13095000" />
-      <workItem from="1714357797982" duration="10593000" />
+      <workItem from="1714357797982" duration="12016000" />
+      <workItem from="1714617050943" duration="2404000" />
     </task>
     <task id="LOCAL-00001" summary="new updates">
       <option name="closed" value="true" />
