@@ -89,8 +89,8 @@ const ProductOptions = () => {
         </span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-[20px] ">
-       {/* <ImageSliderForProduct images={allProducts[ProductIndex].img} />  */}
-        <div className="cols-span-1 lg:flex md:flex-col flex-row hidden">
+        <ImageSliderForProduct images={allProducts[ProductIndex].img} />  
+        <div className="cols-span-1 md:flex flex-col hidden">
           <div className="flex w-[100%] p-2 justify-center">
             <Image
               src={allProducts[ProductIndex].img}
@@ -98,7 +98,7 @@ const ProductOptions = () => {
               width={50}
               height={50}
               alt="Hardware Image"
-              className=" cursor-pointer "
+              className=" cursor-pointer p-5"
             />
             {/* <StaticImage
               src="../ProductImages/Hardware04.jpg"
@@ -106,7 +106,7 @@ const ProductOptions = () => {
             ></StaticImage> */}
           </div>
           <div className="">
-            <div className="flex flex-row gap-3 lg:w-full w-[20%] my-auto items-center lg:px-[5%]  h-auto ">
+            <div className="flex flex-row gap-3 lg:w-full w-[50%] my-auto items-center lg:px-[5%] mx-auto h-auto ">
             <div className=" w-auto border hover:shadow-md border-black lg:p-3 p-1 ">                <Image
                   src={allProducts[ProductIndex].img}
                   layout="responsive"

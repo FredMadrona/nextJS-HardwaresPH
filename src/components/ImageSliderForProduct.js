@@ -1,19 +1,51 @@
-import { useState } from 'react';
-// import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 const ImageSliderForProduct = ({ images }) => {
 
 
 
   return (
-    <div className="relative block border border-black  md:hidden">
-     <Image
-     src={images}
-     height={100}
-     width={100}
-     alt='productImage'   
-     />
+    <div className="md:hidden w-full  mx-auto" >
+<Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide >
+          <Image
+            src={images}
+            alt='Product Image'
+            height={500}
+            width={500}
+            className="mx-auto"
+            ></Image>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src={images}
+            alt='Product Image'
+            height={500}
+            width={500}
+             className="mx-auto"
+            ></Image>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            src={images}
+            alt='Product Image'
+            height={500}
+            width={500}
+             className="mx-auto"
+            ></Image>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };
