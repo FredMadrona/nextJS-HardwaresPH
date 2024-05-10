@@ -1,49 +1,46 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 const ImageSliderForProduct = ({ images }) => {
-
-
-
   return (
-    <div className="md:hidden w-full  mx-auto" >
-<Swiper
+    <div className="md:hidden w-full  mx-auto">
+      <Swiper
         pagination={{
           dynamicBullets: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide >
+        <SwiperSlide>
           <Image
             src={images}
-            alt='Product Image'
+            alt="Product Image"
             height={500}
             width={500}
             className="mx-auto"
-            ></Image>
+          ></Image>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             src={images}
-            alt='Product Image'
+            alt="Product Image"
             height={500}
             width={500}
-             className="mx-auto"
-            ></Image>
+            className="mx-auto"
+          ></Image>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             src={images}
-            alt='Product Image'
+            alt="Product Image"
             height={500}
             width={500}
-             className="mx-auto"
-            ></Image>
+            className="mx-auto"
+          ></Image>
         </SwiperSlide>
       </Swiper>
     </div>

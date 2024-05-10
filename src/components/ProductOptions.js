@@ -89,7 +89,7 @@ const ProductOptions = () => {
         </span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-[20px] ">
-        <ImageSliderForProduct images={allProducts[ProductIndex].img} />  
+        <ImageSliderForProduct images={allProducts[ProductIndex].img} />
         <div className="cols-span-1 md:flex flex-col hidden">
           <div className="flex w-[100%] p-2 justify-center">
             <Image
@@ -107,7 +107,9 @@ const ProductOptions = () => {
           </div>
           <div className="">
             <div className="flex flex-row gap-3 lg:w-full w-[50%] my-auto items-center lg:px-[5%] mx-auto h-auto ">
-            <div className=" w-auto border hover:shadow-md border-black lg:p-3 p-1 ">                <Image
+              <div className=" w-auto border hover:shadow-md border-black lg:p-3 p-1 ">
+                {" "}
+                <Image
                   src={allProducts[ProductIndex].img}
                   layout="responsive"
                   width={100}
@@ -173,79 +175,87 @@ const ProductOptions = () => {
               {allProducts[ProductIndex].price}
             </p>
           </div>
-        <div className="flex md:flex-col flex-row  ">
-        <div className="lg:my-5 my-2 w-full md:order-1 order-last"> {/* size container */}
-            <p className="font-semibold lg:text-md text-sm cursor-pointer">
+          <div className="flex md:flex-col flex-row  ">
+            <div className="lg:my-5 my-2 w-full md:order-1 order-last">
               {" "}
-              Sizes:
-            </p>
-            <div
-              onClick={toggleDropdown}
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === "Space") {
-                  toggleDropdown();
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              className="border border-gray-400 p-1 px-2 flex items-between justify-between  md:w-1/2 w-auto lg:mt-5 mt-1 cursor-pointer"
-            >
-              {selectedOption ? selectedOption : "Select Size"}
-              {isOpen ? (
-                <FaChevronDown className=" mt-1 hover:cursor-pointer" />
-              ) : (
-                <FaChevronUp className=" mt-1 hover:cursor-pointer" />
+              {/* size container */}
+              <p className="font-semibold lg:text-md text-sm cursor-pointer">
+                {" "}
+                Sizes:
+              </p>
+              <div
+                onClick={toggleDropdown}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter" || e.key === "Space") {
+                    toggleDropdown();
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                className="border border-gray-400 p-1 px-2 flex items-between justify-between  md:w-1/2 w-auto lg:mt-5 mt-1 cursor-pointer"
+              >
+                {selectedOption ? selectedOption : "Select Size"}
+                {isOpen ? (
+                  <FaChevronDown className=" mt-1 hover:cursor-pointer" />
+                ) : (
+                  <FaChevronUp className=" mt-1 hover:cursor-pointer" />
+                )}
+              </div>
+              {/*   */}
+              {isOpen && (
+                <ul className="bg-white border border-gray-300 w-1/2 cursor-pointer shadow-lg">
+                  {options.map((option) => (
+                    <li
+                      key={option}
+                      className={
+                        ("p-2 cursor-pointer hover:bg-gray-200 text-end",
+                        option === selectedOption && "bg-gray-200")
+                      }
+                    >
+                      <button
+                        type="button"
+                        onClick={() => selectOption(option)}
+                        className="w-full h-full"
+                      >
+                        {option}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
               )}
             </div>
-
-            {/*   */}
-            {isOpen && (
-              <ul className="bg-white border border-gray-300 w-1/2 cursor-pointer shadow-lg">
-                {options.map((option) => (
-                  <li
-                    key={option}
-                    className={
-                      ("p-2 cursor-pointer hover:bg-gray-200 text-end",
-                      option === selectedOption && "bg-gray-200")
-                    }
-                  >
-                    <button
-                      type="button"
-                      onClick={() => selectOption(option)}
-                      className="w-full h-full"
-                    >
-                      {option}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <div className="md:mt-5 mt-2 w-full md:order-last order-1 "> {/* colors container */}
-            <p className="font-semibold lg:text-md text-sm mb-5"> Colours: </p>
-            <div className="flex flex-row md:gap-5 gap-3 ">
-              <button
-                className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
-                style={{ backgroundColor: "#ffcc99" }}
-                aria-label="Color: Light Orange"
-              ></button>
-              <button
-                className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
-                style={{ backgroundColor: "#333333" }}
-                aria-label="Color: Dark Gray"
-              ></button>
-              <button
-                className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
-                style={{ backgroundColor: "#666633" }}
-                aria-label="Color: Olive Green"
-              ></button>
+            <div className="md:mt-5 mt-2 w-full md:order-last order-1 ">
+              {" "}
+              {/* colors container */}
+              <p className="font-semibold lg:text-md text-sm mb-5">
+                {" "}
+                Colours:{" "}
+              </p>
+              <div className="flex flex-row md:gap-5 gap-3 ">
+                <button
+                  className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
+                  style={{ backgroundColor: "#ffcc99" }}
+                  aria-label="Color: Light Orange"
+                ></button>
+                <button
+                  className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
+                  style={{ backgroundColor: "#333333" }}
+                  aria-label="Color: Dark Gray"
+                ></button>
+                <button
+                  className="rounded-full cursor-pointer p-4 md:p-5 border border-gray-400"
+                  style={{ backgroundColor: "#666633" }}
+                  aria-label="Color: Olive Green"
+                ></button>
+              </div>
             </div>
           </div>
-        </div>
           <div className="mt-5  w-full ">
             <p className="font-semibold text-md mb-3"> Quantity: </p>
             <div className="flex flex-row lg:w-3/4 lg:justify-between justify-start gap-3">
-               <div className="cols-span-1 rounded flex flex-row"> {/* Quantity button container */}
+              <div className="cols-span-1 rounded flex flex-row">
+                {" "}
+                {/* Quantity button container */}
                 <button
                   className="text-md px-[20px] text-gray-500 border border-gray-500 flex items-center justify-center"
                   onClick={decreaseQuantity}
@@ -253,7 +263,6 @@ const ProductOptions = () => {
                   {" "}
                   -{" "}
                 </button>
-
                 <span className="text-md  border border-gray-500 px-[20px] text-lg flex items-center">
                   {" "}
                   {quantity}
@@ -266,7 +275,9 @@ const ProductOptions = () => {
                   +{" "}
                 </button>
               </div>
-              <div className="w-full">  {/* Add to cart button container */}
+              <div className="w-full">
+                {" "}
+                {/* Add to cart button container */}
                 <Link href="/cart?username=admin">
                   <button
                     className="bg-black text-white font-semibold lg:text-sm text-xs text-center p-2  lg:w-[60%] md:w-[40%] w-full"

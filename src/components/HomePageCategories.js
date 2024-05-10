@@ -80,7 +80,7 @@ export default function HomePagecategories() {
             />
             <span className="text-lg text-center text-gray-500">
               {" "}
-             Outdoor Lighting{" "}
+              Outdoor Lighting{" "}
             </span>
           </div>
           <div
@@ -127,7 +127,7 @@ export default function HomePagecategories() {
               {" "}
               Smart Products{" "}
             </span>
-          </div> 
+          </div>
           <div
             className="border text-center bg-white p-3 col-span-1 flex flex-col justify-between cursor-pointer"
             onClick={() => handleMenuItemClick("Tile Products")}
@@ -142,8 +142,8 @@ export default function HomePagecategories() {
               {" "}
               Tile Products{" "}
             </span>
-          </div>      
-           <div
+          </div>
+          <div
             className="border text-center bg-white p-3 col-span-1 flex flex-col justify-between cursor-pointer"
             onClick={() => handleMenuItemClick("Others")}
           >
@@ -153,10 +153,7 @@ export default function HomePagecategories() {
               height={150}
               alt="Door Stopper Image"
             />
-            <span className="text-lg text-center text-gray-500">
-              {" "}
-             Others{" "}
-            </span>
+            <span className="text-lg text-center text-gray-500"> Others </span>
           </div>
         </div>
         <div className="md:col-span-2 hidden md:flex"></div>
