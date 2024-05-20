@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
-import LoginButton from "./LoginButton";
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
-import { BsCart2 } from "react-icons/bs";
+import AuthButton from "./AuthButton";
+
 const Nav = async () => {
   const session = await getServerSession(options);
 
@@ -34,7 +34,7 @@ const Nav = async () => {
         {/* End of Column 2 */}
       </div>
   {/* Column 3: Login and Cart */}
-  <div className="flex flex-no-wrap items-start justify-center md:p-1 py-4 lg:gap-10 md:gap-3 gap-3 w-full  col-span-4 ">    <LoginButton session={session} />
+  <div className="flex flex-no-wrap items-start justify-center md:p-1 py-4 lg:gap-10 md:gap-3 gap-3 w-full  col-span-4 ">    <AuthButton session={session} />
       </div>
       {/* End of Column 3 */}
 

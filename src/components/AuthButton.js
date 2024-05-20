@@ -1,7 +1,6 @@
-// components/LoginButton.js
 import Link from 'next/link';
 
-const LoginButton = ({ session }) => {
+const AuthButton = ({ session }) => {
     return session ? (
         <Link href="/api/auth/signout?callbackUrl=/"> Logout </Link>
     ) : (
@@ -9,4 +8,4 @@ const LoginButton = ({ session }) => {
     );
 };
 
-export default LoginButton;
+export default AuthButton;
