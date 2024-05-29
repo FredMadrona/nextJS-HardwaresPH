@@ -243,8 +243,6 @@ const Navbar = ({ cartItems }) => {
           </div>
           {/* <span className="hidden md:flex ml-2 "> Cart </span> */}
         </div>
-
-
       </div>
       {/* End of Column 3 */}
     </nav>

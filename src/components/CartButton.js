@@ -6,8 +6,7 @@ const CartButton = async () => {
   const session = await getServerSession(options);
 
   return session ? (
-  
- <div className="flex justify-evenly items-center w-full ">
+    <div className="flex justify-evenly items-center w-full ">
       <div>
         <BsPerson className="md:h-8 md:w-8 h-6 w-6  text-primary cursor-pointer " />
       </div>
@@ -28,11 +27,8 @@ const CartButton = async () => {
         </span>
       </div>
     </div>
-
-
   ) : (
     <div className="hidden"> </div>
-   
   );
 };
 

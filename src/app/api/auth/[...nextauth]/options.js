@@ -12,8 +12,16 @@ export const options = {
     Credentials({
       type: "credentials",
       credentials: {
-        email: { label: "E-Mail", type: "email", placeholder: "Enter your email" },
-        password: { label: "Password", type: "password", placeholder: "Enter your password" },
+        email: {
+          label: "E-Mail",
+          type: "email",
+          placeholder: "Enter your email",
+        },
+        password: {
+          label: "Password",
+          type: "password",
+          placeholder: "Enter your password",
+        },
       },
 
       async authorize(credentials) {
@@ -27,7 +35,7 @@ export const options = {
         } else {
           return null;
         }
-      }
+      },
     }),
 
     FacebookProvider({
@@ -62,7 +70,7 @@ export const options = {
   ],
 
   pages: {
-    signIn: '/auth/signin',
+    signIn: "/auth/signin",
   },
 
   callbacks: {

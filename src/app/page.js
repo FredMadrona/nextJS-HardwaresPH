@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Nav from "@/components/NavbarUpdate";
 import ImageSlider from "@/components/ImageSlider";
 import ProductCards from "@/components/ProductCards";
@@ -9,12 +9,12 @@ const Home = () => {
   return (
     <div>
       <Nav />
-      <Menu/>
+      <Menu />
       <ImageSlider />
       <ProductCards />
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;

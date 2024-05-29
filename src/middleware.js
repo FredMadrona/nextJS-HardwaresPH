@@ -13,13 +13,9 @@ export default withAuth(
     callbacks: {
       authorized: ({ token }) => !!token,
     },
-  }
+  },
 );
 
 export const config = {
-matcher: [
-  "/cart",
-  "/checkout",
-  "/products"
-]
+  matcher: ["/cart", "/checkout", "/products"],
 };
