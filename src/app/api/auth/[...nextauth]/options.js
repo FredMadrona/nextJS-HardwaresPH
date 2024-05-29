@@ -61,7 +61,18 @@ export const options = {
     }),
   ],
 
+  pages: {
+    signIn: '/auth/signin',
+  },
+
   callbacks: {
+    async signIn({ user, credentials }) {
+      if (credentials && user) {
+        // Perform additional logic after successful sign-in using credentials
+        console.log("Successful login using credentials:", user);
+      }
+      return true;
+    },
     async jwt({ token, user }) {
       if (user) token.role = user.role;
       return token;

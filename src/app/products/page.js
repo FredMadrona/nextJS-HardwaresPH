@@ -44,7 +44,7 @@ function Products() {
         <HorizontalMenu />
 
         <ProductGrid />
-
+      
         <Footer />
       </CartProvider>
     </Suspense>
