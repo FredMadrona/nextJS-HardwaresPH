@@ -4,7 +4,6 @@ import Image from "next/image";
 import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import LogoutButton from "./LogoutButton";
 import { useRouter } from "next/navigation";
 
 const Navbar = ({ cartItems }) => {
@@ -244,8 +243,6 @@ const Navbar = ({ cartItems }) => {
           </div>
           {/* <span className="hidden md:flex ml-2 "> Cart </span> */}
         </div>
-
-        <LogoutButton />
       </div>
       {/* End of Column 3 */}
     </nav>

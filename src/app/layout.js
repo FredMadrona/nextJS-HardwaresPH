@@ -1,3 +1,4 @@
+import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 import { Providers } from "./providers";
 export const metadata = {
@@ -8,9 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+      <AuthProvider>
+        <body>
+          <Providers>{children}</Providers>
+        </body>
+      </AuthProvider>
     </html>
   );
 }
