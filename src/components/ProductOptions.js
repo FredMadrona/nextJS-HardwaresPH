@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
-import { useCart } from "./CartContext";
+import { useCart } from "./useCart";
 import cartData from "./cartData";
 import allProducts from "@/data/allProducts";
 import { useSearchParams, useRouter } from "next/navigation";

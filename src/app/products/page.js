@@ -1,7 +1,7 @@
 // Products.js
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
-import { CartProvider } from "@/components/CartContext";
+import { CartProvider } from "@/components/useCart";
 import Navbar from "@/components/Navbar";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";

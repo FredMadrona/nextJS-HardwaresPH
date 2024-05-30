@@ -1090,4 +1090,12 @@ const allProducts = [
   },
 ];
 
+export const fetchCartData = () => {
+  if (typeof window !== "undefined") {
+    const storedCartItems = localStorage.getItem("cartItems");
+    return storedCartItems ? JSON.parse(storedCartItems) : allProducts;
+  }
+  return allProducts;
+};
+
 export default allProducts;
