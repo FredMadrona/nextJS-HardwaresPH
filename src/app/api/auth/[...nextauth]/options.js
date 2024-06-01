@@ -42,11 +42,10 @@ export const options = {
       profile(profile) {
         console.log("Facebook user: ", profile);
 
-        let userRole = "Facebook User";
         return {
           ...profile,
           id: profile.sub,
-          role: userRole,
+          loggedInAs: "facebook",
         };
       },
       clientId: process.env.FACEBOOK_CLIENT_ID,
@@ -57,11 +56,10 @@ export const options = {
       profile(profile) {
         console.log("Profile Google: ", profile);
 
-        let userRole = "Google User";
         return {
           ...profile,
           id: profile.sub,
-          role: userRole,
+          loggedInAs: "google",
         };
       },
       clientId: process.env.GOOGLE_ID,

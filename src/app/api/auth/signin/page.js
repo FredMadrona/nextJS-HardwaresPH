@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
@@ -6,16 +5,17 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { signIn } from "next-auth/react";
+
 // import { useRouter } from "next/navigation";
 import Link from "next/link";
 // import Modal from "@/components/modal";
 // import { Spinner } from "@nextui-org/spinner";
 
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [ShowError, setShowError] = useState(false);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -31,6 +31,9 @@ const LoginPage = () => {
       console.log("Error signing in:", result.error);
     }
   };
+
+
+
 
   return (
     <div>
@@ -79,21 +82,7 @@ const LoginPage = () => {
                     </span>
                   </div>
                   <div className="relative">
-                    <input
-                      className="border p-1 pl-3 mx-3 my-1 rounded bg-gray-100 focus:outline-none w-[95%]"
-                      type={showPassword ? "text" : "password"}
-                      placeholder=""
-                      name="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <button
-                      type="button"
-                      className="absolute top-1/2 right-5 transform -translate-y-1/2 text-gray-500 cursor-pointer"
-                      onClick={() => setShowPassword(!showPassword)}
-                    >
-                      <FaEyeSlash />
-                    </button>
+                    <FaEyeSlash />
                   </div>
                 </div>
 
@@ -125,9 +114,9 @@ const LoginPage = () => {
                 <button>
                   <FaXTwitter className="cursor-pointer hover:text-primary w-5 h-5 " />
                 </button>
-                <button>
+                <span onClick={async ()=> signIn("google")}>
                   <FaGoogle className="cursor-pointer hover:text-primary w-5 h-5 " />
-                </button>
+                </span>
               </div>
             </div>
             <div className="flex w-full justify-center mt-10 align-middle">
