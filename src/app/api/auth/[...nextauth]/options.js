@@ -1,19 +1,26 @@
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import Credentials from "next-auth/providers/credentials";
+import axios from "axios";
+
+
+const token = process.env.NEXTAUTH_SECRET;
+
 
 export const options = {
+
   session: {
     strategy: "jwt",
     maxAge: 2 * 24 * 60 * 60, // the duration of this session will last for two days
   },
+
 
   providers: [
     Credentials({
       type: "credentials",
       credentials: {
         email: {
-          label: "E-Mail",
+          label: "Email",
           type: "email",
           placeholder: "Enter your email",
         },
@@ -25,14 +32,32 @@ export const options = {
       },
 
       async authorize(credentials) {
+        console.log('Using token:', token);
         const { email, password } = credentials;
-        if (email === "sample@gmail.com" && password === "password") {
-          return {
-            Id: 1,
-            email: email,
-            userName: "Admin",
-          };
-        } else {
+        try {
+          const response = await axios.post('http://127.0.0.1:8000/api/login', {
+            email,
+            password
+          }, {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+             }
+          });
+
+          const user = response.data;
+          if (user) {
+            console.log('Using token:', token);
+            return user;
+          } else {
+            return null;
+          }
+        } catch (error) {
+          // Handle any errors that occur during the API request
+          console.error('Login error response data:', error.response.data);
+          console.error('Login error response status:', error.response.status);
+          console.error('Login error response headers:', error.response.headers);
+          console.error('Login error:', error);
           return null;
         }
       },
@@ -74,8 +99,8 @@ export const options = {
   callbacks: {
     async signIn({ user, credentials }) {
       if (credentials && user) {
-        // Perform additional logic after successful sign-in using credentials
-        console.log("Successful login using credentials:", user);
+        console.log("Successful login using credentials:", user); 
+        window.location.href = "/";
       }
       return true;
     },
