@@ -1,11 +1,13 @@
 "use client"
 import React, { useState } from 'react';
 import { signIn } from 'next-auth/react'; // Import signIn from NextAuth
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
 
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the default behavior of the form submission,
@@ -21,10 +23,10 @@ const LoginPage = () => {
     });
     console.log('SignIn Result:', JSON.stringify(signInResult, null, 2));
     if (signInResult.error) {
-   
       setError(signInResult.error);
       setResponse(null);
     } else {
+      router.push("/");
       setResponse(signInResult);
       setError(null);
       // Save token or perform further actions
