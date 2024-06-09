@@ -30,7 +30,8 @@ const LoginButton = ({ email, password }) => {
 
   return (
     <div>
-      <button type="button" onClick={handleClick}>Login</button>
+      <button type="button" onClick={handleClick} className="border mx-auto placeholder-black bg-primary rounded w-[95%] text-white p-2 font-semibold mb-5 text-center cursor-pointer hover:bg-blue-800 ease-linear transition-all duration-300"
+      >Submit</button>
       {/* {response && <pre>{JSON.stringify(response, null, 2)}</pre>}
       {error && <p style={{ color: 'red' }}>{error}</p>} */}
     </div>

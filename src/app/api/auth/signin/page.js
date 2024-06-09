@@ -16,7 +16,6 @@ const SignIn = async() => {
         </>
       ) : (
         <>
-          <h1>Sign In</h1>
             <SignInForm/>
         </>
       )}
