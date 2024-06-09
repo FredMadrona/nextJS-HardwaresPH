@@ -32,7 +32,7 @@ export const options = {
       },
 
       async authorize(credentials) {
-        console.log('Using token:', token);
+   
         const { email, password } = credentials;
         try {
           const response = await axios.post('http://127.0.0.1:8000/api/login', {
@@ -47,7 +47,6 @@ export const options = {
 
           const user = response.data;
           if (user) {
-            console.log('Using token:', token);
             return user;
           } else {
             return null;
@@ -99,17 +98,35 @@ export const options = {
   callbacks: {
     async signIn({ user, credentials }) {
       if (credentials && user) {
-        console.log("Successful login using credentials:", user); 
-        window.location.href = "/";
+        console.log("Successful login using credentials:", user);
+        return true; // Allow the login to proceed
       }
-      return true;
+      return false; // Prevent the login if no user
     },
     async jwt({ token, user }) {
-      if (user) token.role = user.role;
+      // Add user data to the JWT token
+      if (user) {
+        token.id = user.id;
+        token.firstName = user.first_name;
+        token.lastName = user.last_name;
+        token.email = user.email;
+        token.role = user.role || 'user'; // Add a default role if not present
+        token.token = user.token; // Include the token
+      }
       return token;
     },
     async session({ session, token }) {
-      if (session?.user) session.user.role = token.role;
+      // Add user data to the session
+      if (session?.user) {
+        session.user.id = token.id;
+        session.user.firstName = token.firstName;
+        session.user.lastName = token.lastName;
+        session.user.email = token.email;
+        session.user.role = token.role;
+        session.user.token = token.token; // Include the token
+      } else {
+        console.log("saving session failed");
+      }
       return session;
     },
   },
