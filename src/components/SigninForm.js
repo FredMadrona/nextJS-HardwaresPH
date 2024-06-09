@@ -1,16 +1,15 @@
 "use client";
-import React, { useState } from 'react';
-import LoginButton from './SignInHandler';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState } from "react";
+import LoginButton from "./SignInHandler";
+import Image from "next/image";
+import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const SigninForm = () => {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents default form submission behavior
@@ -21,7 +20,7 @@ const SigninForm = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
- 
+
   return (
     <div>
       <div className="grid grid-cols-12 w-full  h-screen">
@@ -41,7 +40,10 @@ const SigninForm = () => {
               Sign in to continue to HardwaresPH
             </p>
             <div className="p-5 mt-5 ">
-              <form className="w-full flex justify-center flex-col gap-3 mx-1" onSubmit={handleSubmit}>
+              <form
+                className="w-full flex justify-center flex-col gap-3 mx-1"
+                onSubmit={handleSubmit}
+              >
                 <div className="flex-col ">
                   <div className="flex justify-between text-sm text-gray-700 font-semibold mx-4">
                     <span> Email or number </span>
@@ -103,16 +105,16 @@ const SigninForm = () => {
                 - Sign in with -{" "}
               </p>
               <div className="flex justify-center gap-5 mt-4 align-center">
-                <button >
+                <button>
                   <FaFacebook className="cursor-pointer hover:text-primary w-5 h-5 " />
                 </button>
-    
+
                 {/* <FaXTwitter className="cursor-pointer hover:text-primary w-5 h-5 " /> */}
-                <button >
+                <button>
                   <FaXTwitter className="cursor-pointer hover:text-primary w-5 h-5 " />
                 </button>
 
-                <button >
+                <button>
                   <FaGoogle className="cursor-pointer hover:text-primary w-5 h-5 " />
                 </button>
                 {/* <FaGoogle className="cursor-pointer hover:text-primary w-5 h-5 " /> */}

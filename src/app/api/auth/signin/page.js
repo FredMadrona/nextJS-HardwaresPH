@@ -3,12 +3,11 @@ import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import SignInForm from "@/components/SigninForm";
 
-const SignIn = async() => {
+const SignIn = async () => {
   const session = await getServerSession(options);
 
   return (
     <>
-
       {session ? (
         <>
           Signed in as {session.user.email} <br />
@@ -16,10 +15,9 @@ const SignIn = async() => {
         </>
       ) : (
         <>
-            <SignInForm/>
+          <SignInForm />
         </>
       )}
-   
     </>
   );
 };

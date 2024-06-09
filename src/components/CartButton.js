@@ -28,7 +28,7 @@ const CartButton = async () => {
   //     </div>
   //   </div>
   // ) : (
-    <div className="hidden"> </div>
+  <div className="hidden"> </div>;
   // );
 };
 
