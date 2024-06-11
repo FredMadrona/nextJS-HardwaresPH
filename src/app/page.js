@@ -1,15 +1,17 @@
 "use client";
+import React from "react";
 import Nav from "@/components/NavbarUpdate";
 import ImageSlider from "@/components/ImageSlider";
 import ProductCards from "@/components/ProductCards";
 import Footer from "@/components/Footer";
-import Menu from "@/components/HorizontalMenu";
+import { useSession } from "next-auth/react";
 
 const Home = () => {
+  const { data: session } = useSession();
+
   return (
     <div>
       <Nav />
-      <Menu />
       <ImageSlider />
       <ProductCards />
       <Footer />
