@@ -178,14 +178,14 @@ const ProductDescriptions = () => {
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
+            
               Stainless Steel Bathroom Hardware WWG17220{" "}
             </p>
             <div className="flex justify-between mb-3">
               <p className="text-sm font-semibold"> Product Price </p>
               {/* Heart Icon */}
               <p>
-                {" "}
+                
                 <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
               </p>
             </div>
@@ -203,8 +203,8 @@ const ProductDescriptions = () => {
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Stainless Steel Bathroom Hardware{" "}
+
+              Stainless Steel Bathroom Hardware
             </p>
             <div className="flex justify-between mb-3">
               <p className="text-sm font-semibold"> Product Price </p>
@@ -228,14 +228,14 @@ const ProductDescriptions = () => {
               layout="responsive"
             />
             <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Exposed Door Closer Series{" "}
+              
+              Exposed Door Closer Series
             </p>
             <div className="flex justify-between mb-3">
               <p className="text-sm font-semibold"> Product Price </p>
               {/* Heart Icon */}
               <p>
-                {" "}
+              
                 <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
               </p>
             </div>
@@ -254,14 +254,13 @@ const ProductDescriptions = () => {
             />
             {/* <StaticImage src="../ProductImages/Hardware03.jpg"></StaticImage> */}
             <p className="text-sm text-gray-500 mb-3 h-10">
-              {" "}
-              Intelligent Door Lock N6700{" "}
+              
+              Intelligent Door Lock N6700
             </p>
             <div className="flex justify-between mb-3">
               <p className="text-sm font-semibold"> Product Price </p>
               {/* Heart Icon */}
               <p>
-                {" "}
                 <BsHeart className="text-gray-500 hover:cursor-pointer hover:text-primary" />
               </p>
             </div>

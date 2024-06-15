@@ -1,6 +1,7 @@
 import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
-import { Providers } from "./providers";
+import Providers from "./providers";
+
 export const metadata = {
   title: "Hardware PH",
   description: "Hardware Ecommerce Website",
@@ -9,11 +10,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <AuthProvider>
-        <body>
-          <Providers>{children}</Providers>
-        </body>
-      </AuthProvider>
+      <head>
+        {/* Add any head elements here */}
+      </head>
+      <body>
+        <AuthProvider>
+          <Providers>
+            {children}
+          </Providers>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

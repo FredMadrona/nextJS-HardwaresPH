@@ -1,10 +1,11 @@
-"use client";
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
 import AuthButton from "./AuthButton";
 import Logo from "/public/images/Hardware_Logo_Mobile.png";
-import CartButton from "./CartButton";
-const Nav = () => {
+// import CartButton from "./CartButton";
+
+
+export default function Nav () {
   return (
     <nav className="  sticky top-0 w-full z-50 bg-white p-1 grid grid-cols-12 justify-between items-center gap-4 h-18 lg:px-1/4 ">
       {/* Column 1: Logo */}
@@ -27,7 +28,7 @@ const Nav = () => {
       {/* Column 3: Login and Cart */}
       <div className="h-full md:col-span-4 col-span-3 flex items-center justify-center ">
         <div className="md:w-[40%] w-full ">
-          <CartButton />
+          {/* <CartButton /> */}
         </div>
         <div className="">
           <AuthButton />
@@ -38,4 +39,3 @@ const Nav = () => {
   );
 };
 
-export default Nav;
