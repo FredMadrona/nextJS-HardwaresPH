@@ -1,4 +1,3 @@
-import { signIn } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import SignInForm from "@/components/SigninForm";
@@ -10,8 +9,7 @@ const SignIn = async () => {
     <>
       {session ? (
         <>
-          Signed in as {session.user.email} <br />
-          <button onClick={() => signIn(signOut)}>Sign out</button>
+          Signed in 
         </>
       ) : (
         <>

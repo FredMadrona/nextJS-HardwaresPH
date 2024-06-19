@@ -100,35 +100,19 @@ export const options = {
   callbacks: {
     async signIn({ user, credentials }) {
       if (credentials && user) {
-        console.log("Successful login using credentials:", user);
         return true; // Allow the login to proceed
       }
       return false; // Prevent the login if no user
     },
-    async jwt({ token, user }) {
-      // Add user data to the JWT token
-      if (user) {
-        token.id = user.id;
-        token.firstName = user.first_name;
-        token.lastName = user.last_name;
-        token.email = user.email;
-        token.role = user.role || "user"; // Add a default role if not present
-        token.token = user.token; // Include the token
-      }
-      return token;
+    jwt: async ({ token, user }) => {
+      // console.log("JWT token created:", token);
+      // console.log("User data:", user);
+      return { ...token, ...user };
     },
-    async session({ session, token }) {
-      // Add user data to the session
-      if (session?.user) {
-        session.user.id = token.id;
-        session.user.firstName = token.firstName;
-        session.user.lastName = token.lastName;
-        session.user.email = token.email;
-        session.user.role = token.role;
-        session.user.token = token.token; // Include the token
-      } else {
-        console.log("saving session failed");
-      }
+    session: async ({ session, token }) => {
+      session.user = token;
+      console.log("Session user object:", session.user); // Debugging statement
+      console.log("Session user ID:", session.user.data?.user?.id);
       return session;
     },
   },
