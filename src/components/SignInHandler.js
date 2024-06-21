@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 
-const LoginButton = ({ email, password }) => {
+const SignInHandler = ({ email, password }) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleClick = async () => {
+  const handleSignIn = async () => {
     try {
       const signInResult = await signIn("credentials", {
         email,
@@ -32,7 +32,7 @@ const LoginButton = ({ email, password }) => {
     <div>
       <button
         type="button"
-        onClick={handleClick}
+        onClick={handleSignIn}
         className="border mx-auto placeholder-black bg-primary rounded w-[95%] text-white p-2 font-semibold mb-5 text-center cursor-pointer hover:bg-blue-800 ease-linear transition-all duration-300"
       >
         Submit
@@ -43,4 +43,4 @@ const LoginButton = ({ email, password }) => {
   );
 };
 
-export default LoginButton;
+export default SignInHandler;

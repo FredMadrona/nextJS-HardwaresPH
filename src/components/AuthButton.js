@@ -25,7 +25,7 @@ const AuthButton = () => {
       <span className="md:text-lg text-xs mt-1 font-semibold md:mx-5 mx-2">
         |
       </span>
-      <Link className="md:text-lg text-xs mt-1 font-semibold" href="#">
+      <Link className="md:text-lg text-xs mt-1 font-semibold" href="/api/auth/signup">
         Sign Up
       </Link>
     </>
