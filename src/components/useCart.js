@@ -1,64 +1,97 @@
-// hooks/useCart.js
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 
-// Define the fetcher function to fetch cart data from the API
-const fetcher = async (url) => {
-  const response = await axios.get(url);
-  return response.data;
+const fetcher = async (url, token) => {
+  try {
+    console.log(url);
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching cart data:", error);
+    throw error;
+  }
 };
 
 export const useCart = () => {
-  const { data: cartItems, mutate } = useSWR("/api/cart", fetcher, {
-    fallbackData: [],
-  });
+  const { data: session, status } = useSession();
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
-    // Fetch the cart data from the API when the component mounts
-    if (typeof window !== "undefined") {
-      mutate();
+    if (session?.user?.data?.token) {
+      setToken(session.user.data.token);
     }
-  }, [mutate]);
+  }, [session]);
+// ADD URL TO .ENV
+  const { data: cartItems, mutate } = useSWR(
+      token ? ["http://127.0.0.1:8000/api/cart", token] : null,
+      fetcher,
+      {
+        fallbackData: [],
+      }
+  );
+
+  useEffect(() => {
+    if (token && typeof window !== "undefined") {
+      mutate(); // Trigger initial fetch or re-fetch when token changes
+    }
+  }, [token, mutate]);
 
   const addToCart = async (item) => {
-    const updatedCart = [...cartItems, item];
-    mutate(updatedCart, false);
+    if (!token) return; // Ensure token is available
 
-    if (typeof window !== "undefined") {
-      try {
-        await axios.post("/api/cart/add", { item });
-        mutate(); // Re-fetch the cart data from the API
-      } catch (error) {
-        console.error("Failed to add item to cart", error);
-      }
+    try {
+      await axios.post(
+          "http://127.0.0.1:8000/api/cart",
+          { item },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+      );
+      mutate(); // Re-fetch the cart data from the API
+    } catch (error) {
+      console.error("Failed to add item to cart", error);
     }
   };
 
   const removeFromCart = async (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    mutate(updatedCart, false);
+    if (!token) return; // Ensure token is available
 
-    if (typeof window !== "undefined") {
-      try {
-        await axios.post("/api/cart/remove", { itemId });
-        mutate(); // Re-fetch the cart data from the API
-      } catch (error) {
-        console.error("Failed to remove item from cart", error);
-      }
+    try {
+      await axios.delete(`http://127.0.0.1:8000/api/cart/${itemId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      mutate(); // Re-fetch the cart data from the API
+    } catch (error) {
+      console.error("Failed to remove item from cart", error);
     }
   };
 
   const updateCart = async (updatedCart) => {
-    mutate(updatedCart, false);
+    if (!token) return; // Ensure token is available
 
-    if (typeof window !== "undefined") {
-      try {
-        await axios.post("/api/cart/update", { cart: updatedCart });
-        mutate(); // Re-fetch the cart data from the API
-      } catch (error) {
-        console.error("Failed to update cart", error);
-      }
+    try {
+      await axios.put(
+          "http://127.0.0.1:8000/api/cart",
+          { cart: updatedCart },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+      );
+      mutate(); // Re-fetch the cart data from the API
+    } catch (error) {
+      console.error("Failed to update cart", error);
     }
   };
 
@@ -67,5 +100,7 @@ export const useCart = () => {
     addToCart,
     removeFromCart,
     updateCart,
+    isLoading: status === "loading",
+    isError: status === "error",
   };
 };
