@@ -1,57 +1,31 @@
+// SignUpHandler.js
+
 import React, { useState } from "react";
-import axios from "axios";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import registerService from "./RegisterService";
 
 const token = process.env.NEXT_PUBLIC_NEXTAUTH_SECRET;
 
-
-const SignUpHandler = ({ email, password, first_name, last_name, confirm_password}) => {
+const SignUpHandler = ({ email, password, first_name, last_name, confirm_password }) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
-  const {isOpen, onOpen, onOpenChange, onClose} = useDisclosure();
-
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   const handleSignUp = async () => {
-    try {
-      // console.log("Data being sent:", { first_name,  last_name, email, password, confirm_password }, token); // Log data before sending request
-  
-      const signUpResult = await axios.post(
-        "http://127.0.0.1:8000/api/register",
-        {
-          first_name,
-          last_name,
-          email,
-          password,
-          confirm_password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-  
-      console.log("SignUp Result:", JSON.stringify(signUpResult.data, null, 2)); // Log the response from the server
-  
-      if (signUpResult.data.error) {
-        setError(signUpResult.data.message);
-      } else {
-        setResponse(signUpResult.data);
-        onOpen();
-        // window.location.href = "/api/auth/signin"; // Redirect user on successful signup
-      }
-    } catch (error) {
-      console.error("An error occurred during sign up:", error); // Log any caught errors
-      setError("An unexpected error occurred");
+    const result = await registerService.signUp({ first_name, last_name, email, password, confirm_password, token });
+
+    if (result.error) {
+      setError(result.message);
+    } else {
+      setResponse(result.data);
+      onOpen();
     }
   };
 
-  const HandleSignUp = () => {
+  const handleProceedToSignIn = () => {
     onClose(); // Close the modal
     window.location.href = "/api/auth/signin"; // Redirect user on successful signup
-
-  }
+  };
 
   return (
     <div>
@@ -62,19 +36,18 @@ const SignUpHandler = ({ email, password, first_name, last_name, confirm_passwor
       >
         Submit
       </button>
-      {/* {response && <pre>{JSON.stringify(response, null, 2)}</pre>} */}
       {error && <p style={{ color: "red" }}>{error}</p>}
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
-          {(onClose) => (
+          {() => (
             <>
               <ModalHeader className="flex flex-col gap-1">Successful Register</ModalHeader>
               <ModalBody>
-              Continue to Sign in page?
+                Continue to Sign in page?
               </ModalBody>
               <ModalFooter>
-                <Button color="primary" onPress={HandleSignUp}>
-                  Proceed 
+                <Button color="primary" onPress={handleProceedToSignIn}>
+                  Proceed
                 </Button>
               </ModalFooter>
             </>
