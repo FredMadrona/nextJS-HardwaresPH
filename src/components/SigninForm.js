@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import LoginButton from "./SignInHandler";
+import SignInHandler from "./SignInHandler";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -96,7 +96,7 @@ const SigninForm = () => {
                   </span>
                 </div>
 
-                <LoginButton email={email} password={password} />
+                <SignInHandler email={email} password={password} />
               </form>
             </div>
             <div className="w-full flex-col justify-center align-center mb-5">
@@ -123,7 +123,7 @@ const SigninForm = () => {
             <div className="flex w-full justify-center mt-10 align-middle">
               <p className="text-xs text-gray-400"> Dont have an account ?</p>{" "}
               <span className="text-xs text-primary font-bold ml-1 cursor-pointer hover:underline">
-                Sign up now
+                <Link href="/api/auth/signup"> Sign up now </Link>
               </span>
             </div>
             <div className="w-full justify-center text-center text-gray-400 mt-5">

@@ -100,6 +100,7 @@ export const options = {
   callbacks: {
     async signIn({ user, credentials }) {
       if (credentials && user) {
+        console.log('returned credentials and user',credentials, user)
         return true; // Allow the login to proceed
       }
       return false; // Prevent the login if no user
