@@ -3,7 +3,7 @@ import React from "react";
 import { BsHeart, BsCart2 } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
-import PopularProducts from "./PopularProducts";
+import PopularProductsUpdated from "./PopularProductsUpdated";
 import NewArrivalProducts from "./NewArrivalProducts";
 import IndexPageImage01 from "/public/images/IndexPageImage01.png";
 import IndexPageImage02 from "/public/images/IndexPageImage02.png";
@@ -49,7 +49,7 @@ const ProductCards = () => {
         <div className="md:col-span-2 col-span-1 "></div>
       </div>
 
-      <PopularProducts></PopularProducts>
+      <PopularProductsUpdated></PopularProductsUpdated> 
       {/* End of Popular Products */}
 
       {/* Start of New Arrival */}
