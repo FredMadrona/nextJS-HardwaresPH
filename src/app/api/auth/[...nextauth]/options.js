@@ -4,6 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 import axios from "axios";
 
 const token =process.env.NEXTAUTH_SECRET;
+const basePath = process.env.NEXT_PUBLIC_API_URL;
 
 export const options = {
   session: {
@@ -31,7 +32,7 @@ export const options = {
         const { email, password } = credentials;
         try {
           const response = await axios.post(
-            "http://127.0.0.1:8000/api/login",
+           `${basePath}/login`,
             {
               email,
               password,
