@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
@@ -7,13 +7,23 @@ import cartData from "./cartData";
 import allProducts from "@/data/allProducts";
 import { useSearchParams, useRouter } from "next/navigation";
 import ImageSliderForProduct from "./ImageSliderForProduct";
+import {useSession} from "next-auth/react";
 const ProductOptions = () => {
   const ProductParams = useSearchParams();
   const ProductIndex = ProductParams.get("PopProduct");
   const CartRouter = useRouter();
-
+  const { data: session, status } = useSession();
+  const [token, setToken] = useState(null);
   const options = ["Small", "Medium", "Large"];
-  const { addToCart } = useCart();
+  const [addtocart, setAddtocart] = useState({});
+
+  useEffect(() => {
+    if (session?.user?.data?.token) {
+      const { addToCart } = useCart(session?.user?.data?.token);
+      setAddtocart(addToCart)
+    }
+  }, [session]);
+
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -51,7 +61,7 @@ const ProductOptions = () => {
     cartData.push(newItem);
 
     // Call addToCart from your context
-    addToCart(newItem);
+    addtocart(newItem);
 
     // Retrieve existing cart items from local storage
     const storedCartItems = localStorage.getItem("cartItems");

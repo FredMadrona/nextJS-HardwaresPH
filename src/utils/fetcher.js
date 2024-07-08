@@ -1,13 +1,14 @@
-export const fetcher = async (url) => {
+export const fetcher = async (url, token = process.env.NEXT_PUBLIC_CLIENT_TOKEN) => {
 
-const token =process.env.NEXT_PUBLIC_CLIENT_TOKEN;
 
   try {
+      console.log(`Fetching ${url} from ${token}`);
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${url}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json',
       },
     });
 

@@ -1,14 +1,16 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BsSearch, BsCart2 } from "react-icons/bs";
 import AuthButton from "./AuthButton";
 import Logo from "/public/images/Hardware_Logo_Mobile.png";
-import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
+import { useCart } from "./useCart"; // Corrected import path
 
-export default function Nav({ cartItems }) {
+const Nav = () => {
     const { data: session } = useSession();
     const [firstName, setFirstName] = useState("");
+    const { cartItems = [] } = useCart(session?.user?.data?.token);
 
     useEffect(() => {
         if (session) {
@@ -19,7 +21,7 @@ export default function Nav({ cartItems }) {
         }
     }, [session]);
 
-    const totalItemsInCart = cartItems && cartItems.length > 0
+    const totalItemsInCart = Array.isArray(cartItems)
         ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
         : 0;
 
@@ -55,8 +57,8 @@ export default function Nav({ cartItems }) {
                         {/* Items in cart counter */}
                         {totalItemsInCart > 0 && (
                             <span className="absolute top-0 right-0 -mt-3 -mr-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full md:text-sm text-xs">
-                {totalItemsInCart}
-              </span>
+                                {totalItemsInCart}
+                            </span>
                         )}
                     </div>
                     {/* End of Cart Icon */}
@@ -73,4 +75,6 @@ export default function Nav({ cartItems }) {
             {/* End of Column 3 */}
         </nav>
     );
-}
+};
+
+export default Nav;

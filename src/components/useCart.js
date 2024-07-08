@@ -1,39 +1,28 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import axios from "axios";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
+import {fetcher} from "@/utils/fetcher";
 
-const fetcher = async (url, token) => {
-  try {
-    console.log(url);
-    const response = await axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching cart data:", error);
-    throw error;
-  }
-};
 
-export const useCart = () => {
-  const { data: session, status } = useSession();
-  const [token, setToken] = useState(null);
+export const useCart = (token) => {
+  // const { data: session, status } = useSession();
+  // const [token, setToken] = useState(null);
+  const basePath = process.env.NEXT_PUBLIC_API_URL;
 
-  useEffect(() => {
-    if (session?.user?.data?.token) {
-      setToken(session.user.data.token);
-    }
-  }, [session]);
-// ADD URL TO .ENV
-  const { data: cartItems, mutate } = useSWR(
-      token ? ["http://127.0.0.1:8000/api/cart", token] : null,
-      fetcher,
-      {
-        fallbackData: [],
-      }
+  // useEffect(() => {
+  //   if (session?.user?.data?.token) {
+  //     setToken(session.user.data.token);
+  //   }
+  // }, [session]);
+
+  const { data: cartItems, mutate, error } = useSWR(
+      //token ? [`${basePath}/cart`] : null,
+     // fetcher,
+      //{
+
+     // }
+      '/cart', url => fetcher(url, token)
   );
 
   useEffect(() => {
@@ -47,7 +36,7 @@ export const useCart = () => {
 
     try {
       await axios.post(
-          "http://127.0.0.1:8000/api/cart",
+          `${basePath}/cart`,
           { item },
           {
             headers: {
@@ -65,7 +54,7 @@ export const useCart = () => {
     if (!token) return; // Ensure token is available
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/cart/${itemId}`, {
+      await axios.delete(`${basePath}/cart/${itemId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -81,7 +70,7 @@ export const useCart = () => {
 
     try {
       await axios.put(
-          "http://127.0.0.1:8000/api/cart",
+          `${basePath}/cart`,
           { cart: updatedCart },
           {
             headers: {
@@ -101,6 +90,6 @@ export const useCart = () => {
     removeFromCart,
     updateCart,
     isLoading: status === "loading",
-    isError: status === "error",
+    isError: status === "error" || !!error,
   };
 };
