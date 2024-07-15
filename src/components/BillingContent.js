@@ -30,6 +30,7 @@ const BillingContent = ({ updateCart }) => {
     expiryYear: "",
     cvv: "",
   });
+
   const [showCreditCardDropdown, setShowCreditCardDropdown] = useState(false);
 
   const { data: cartData, error, mutate } = useSWR('/cart', fetcher);
