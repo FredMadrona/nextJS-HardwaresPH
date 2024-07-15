@@ -1,6 +1,7 @@
-"use client";
+"use client"; // Ensure this component runs on the client-side
+
 import React, { Suspense } from "react";
-import Navbar from "@/components/Navbar";
+import Nav from "@/components/NavbarUpdate";
 import HorizontalMenu from "@/components/HorizontalMenu";
 import Footer from "@/components/Footer";
 import BillingNavTrail from "@/components/BillingNavTrail";
@@ -30,9 +31,15 @@ function Billing() {
         return <div>Loading...</div>; // Ensure cartItems are loaded
     }
 
+    const cartItemsArray = Array.isArray(cartItems) ? cartItems : [];
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <Navbar cartItems={cartItems} updateCart={updateCart} />
+            <Nav
+                cartItems={cartItemsArray}
+                totalItems={cartItemsArray.reduce((acc, item) => acc + item.quantity, 0)}
+                updateCart={updateCart}
+            />
             <BillingNavTrail />
             <BillingContent cartItems={cartItems} updateCart={updateCart} />
             <MobileBillingContent updateCart={updateCart} />

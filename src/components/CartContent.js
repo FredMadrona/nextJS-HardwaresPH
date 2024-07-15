@@ -216,7 +216,7 @@ const CartContent = ({ updateCart }) => {
               </div>
               {cartItems.length > 0 && (
                   <div className="w-full flex justify-center mt-1 p-3 md:block">
-                    <Link href="/checkout?username=admin" className="w-full">
+                    <Link href="/checkout" className="w-full">
                       <button className="w-full bg-red-600 py-3 rounded border text-white hover:shadow-md hover:bg-red-700">
                         <p className="font-semibold hover:underline text-xs md:text-md">
                           PROCEED TO CHECKOUT
