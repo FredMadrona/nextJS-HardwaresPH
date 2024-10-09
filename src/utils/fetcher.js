@@ -1,14 +1,17 @@
-export const fetcher = async (url) => {
-
-const token =process.env.NEXT_PUBLIC_CLIENT_TOKEN;
+export const fetcher = async (url, options = {}) => {
+  const token = process.env.NEXT_PUBLIC_CLIENT_TOKEN;
 
   try {
+    // Default method is GET if not specified
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${url}`, {
-      method: 'GET',
+      method: options.method || 'GET', // Use provided method or default to GET
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json',
+        ...options.headers, // Merge with any headers provided in options
       },
+      body: options.body ? JSON.stringify(options.body) : undefined, // Include body if provided
     });
 
     if (!response.ok) {
@@ -17,12 +20,9 @@ const token =process.env.NEXT_PUBLIC_CLIENT_TOKEN;
       throw new Error(`Network response was not ok: ${errorText}`);
     }
 
-    const data = await response.json();
-    return data;
+    return response.json();
   } catch (error) {
     console.error('Fetch failed:', error);
     throw error;
   }
-
 };
-

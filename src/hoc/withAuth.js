@@ -1,6 +1,6 @@
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const withAuth = (WrappedComponent) => {
   return (props) => {
@@ -8,13 +8,13 @@ const withAuth = (WrappedComponent) => {
     const router = useRouter();
 
     useEffect(() => {
-      if (status === "loading") return; // Do nothing while loading
-      if (!session && status !== "loading") {
-        router.push("/"); // Redirect to home page if not authenticated
+      if (status === 'loading') return; // Do nothing while loading
+      if (!session && status !== 'loading') {
+        router.push('/'); // Redirect to home page if not authenticated
       }
     }, [session, status, router]);
 
-    if (status === "loading") {
+    if (status === 'loading') {
       return <div>Loading...</div>; // Show a loading indicator while checking session
     }
 

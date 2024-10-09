@@ -30,18 +30,20 @@ function Checkout() {
         return <div>Loading...</div>; // Ensure cartItems are loaded
     }
 
+    const cartItemsArray = Array.isArray(cartItems) ? cartItems : [];
+
     return (
         <>
             <Nav
-                cartItems={cartItems}
-                totalItems={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                cartItems={cartItemsArray}
+                totalItems={cartItemsArray.reduce((acc, item) => acc + item.quantity, 0)}
                 updateCart={updateCart}
             />
-            <HorizontalMenu />
+
             <CartNavTrail />
-            <CartContent cartItems={cartItems} updateCart={updateCart} />
+            <CartContent cartItems={cartItemsArray} updateCart={updateCart} />
             <ShippingDetails />
-            <CartBar cartItems={cartItems} updateCart={updateCart} />
+            <CartBar cartItems={cartItemsArray} updateCart={updateCart} />
             <Footer />
         </>
     );
